@@ -1,8 +1,14 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-7">
         <button class="button btn-success">
             Host Tournament
         </button>
+    </div>
+    <div class="col-xs-5">
+        <div [ngSwitch]="toggleCurrentTournaments">
+            <div *ngSwitchCase="false">Archived Tournaments</div>
+            <div *ngSwitchDefault>Current Tournaments</div>
+        </div>
     </div>
 </div>
 <hr>
@@ -11,7 +17,7 @@
         <a
             href="#"
             class="list-group-item clearfix"
-            *ngFor="let tournament of tournaments"
+            *ngFor="let tournament of currentTournaments"
         >
             <div class="pull-left">
                 <h4 class="list-group-item-heading">{{tournament.name}}</h4>

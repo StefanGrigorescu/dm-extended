@@ -10,6 +10,13 @@ import { TournamentsComponent } from './tournaments/tournaments.component';
 import { TournamentDetailComponent } from './tournaments/tournament-detail/tournament-detail.component';
 import { TournamentListComponent } from './tournaments/tournament-list/tournament-list.component';
 import { TournamentItemComponent } from './tournaments/tournament-list/tournament-item/tournament-item.component';
+import { DecksComponent } from './decks/decks.component';
+import { DeckStatisticsComponent } from './decks/deck-statistics/deck-statistics.component';
+import { DeckListComponent } from './decks/deck-list/deck-list.component';
+import { DeckItemComponent } from './decks/deck-list/deck-item/deck-item.component';
+import { DeckDetailComponent } from './decks/deck-detail/deck-detail.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { TournamentItemComponent } from './tournaments/tournament-list/tournamen
     TournamentsComponent,
     TournamentDetailComponent,
     TournamentListComponent,
-    TournamentItemComponent
+    TournamentItemComponent,
+    DecksComponent,
+    DeckStatisticsComponent,
+    DeckListComponent,
+    DeckItemComponent,
+    DeckDetailComponent,
+    GalleryComponent,
+    TournamentFormComponent
   ],
   imports: [
     BrowserModule,

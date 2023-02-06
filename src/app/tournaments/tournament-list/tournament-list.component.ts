@@ -7,12 +7,21 @@ import { Tournament } from '../tournament.model';
   styleUrls: ['./tournament-list.component.scss']
 })
 export class TournamentListComponent  implements OnInit{
-  tournaments: Tournament[] = [
+  currentTournaments: Tournament[] = [
     new Tournament("Mock Tournament1", "Some descriptive text"),
     new Tournament("Mock Tournament2", "Some descriptive text"),
     new Tournament("Mock Tournament3", "Some descriptive text"),
     new Tournament("Mock Tournament4", "Some descriptive text"),
   ];
+
+  archivedTournaments: Tournament[] = [
+    new Tournament("Mock Tournament1", "Some descriptive text"),
+    new Tournament("Mock Tournament2", "Some descriptive text"),
+    new Tournament("Mock Tournament3", "Some descriptive text"),
+    new Tournament("Mock Tournament4", "Some descriptive text"),
+  ];
+
+  toggleCurrentTournaments : boolean = true;
 
   constructor() {
 
