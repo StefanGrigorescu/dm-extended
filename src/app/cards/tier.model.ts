@@ -1,7 +1,7 @@
 export class Tier{
-    id: number;
+    public id: number;
     // unique name
-    name: string;
-    description: string;
-    color: string;
+    public name: string;
+    public description: string;
+    public color: string;
 }

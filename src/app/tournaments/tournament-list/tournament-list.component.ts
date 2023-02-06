@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tournament } from '../tournament.model';
 
 @Component({
   selector: 'app-tournament-list',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tournament-list.component.scss']
 })
 export class TournamentListComponent  implements OnInit{
-  tournaments = [];
+  tournaments: Tournament[] = [
+    new Tournament("Mock Tournament1", "Some descriptive text"),
+    new Tournament("Mock Tournament2", "Some descriptive text"),
+    new Tournament("Mock Tournament3", "Some descriptive text"),
+    new Tournament("Mock Tournament4", "Some descriptive text"),
+  ];
 
   constructor() {
 

@@ -1,12 +1,12 @@
 export class Card {
-    uid: string;
-    name: string;
-    civilization: string;
-    family: string;
-    manaCost: number;
-    set: string;
-    type: string;
-    defaultTierId: number = null;
+    public uid: string;
+    public name: string;
+    public civilization: string;
+    public family: string;
+    public manaCost: number;
+    public set: string;
+    public type: string;
+    public defaultTierId: number = null;
 
     getImgUrl() {
         return `https://shobu.io/assets/cards/all/${this.uid}.jpg`;
