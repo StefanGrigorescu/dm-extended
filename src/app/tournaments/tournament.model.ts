@@ -1,14 +1,15 @@
 import { TournamentStatus } from "./tournament-status.enum";
 
 export class Tournament {
+    // Tournament descriptive properties
     public name: string;
     public shortDescription: string;
     public description: string = "";
 
-    // Tournament property
+    // Tournament config properties
     public initialPoolLowerSize: number;    // for random initial pool sizes;  >= 60
     public initialPoolUpperSize: number;    // for random initial pool sizes   <= 500
-    public initialPoolCanBeReset: boolean = false;
+    public initialPoolMaxResetTimes: number = 0;
     public deckMaxSize: number;             // between 40 and 70 (for some crazy draft)
     public allowedSets: any = ["dm-01", "dm-02", "dm-03", "dm-04", "dm-05"];
     public onlyMonoDecks: boolean = false;
@@ -33,6 +34,8 @@ export class Tournament {
     public winnerId: string = null;
     public winnerName: string = null;
 
+    // Tournament calculated properties
+    public tournamentId: number;
     public hostId: string;
     public hostName: string;
     public createdOn: Date = new Date();

@@ -1,5 +1,5 @@
 export class Tier{
-    public id: number;
+    public tierId: number;
     // unique name
     public name: string;
     public description: string;
