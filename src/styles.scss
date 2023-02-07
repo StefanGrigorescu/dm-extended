@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/// Source mixin
+@mixin make-container($padding-x: $container-padding-x) {
+    width: 100%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+$custom-container-padding-x-xs: 5px;
+$custom-container-padding-x-sm: 20px;
+$custom-container-padding-x-md: 40px;
+$custom-container-padding-x-lg: 60px;
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+
+@media screen and (max-width: $screen-xs-max) {
+    .custom-container {
+        @include make-container($custom-container-padding-x-xs);
+    }
+}
+@media screen and (min-width: $screen-sm-min) {
+    .custom-container {
+        @include make-container($custom-container-padding-x-sm);
+    }
+}
+@media screen and (min-width: $screen-md-min) {
+    .custom-container {
+        @include make-container($custom-container-padding-x-md);
+    }
+}
+@media screen and (min-width: $screen-lg-min) {
+    .custom-container {
+        @include make-container($custom-container-padding-x-lg);
+    }
+}

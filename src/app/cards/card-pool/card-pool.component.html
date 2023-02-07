@@ -1,1 +1,58 @@
-<p>card-pool works!</p>
+<div class="container">
+    <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">Card Pool</h1>
+        </div>
+
+        <div align = "center">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">Name</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Civilization</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Race</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Mana Cost</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Set</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Type</button>
+        </div>
+        <br/>
+
+        <div
+            class="gallery_product col-lg-3 col-md-4 col-sm-4 col-xs-6 filter hdpe"
+            *ngFor="let card of cards"
+        >
+            <a><span class="pull-up">
+                <img
+                    [src]="card.getImgUrl()"
+                    alt="{{card.name}}"
+                    class="img-responsive"
+                    style="max-height: 400px"
+                >
+            </span></a>
+            <div class="pull-down">
+                <a><p class="list-group-item-heading">{{card.defaultTierId}}</p></a>
+                <p class="list-group-item-text">{{card.copiesCount}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col-xs-3">
+        <a
+            class="list-group-item clearfix"
+            *ngFor="let card of cards"
+        >
+            <span class="pull-down">
+                <img
+                    [src]="card.getImgUrl()"
+                    alt="{{card.name}}"
+                    class="img-responsive"
+                    style="max-height: 400px"
+                >
+            </span>
+            <div class="pull-up">
+                <h4 class="list-group-item-heading">{{card.defaultTierId}}</h4>
+                <p class="list-group-item-text">{{card.copiesCount}}</p>
+            </div>
+        </a>
+    </div>
+</div> -->

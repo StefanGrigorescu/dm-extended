@@ -6,7 +6,10 @@ export class Card {
     public manaCost: number;
     public set: string;
     public type: string;
+
     public defaultTierId: number = null;
+    public specificTierId: number = null;
+    public copiesCount: number = null;
 
     getImgUrl() {
         return `https://shobu.io/assets/cards/all/${this.uid}.jpg`;
@@ -21,6 +24,31 @@ export class Card {
             case "nature": return "green";
             case "darkness": return "dark-gray";
         }
+    }
+
+    constructor(
+        uid: string,
+        name: string,
+        civilization: string,
+        family: string,
+        manaCost: number,
+        set: string,
+        type: string,
+        defaultTierId: number = null,
+        specificTierId: number = null,
+        copiesCount: number = null
+        )
+    {
+        this.uid = uid;
+        this.name = name;
+        this.civilization = civilization;
+        this.family = family;
+        this.manaCost = manaCost;
+        this.set = set;
+        this.type = type;
+        this.defaultTierId = defaultTierId;
+        this.specificTierId = specificTierId;
+        this.copiesCount = copiesCount;
     }
 }
 

@@ -49,10 +49,10 @@ export class Tournament {
         // deckMaxSize: number,             // between 40 and 70 (for some crazy draft), 
         // draftPickCount: number,         // how many cards the players see on screen when drafting;                          e.g.: 10, 
         // draftPickDropped: number,       // how many of the draft cards on a screen will be dropped (the undrafted ones);    e.g.: 4, 
-        // registerStartTime: Date,
-        // registerEndTime: Date,
-        // activeStartTime: Date,
-        // activeEndTime: Date,
+        registerStartTime: Date,
+        registerEndTime: Date,
+        activeStartTime: Date,
+        activeEndTime: Date,
         // hostId: string,
         // hostName: string
     ) {
@@ -61,10 +61,10 @@ export class Tournament {
         // this.deckMaxSize = deckMaxSize
         // this.draftPickCount = draftPickCount
         // this.draftPickDropped = draftPickDropped
-        // this.registerStartTime = registerStartTime
-        // this.registerEndTime = registerEndTime
-        // this.activeStartTime = activeStartTime
-        // this.activeEndTime = activeEndTime
+        this.registerStartTime = registerStartTime
+        this.registerEndTime = registerEndTime
+        this.activeStartTime = activeStartTime
+        this.activeEndTime = activeEndTime
         // this.hostId = hostId
         // this.hostName = hostName
     }
