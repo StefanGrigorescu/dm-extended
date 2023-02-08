@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tournament } from '../tournament.model';
 
@@ -8,7 +8,10 @@ import { Tournament } from '../tournament.model';
   styleUrls: ['./tournament-form.component.scss']
 })
 export class TournamentFormComponent {
+  @Output() tournamentCreated = new EventEmitter<Tournament>();
+
   tournamentForm: FormGroup;
+  
   tournament: Tournament = new Tournament
   (
     "Mock Defined State Tournament",
@@ -54,8 +57,18 @@ export class TournamentFormComponent {
     });
   }
 
-  onSubmit() {
+  onDefineTournament() {
     this.tournament = this.tournamentForm.value;
     console.log(this.tournament);
+
+    this.tournamentCreated.emit(this.tournament);
+  }
+
+  onClearForm() {
+    
+  }
+
+  onCancel() {
+    
   }
 }

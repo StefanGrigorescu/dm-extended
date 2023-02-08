@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-sm-3 form-group">
                     <label for="defineTiers">Define Tiers</label>
-                    <input type="checkbox" id="defineTiers" [(ngModel)]="tournament.defineTiers" name="defineTiers">
+                    <input type="checkbox" id="defineTiers" class="form-control" [(ngModel)]="tournament.defineTiers" name="defineTiers">
                 </div>
             </div>
 
@@ -149,13 +149,49 @@
                     <input type="datetime-local" id="activeEndTime" [(ngModel)]="tournament.activeEndTime" name="activeEndTime">
                 </div>
             </div>
+              
+
             <b></b>
             <div class="row">
-                <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit">Add</button>
-                    <button class="btn btn-danger" type="button">Delete</button>
-                    <button class="btn btn-primary" type="button">Clear</button>
+                <div class="col-xs-2"></div>
+                <div class="btn-group col-xs-1">
+                    <button
+                        type="button"
+                        class="btn btn-primary dropdown-toggle"
+                    >
+                        Load Preset<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">New Tournament</a></li>
+                        <li><a href="#">Edit Tournament</a></li>
+                        <li><a href="#">Cancel Tournament</a></li>
+                    </ul>
                 </div>
+                <div class="col-xs-1"></div>
+                <button
+                    class="btn btn-success col-xs-1"
+                    type="submit"
+                    (click)="onDefineTournament()"
+                >
+                    Submit
+                </button>
+                <div class="col-xs-1"></div>
+                <button
+                    class="btn btn-primary col-xs-1"
+                    type="button"
+                    (click)="onClearForm()"
+                >
+                    Clear
+                </button>
+                <div class="col-xs-1"></div>
+                <button
+                    class="btn btn-danger col-xs-1"
+                    type="button"
+                    (click)="onCancel()"
+                >
+                    Cancel
+                </button>
+                <div>&nbsp;&nbsp;</div>
             </div>
         </form>
     </div>

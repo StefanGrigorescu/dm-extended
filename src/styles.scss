@@ -77,3 +77,8 @@ $my-light-theme: mat.define-light-theme((
 @include mat.button-theme($my-light-theme);
 
 // Include the theme mixins for other components you use here.
+
+@include mat.grid-list-theme($my-light-theme);
+
+// @include mat.expansion-panel-theme($my-light-theme);
+// @include mat.accordion-theme($my-light-theme);

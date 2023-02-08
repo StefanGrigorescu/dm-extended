@@ -79,3 +79,23 @@ export class Tournament {
         this.maxCardCopiesOfTier = {"A": 2, "B": 4, "C": 2, "D": 2, "E": 0};
     }
 }
+
+/*
+Summary
+
+- Draft configuration properties:
+draft: a boolean property which indicates whether the deck is built separately or in real time with the opponent.
+draftPickCount: the number of cards displayed on screen when drafting.
+draftPickDropped: the number of draft cards on screen that will be dropped (undrafted).
+
+- Pool & Deck Management Config properties:
+sharedPool: a boolean property that indicates if the pool is shared.
+fixedDecks: a boolean property that indicates if the player registers with a single deck at the start and cannot change it later.
+Initial Pool Config properties:
+initialPoolLowerSize: the lower limit for random initial pool sizes.
+initialPoolUpperSize: the upper limit for random initial pool sizes.
+initialPoolMaxResetTimes: the maximum number of times the initial pool can be reset.
+defineTiers: a boolean property indicating if the tiers are defined.
+cardsInPoolOfTier: an object indicating the total number of cards of a specific tier in the pool.
+maxCardCopiesOfTier: an object indicating the maximum number of copies of a card of a specific tier in the pool.
+*/

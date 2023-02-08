@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -42,7 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     MatExpansionModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
