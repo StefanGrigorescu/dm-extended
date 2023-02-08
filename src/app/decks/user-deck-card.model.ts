@@ -1,8 +1,7 @@
 export class UserDeckCard {
-    userId: number;
+    public userId: number;
     
-    userDeckId: number;
+    public userDeckId: number;
 
-    cardUid: number;
-
+    public cardUid: number;
 }

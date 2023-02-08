@@ -1,1 +1,37 @@
-<p>deck-list works!</p>
+<div class="row">
+    <div 
+        *ngIf="canCreateNewDeck()"
+        class="col-xs-7"
+    >
+        <button class="button btn-success">
+            New Deck
+        </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a
+            href="#"
+            class="list-group-item clearfix"
+            *ngFor="let deck of decks"
+            [ngStyle]="{
+                'background-color': deck.coverCardCivilizationColor ?? 'transparent'
+            }"
+        >
+            <span class="pull-left">
+                <img
+                    [src]="deck.coverCardImgUrl"
+                    alt="{{deck.name}}"
+                    class="img-responsive"
+                    style="max-height: 50px"
+                >
+            </span>
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{deck.name}}</h4>
+                <p class="list-group-item-text">{{deck.tournamentId}}</p>
+            </div>
+        </a>
+        <app-deck-item/>
+    </div>
+</div>

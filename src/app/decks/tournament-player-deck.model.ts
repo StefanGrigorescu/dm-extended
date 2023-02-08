@@ -6,5 +6,5 @@ export class TournamentPlayerDeck {
 
     public tournamentPlayerDeckId: number;
     public name: string;
-    public coverImgUrl: string;
+    public coverCardImgUrl: string;
 }

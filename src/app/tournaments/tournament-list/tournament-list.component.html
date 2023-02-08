@@ -19,11 +19,7 @@
             class="list-group-item clearfix"
             *ngFor="let tournament of currentTournaments"
         >
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{tournament.name}}</h4>
-                <p class="list-group-item-text">{{tournament.shortDescription}}</p>
-            </div>
-            <span class="pull-right">
+            <span class="pull-left">
                 <img
                     [src]="tournament.imagePath"
                     alt="{{tournament.shortDescription}}"
@@ -31,6 +27,10 @@
                     style="max-height: 50px"
                 >
             </span>
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{tournament.name}}</h4>
+                <p class="list-group-item-text">{{tournament.shortDescription}}</p>
+            </div>
         </a>
         <app-tournament-item></app-tournament-item>
     </div>
