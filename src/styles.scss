@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 /// Source mixin
 @mixin make-container($padding-x: $container-padding-x) {
     width: 100%;
@@ -37,3 +39,41 @@ $screen-xs-max: $screen-sm-min - 1;
         @include make-container($custom-container-padding-x-lg);
     }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$indigo-default: #3F51B5;
+$indigo-light: #8C9EFF;
+$indigo-dark: #303F9F;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500, A100, 700);
+$my-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$deep-orange-palette);
+
+$my-light-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+//    background: $indigo-light
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+//  background: $indigo-light
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-light-theme);
+
+// Emit styles for MatButton based on `$my-light-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($my-light-theme);
+
+// Include the theme mixins for other components you use here.

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +18,7 @@ import { DeckItemComponent } from './decks/deck-list/deck-item/deck-item.compone
 import { DeckDetailComponent } from './decks/deck-detail/deck-detail.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TournamentFormComponent } from './tournaments/tournament-form/tournamen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

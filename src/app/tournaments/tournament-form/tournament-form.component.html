@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-xs-12">
         <form>
             <div class="row">
@@ -20,4 +20,197 @@
             </div>
         </form>
     </div>
+</div> -->
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <form>
+            <h2 class="text-center">General</h2>
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" class="form-control" [(ngModel)]="tournament.name" name="name">
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label for="shortDescription">Short Description</label>
+                  <input type="text" id="shortDescription" class="form-control" [(ngModel)]="tournament.shortDescription" name="shortDescription">
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label for="description">Description</label>
+                  <textarea id="description" class="form-control" [(ngModel)]="tournament.description" name="description"></textarea>
+                </div>
+            </div>
+
+            <h2 class="text-center">Draft Configurations</h2>
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                    <label for="draft">Draft</label>
+                    <input type="checkbox" id="draft" class="form-control" [(ngModel)]="tournament.draft" name="draft">
+                </div>
+
+                <div 
+                    class="col-sm-8"
+                >
+                    <div class="col-sm-4 form-group">
+                        <label for="draftPickCount">Draft Pick Count</label>
+                        <input type="number" id="draftPickCount" class="form-control" [(ngModel)]="tournament.draftPickCount" name="draftPickCount" [disabled]="!tournament.draft">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="draftPickDropped">Draft Pick Dropped</label>
+                        <input type="number" id="draftPickDropped" class="form-control" [(ngModel)]="tournament.draftPickDropped" name="draftPickDropped" [disabled]="!tournament.draft">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-center">Pool & Deck Management</h2>
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                    <label for="sharedPool">Shared Pool</label>
+                    <input type="checkbox" id="sharedPool" class="form-control" [(ngModel)]="tournament.sharedPool" name="sharedPool" [disabled]="tournament.draft">
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="fixedDecks">Fixed Decks</label>
+                    <input type="checkbox" id="fixedDecks" class="form-control" [(ngModel)]="tournament.fixedDecks" name="fixedDecks" [disabled]="tournament.draft">
+                </div>
+            </div>
+
+            <h2 class="text-center">Initial Pool Configurations</h2>
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                    <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
+                    <input type="number" id="initialPoolLowerSize" class="form-control" [(ngModel)]="tournament.initialPoolLowerSize" name="initialPoolLowerSize">
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
+                    <input type="number" id="initialPoolUpperSize" class="form-control" [(ngModel)]="tournament.initialPoolUpperSize" name="initialPoolUpperSize">
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="initialPoolUpperSize">Initial Pool Max Reset Times</label>
+                    <input type="number" id="initialPoolMaxResetTimes" class="form-control" [(ngModel)]="tournament.initialPoolMaxResetTimes" name="initialPoolMaxResetTimes">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="defineTiers">Define Tiers</label>
+                    <input type="checkbox" id="defineTiers" [(ngModel)]="tournament.defineTiers" name="defineTiers">
+                </div>
+            </div>
+
+            <div class="row">
+                Cards In Pool Of Tier
+            </div>
+            <!-- <div class="row">
+                <div 
+                    *ngFor="let item of tournament.cardsInPoolOfTier | keyvalue"
+                    class="col-sm-3 form-group"
+                >
+                    <label for="cardsInPoolOfTier">Tier {{item.key}}</label>
+                    <input type="number" id="cardsInPoolOfTier" class="form-control" [(ngModel)]="item.value")] name="totalCards">
+                </div>
+            </div> -->
+
+            <div class="row">
+                Max Card Copies Of Tier
+            </div>
+
+            <h2 class="text-center">General Pool Configurations</h2>
+            <div class="row">
+                Allowed Sets
+            </div>
+
+            <h2 class="text-center">Deck Building Configurations</h2>
+            <div class="row">
+                <div class="col-sm-2 form-group">
+                    <label for="onlyMonoDecks">Only Mono Decks</label>
+                    <input type="checkbox" id="onlyMonoDecks" class="form-control" [(ngModel)]="tournament.onlyMonoDecks" name="onlyMonoDecks">
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="deckMaxSize">Deck Max Size</label>
+                    <input type="number" id="deckMaxSize" class="form-control" [(ngModel)]="tournament.deckMaxSize" name="deckMaxSize">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 form-group">
+                    <label for="registerStartTime">Register Start Time</label>
+                    <input type="datetime-local" id="registerStartTime" [(ngModel)]="tournament.registerStartTime" name="registerStartTime">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="registerEndTime">Register End Time</label>
+                    <input type="datetime-local" id="registerEndTime" [(ngModel)]="tournament.registerEndTime" name="registerEndTime">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="activeStartTime">Active Start Time</label>
+                    <input type="datetime-local" id="activeStartTime" [(ngModel)]="tournament.activeStartTime" name="activeStartTime">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="activeEndTime">Active End Time</label>
+                    <input type="datetime-local" id="activeEndTime" [(ngModel)]="tournament.activeEndTime" name="activeEndTime">
+                </div>
+            </div>
+            <b></b>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-danger" type="button">Delete</button>
+                    <button class="btn btn-primary" type="button">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+<!-- 
+<div class="row">
+    <div class="col-xs-12"> -->
+      <!-- <form [formGroup]="tournamentForm"> -->
+    <!-- <form>
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            <div *ngIf="tournamentForm.controls['name'].invalid && tournamentForm.controls['name'].touched" class="alert alert-danger">
+              Name is required.
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
+            <input type="number" id="initialPoolLowerSize" class="form-control" formControlName="initialPoolLowerSize">
+            <div *ngIf="tournamentForm.controls['initialPoolLowerSize'].invalid && tournamentForm.controls['initialPoolLowerSize'].touched" class="alert alert-danger">
+              Initial Pool Lower Size is required and must be a number.
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
+            <input type="number" id="initialPoolUpperSize" class="form-control" formControlName="initialPoolUpperSize">
+            <div *ngIf="tournamentForm.controls['initialPoolUpperSize'].invalid && tournamentForm.controls['initialPoolUpperSize'].touched" class="alert alert-danger">
+              Initial Pool Upper Size is required and must be a number.
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="deckMaxSize">Deck Max Size</label>
+            <input type="number" id="deckMaxSize" class="form-control" formControlName="deckMaxSize">
+            <div *ngIf="tournamentForm.controls['deckMaxSize'].invalid && tournamentForm.controls['deckMaxSize'].touched" class="alert alert-danger">
+              Deck Max Size is required and must be a number.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 form-group">
+            <label for="onlyMonoDecks">Only Mono Decks</label>
+            <input type="checkbox" id="onlyMonoDecks" class="form-control" formControlName="onlyMonoDecks">
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="sharedPool">Shared Pool</label>
+            <input type="checkbox" id="sharedPool" class="form-control" formControlName="sharedPool">
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="fixedDecks">Fixed Decks</label>
+            <input type="checkbox" id="fixedDecks" class="form-control" formControlName="fixedDecks">
+          </div>
+        </div>
+    </form>
+</div>
+   -->
