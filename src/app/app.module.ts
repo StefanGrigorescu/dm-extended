@@ -5,6 +5,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
+import { EnumValueToNamePipe } from 'src/utils/enum-value-to-name-pipe';
 import { HeaderComponent } from './header/header.component';
 import { CardPileComponent } from './cards/card-pile/card-pile.component';
 import { CardPoolComponent } from './cards/card-pool/card-pool.component';
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
+    EnumValueToNamePipe,
     HeaderComponent,
     CardPileComponent,
     CardPoolComponent,

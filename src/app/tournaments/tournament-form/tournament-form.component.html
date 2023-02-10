@@ -1,29 +1,3 @@
-<!-- <div class="row">
-    <div class="col-xs-12">
-        <form>
-            <div class="row">
-                <div class="col-sm-5 form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="amout">Amount</label>
-                    <input type="number" id="amount" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit">Add</button>
-                    <button class="btn btn-danger" type="button">Delete</button>
-                    <button class="btn btn-primary" type="button">Clear</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div> -->
-
-
-
 <div class="row">
     <div class="col-xs-12">
         <form>
@@ -49,18 +23,13 @@
                     <label for="draft">Draft</label>
                     <input type="checkbox" id="draft" class="form-control" [(ngModel)]="tournament.draft" name="draft">
                 </div>
-
-                <div 
-                    class="col-sm-8"
-                >
-                    <div class="col-sm-4 form-group">
-                        <label for="draftPickCount">Draft Pick Count</label>
-                        <input type="number" id="draftPickCount" class="form-control" [(ngModel)]="tournament.draftPickCount" name="draftPickCount" [disabled]="!tournament.draft">
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <label for="draftPickDropped">Draft Pick Dropped</label>
-                        <input type="number" id="draftPickDropped" class="form-control" [(ngModel)]="tournament.draftPickDropped" name="draftPickDropped" [disabled]="!tournament.draft">
-                    </div>
+                <div class="col-sm-4 form-group">
+                    <label for="draftPickCount">Draft Pick Count</label>
+                    <input type="number" id="draftPickCount" class="form-control" [(ngModel)]="tournament.draftPickCount" name="draftPickCount" [disabled]="!tournament.draft">
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="draftPickDropped">Draft Pick Dropped</label>
+                    <input type="number" id="draftPickDropped" class="form-control" [(ngModel)]="tournament.draftPickDropped" name="draftPickDropped" [disabled]="!tournament.draft">
                 </div>
             </div>
 
