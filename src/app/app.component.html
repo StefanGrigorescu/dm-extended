@@ -1,4 +1,6 @@
-<app-header/>
+<app-header
+  (navigate)="onNavigated($event)"
+/>
 
 <!--   [ngStyle]="{
     'background-color': '#afc9e7ff'
@@ -6,16 +8,23 @@
 
 <div class="container custom-container">
   <div class="row">
-    <div class="col-md-12">
-      <app-tournaments/>
-    </div>
-    <hr>
-    <div class="col-md-12">
-      <app-decks/>
-    </div>
-    <hr>
-    <div class="col-md-12">
-      <app-gallery/>
+    <div
+      class="col-md-12"
+      [ngSwitch]="currentPage"  
+    >
+
+      <ng-template ngSwitchCase="gallery">
+        <app-gallery/>
+      </ng-template>
+
+      <ng-template ngSwitchCase="tournaments">
+        <app-tournaments/>
+      </ng-template>
+
+      <ng-template ngSwitchDefault>
+        <app-decks/>
+      </ng-template>
+
     </div>
   </div>
 </div>

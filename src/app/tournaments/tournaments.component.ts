@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoutesManager } from 'src/utils/routes-manager';
 import { Tournament } from './tournament.model';
 
 @Component({
@@ -69,9 +70,24 @@ export class TournamentsComponent {
     ),
   ];
 
+  routesManager = RoutesManager;
+  currentPage = RoutesManager.tournamentsView;
+
+  onTournamentDefine()
+  {
+    this.currentPage = RoutesManager.tournamentsCreate;
+  }
+
+  onCancelTournamentDefine()
+  {
+    this.currentPage = RoutesManager.tournamentsView;
+  }
+
   onTournamentDefined(tournament: Tournament)
   {
+    console.log("TournamentsComponent: onTournamentDefined: " + tournament.name)
     this.tournaments.push(tournament);
+    this.currentPage = RoutesManager.tournamentsView;
   }
 
   onTournamentSelected(tournament: Tournament)

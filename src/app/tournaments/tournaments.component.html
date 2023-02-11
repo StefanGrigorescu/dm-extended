@@ -1,8 +1,12 @@
-<div class="row">
+<div
+    class="row"
+    *ngIf="currentPage === routesManager.tournamentsView; else tournamentDefine"
+>
     <div class="col-md-3">
         <app-tournament-list
             [tournaments]="tournaments"
             (tournamentSelect)="onTournamentSelected($event)"
+            (tournamentDefine)="onTournamentDefine()"
         />
     </div>
 
@@ -11,23 +15,20 @@
             [tournament]="selectedTournament"
             *ngIf="selectedTournament; else infoText">
         </app-tournament-detail>
-        
-        
-        <!-- <app-tournament-detail>
-            *ngIf="selectedTournament; else infoText"
-            [tournament]="selectedTournament"
-        </app-tournament-detail> -->
-
 
         <ng-template #infoText>
             <p>You can select a tournament from the list on left to see its details!</p>
         </ng-template>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <app-tournament-form
-            (tournamentCreated) = "onTournamentDefined($event)"
-        />
+
+<ng-template #tournamentDefine>
+    <div class="row">
+        <div class="col-md-12">
+            <app-tournament-form
+                (tournamentCreated) = "onTournamentDefined($event)"
+                (cancel) = "onCancelTournamentDefine()"
+            />
+        </div>
     </div>
-</div>
+</ng-template>

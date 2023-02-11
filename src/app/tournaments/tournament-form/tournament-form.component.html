@@ -4,16 +4,34 @@
             <h2 class="text-center">General</h2>
             <div class="row">
                 <div class="col-sm-2 form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" class="form-control" [(ngModel)]="tournament.name" name="name">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        [(ngModel)]="tournament.name"
+                        name="name"
+                    >
                 </div>
                 <div class="col-sm-2 form-group">
-                  <label for="shortDescription">Short Description</label>
-                  <input type="text" id="shortDescription" class="form-control" [(ngModel)]="tournament.shortDescription" name="shortDescription">
+                    <label for="shortDescription">Short Description</label>
+                    <input
+                        type="text"
+                        id="shortDescription"
+                        class="form-control"
+                        [(ngModel)]="tournament.shortDescription"
+                        name="shortDescription"
+                    >
                 </div>
                 <div class="col-sm-2 form-group">
-                  <label for="description">Description</label>
-                  <textarea id="description" class="form-control" [(ngModel)]="tournament.description" name="description"></textarea>
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        class="form-control"
+                        [(ngModel)]="tournament.description"
+                        name="description"
+                    >
+                    </textarea>
                 </div>
             </div>
 
@@ -21,15 +39,35 @@
             <div class="row">
                 <div class="col-sm-2 form-group">
                     <label for="draft">Draft</label>
-                    <input type="checkbox" id="draft" class="form-control" [(ngModel)]="tournament.draft" name="draft">
+                    <input
+                        type="checkbox"
+                        id="draft"
+                        class="form-control"
+                        [(ngModel)]="tournament.draft"
+                        name="draft"
+                    >
                 </div>
                 <div class="col-sm-4 form-group">
                     <label for="draftPickCount">Draft Pick Count</label>
-                    <input type="number" id="draftPickCount" class="form-control" [(ngModel)]="tournament.draftPickCount" name="draftPickCount" [disabled]="!tournament.draft">
+                    <input
+                        type="number"
+                        id="draftPickCount"
+                        class="form-control"
+                        [(ngModel)]="tournament.draftPickCount"
+                        name="draftPickCount"
+                        [disabled]="!tournament.draft"
+                    >
                 </div>
                 <div class="col-sm-4 form-group">
                     <label for="draftPickDropped">Draft Pick Dropped</label>
-                    <input type="number" id="draftPickDropped" class="form-control" [(ngModel)]="tournament.draftPickDropped" name="draftPickDropped" [disabled]="!tournament.draft">
+                    <input
+                        type="number"
+                        id="draftPickDropped"
+                        class="form-control"
+                        [(ngModel)]="tournament.draftPickDropped"
+                        name="draftPickDropped"
+                        [disabled]="!tournament.draft"
+                    >
                 </div>
             </div>
 
@@ -37,11 +75,25 @@
             <div class="row">
                 <div class="col-sm-2 form-group">
                     <label for="sharedPool">Shared Pool</label>
-                    <input type="checkbox" id="sharedPool" class="form-control" [(ngModel)]="tournament.sharedPool" name="sharedPool" [disabled]="tournament.draft">
+                    <input
+                        type="checkbox"
+                        id="sharedPool"
+                        class="form-control"
+                        [(ngModel)]="tournament.sharedPool"
+                        name="sharedPool"
+                        [disabled]="tournament.draft"
+                    >
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="fixedDecks">Fixed Decks</label>
-                    <input type="checkbox" id="fixedDecks" class="form-control" [(ngModel)]="tournament.fixedDecks" name="fixedDecks" [disabled]="tournament.draft">
+                    <input
+                        type="checkbox"
+                        id="fixedDecks"
+                        class="form-control"
+                        [(ngModel)]="tournament.fixedDecks"
+                        name="fixedDecks"
+                        [disabled]="tournament.draft"
+                    >
                 </div>
             </div>
 
@@ -49,19 +101,42 @@
             <div class="row">
                 <div class="col-sm-2 form-group">
                     <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
-                    <input type="number" id="initialPoolLowerSize" class="form-control" [(ngModel)]="tournament.initialPoolLowerSize" name="initialPoolLowerSize">
+                    <input 
+                        type="number" 
+                        id="initialPoolLowerSize" 
+                        class="form-control" 
+                        [(ngModel)]="tournament.initialPoolLowerSize" 
+                        name="initialPoolLowerSize"
+                    >                        
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
-                    <input type="number" id="initialPoolUpperSize" class="form-control" [(ngModel)]="tournament.initialPoolUpperSize" name="initialPoolUpperSize">
+                    <input 
+                        type="number"
+                        id="initialPoolUpperSize"
+                        class="form-control"
+                        [(ngModel)]="tournament.initialPoolUpperSize"
+                        name="initialPoolUpperSize"
+                    >
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="initialPoolUpperSize">Initial Pool Max Reset Times</label>
-                    <input type="number" id="initialPoolMaxResetTimes" class="form-control" [(ngModel)]="tournament.initialPoolMaxResetTimes" name="initialPoolMaxResetTimes">
+                    <input 
+                        type="number"
+                        id="initialPoolMaxResetTimes"
+                        class="form-control" [(ngModel)]="tournament.initialPoolMaxResetTimes"
+                        name="initialPoolMaxResetTimes"
+                    >
                 </div>
                 <div class="col-sm-3 form-group">
                     <label for="defineTiers">Define Tiers</label>
-                    <input type="checkbox" id="defineTiers" class="form-control" [(ngModel)]="tournament.defineTiers" name="defineTiers">
+                    <input 
+                        type="checkbox"
+                        id="defineTiers"
+                        class="form-control"
+                        [(ngModel)]="tournament.defineTiers"
+                        name="defineTiers"
+                    >
                 </div>
             </div>
 
@@ -91,38 +166,70 @@
             <div class="row">
                 <div class="col-sm-2 form-group">
                     <label for="onlyMonoDecks">Only Mono Decks</label>
-                    <input type="checkbox" id="onlyMonoDecks" class="form-control" [(ngModel)]="tournament.onlyMonoDecks" name="onlyMonoDecks">
+                    <input 
+                        type="checkbox"
+                        id="onlyMonoDecks"
+                        class="form-control"
+                        [(ngModel)]="tournament.onlyMonoDecks"
+                        name="onlyMonoDecks"
+                    >
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="deckMaxSize">Deck Max Size</label>
-                    <input type="number" id="deckMaxSize" class="form-control" [(ngModel)]="tournament.deckMaxSize" name="deckMaxSize">
+                    <input 
+                        type="number"
+                        id="deckMaxSize"
+                        class="form-control"
+                        [(ngModel)]="tournament.deckMaxSize"
+                        name="deckMaxSize"
+                    >
                 </div>
-
             </div>
 
             <div class="row">
                 <div class="col-sm-3 form-group">
                     <label for="registerStartTime">Register Start Time</label>
-                    <input type="datetime-local" id="registerStartTime" [(ngModel)]="tournament.registerStartTime" name="registerStartTime">
+                    <input 
+                        type="datetime-local"
+                        id="registerStartTime"
+                        [(ngModel)]="tournament.registerStartTime"
+                        name="registerStartTime"
+                    >
                 </div>
                 <div class="col-sm-3 form-group">
                     <label for="registerEndTime">Register End Time</label>
-                    <input type="datetime-local" id="registerEndTime" [(ngModel)]="tournament.registerEndTime" name="registerEndTime">
+                    <input 
+                        type="datetime-local"
+                        id="registerEndTime"
+                        [(ngModel)]="tournament.registerEndTime"
+                        name="registerEndTime"
+                    >
                 </div>
                 <div class="col-sm-3 form-group">
                     <label for="activeStartTime">Active Start Time</label>
-                    <input type="datetime-local" id="activeStartTime" [(ngModel)]="tournament.activeStartTime" name="activeStartTime">
+                    <input 
+                        type="datetime-local"
+                        id="activeStartTime"
+                        [(ngModel)]="tournament.activeStartTime"
+                        name="activeStartTime"
+                    >
                 </div>
                 <div class="col-sm-3 form-group">
                     <label for="activeEndTime">Active End Time</label>
-                    <input type="datetime-local" id="activeEndTime" [(ngModel)]="tournament.activeEndTime" name="activeEndTime">
+                    <input 
+                        type="datetime-local"
+                        id="activeEndTime"
+                        [(ngModel)]="tournament.activeEndTime"
+                        name="activeEndTime"
+                    >
                 </div>
             </div>
-              
+            
+            <div style="margin: 20px 0;"></div>
 
-            <b></b>
             <div class="row">
                 <div class="col-xs-2"></div>
+
                 <div class="btn-group col-xs-1">
                     <button
                         type="button"
@@ -136,6 +243,7 @@
                         <li><a href="#">Cancel Tournament</a></li>
                     </ul>
                 </div>
+
                 <div class="col-xs-1"></div>
                 <button
                     class="btn btn-success col-xs-1"
@@ -144,6 +252,7 @@
                 >
                     Submit
                 </button>
+
                 <div class="col-xs-1"></div>
                 <button
                     class="btn btn-primary col-xs-1"
@@ -152,6 +261,7 @@
                 >
                     Clear
                 </button>
+
                 <div class="col-xs-1"></div>
                 <button
                     class="btn btn-danger col-xs-1"
@@ -160,8 +270,10 @@
                 >
                     Cancel
                 </button>
-                <div>&nbsp;&nbsp;</div>
+                
             </div>
+
+            <div style="margin: 100px 0;"></div>
         </form>
     </div>
 </div>

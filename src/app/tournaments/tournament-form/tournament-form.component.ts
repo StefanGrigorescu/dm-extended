@@ -9,6 +9,7 @@ import { Tournament } from '../tournament.model';
 })
 export class TournamentFormComponent {
   @Output() tournamentCreated = new EventEmitter<Tournament>();
+  @Output() cancel = new EventEmitter<void>();
 
   tournamentForm: FormGroup;
   
@@ -54,7 +55,6 @@ export class TournamentFormComponent {
     console.log(this.tournament);
 
     this.tournamentCreated.emit(this.tournament);
-    this.tournament = this.getDefaultTournament();
   }
 
   onClearForm() {
@@ -62,7 +62,7 @@ export class TournamentFormComponent {
   }
 
   onCancel() {
-    
+    this.cancel.emit();
   }
 
   private getDefaultTournament(): Tournament
