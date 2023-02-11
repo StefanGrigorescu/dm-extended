@@ -14,24 +14,10 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a
-            href="#"
-            class="list-group-item clearfix"
-            *ngFor="let tournament of tournaments"
-        >
-            <span class="pull-left">
-                <img
-                    [src]="tournament.imagePath"
-                    alt="{{tournament.shortDescription}}"
-                    class="img-responsive"
-                    style="max-height: 50px"
-                >
-            </span>
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{tournament.name}}</h4>
-                <p class="list-group-item-text">{{tournament.shortDescription}}</p>
-            </div>
-        </a>
-        <app-tournament-item></app-tournament-item>
+        <app-tournament-item
+            *ngFor="let tournamentElement of tournaments"
+            [tournament]="tournamentElement"
+            (tournamentItemSelect)="onTournamentSelected(tournamentElement)"
+        />
     </div>
 </div>

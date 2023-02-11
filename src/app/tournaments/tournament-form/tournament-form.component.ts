@@ -12,15 +12,7 @@ export class TournamentFormComponent {
 
   tournamentForm: FormGroup;
   
-  tournament: Tournament = new Tournament
-  (
-    "Mock Defined State Tournament",
-    "Some descriptive text",
-    (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
-    (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
-    (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
-    (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
-  );
+  tournament: Tournament = this.getDefaultTournament();
 
   constructor(private formBuilder: FormBuilder) {
     this.tournamentForm = this.formBuilder.group({
@@ -62,6 +54,7 @@ export class TournamentFormComponent {
     console.log(this.tournament);
 
     this.tournamentCreated.emit(this.tournament);
+    this.tournament = this.getDefaultTournament();
   }
 
   onClearForm() {
@@ -70,5 +63,19 @@ export class TournamentFormComponent {
 
   onCancel() {
     
+  }
+
+  private getDefaultTournament(): Tournament
+  {
+    return new Tournament
+    (
+      "Mock Defined State Tournament",
+      "first short text only",
+      "Some descriptive text",
+      (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
+      (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
+    );
   }
 }

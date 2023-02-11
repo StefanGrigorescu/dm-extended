@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Tournament } from '../tournament.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { Tournament } from '../tournament.model';
 })
 export class TournamentListComponent  implements OnInit{
   @Input() tournaments: Tournament[];
+  @Output() tournamentSelect: EventEmitter<Tournament> = new EventEmitter<Tournament>();
 
   toggleCurrentTournaments : boolean = true;
 
@@ -17,6 +18,11 @@ export class TournamentListComponent  implements OnInit{
 
   ngOnInit() {
 
+  }
+
+  onTournamentSelected(tournament: Tournament)
+  {
+    this.tournamentSelect.emit(tournament);
   }
 }
 

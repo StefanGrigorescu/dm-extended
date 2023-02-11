@@ -2,20 +2,32 @@
     <div class="col-md-3">
         <app-tournament-list
             [tournaments]="tournaments"
+            (tournamentSelect)="onTournamentSelected($event)"
         />
     </div>
 
     <div class="col-md-9">
         <app-tournament-detail
-            *ngFor="let tournament of tournaments"
-            [tournament]="tournament"
-        />
+            [tournament]="selectedTournament"
+            *ngIf="selectedTournament; else infoText">
+        </app-tournament-detail>
+        
+        
+        <!-- <app-tournament-detail>
+            *ngIf="selectedTournament; else infoText"
+            [tournament]="selectedTournament"
+        </app-tournament-detail> -->
+
+
+        <ng-template #infoText>
+            <p>You can select a tournament from the list on left to see its details!</p>
+        </ng-template>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
         <app-tournament-form
-            (onDefineTournament) = "onTournamentDefined($event)"
+            (tournamentCreated) = "onTournamentDefined($event)"
         />
     </div>
 </div>

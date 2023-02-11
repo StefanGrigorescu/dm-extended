@@ -1,1 +1,18 @@
-<p>tournament-item works!</p>
+<a
+    href="#"
+    class="list-group-item clearfix"
+    (click)="onSelect()"
+>
+    <!-- <span class="pull-left">
+        <img
+            [src]="tournament.imagePath"
+            alt="{{tournament.shortDescription}}"
+            class="img-responsive"
+            style="max-height: 50px"
+        >
+    </span> -->
+        <div class="pull-left">
+            <h4 class="list-group-item-heading">{{tournament.name}}</h4>
+            <p class="list-group-item-text">{{tournament.shortDescription}}</p>
+        </div>
+</a>

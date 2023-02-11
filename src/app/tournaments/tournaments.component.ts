@@ -7,9 +7,12 @@ import { Tournament } from './tournament.model';
   styleUrls: ['./tournaments.component.scss']
 })
 export class TournamentsComponent {
+  selectedTournament: Tournament;
+
   tournaments: Tournament[] = [
     new Tournament(
       "Mock Defined State Tournament",
+      "short description",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
@@ -18,6 +21,7 @@ export class TournamentsComponent {
     ),
     new Tournament(
       "Mock Register State Tournament",
+      "quick info",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()-2); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+1); return d})(new Date),       
@@ -26,6 +30,7 @@ export class TournamentsComponent {
     ),
     new Tournament(
       "Mock Active State Tournament",
+      "small text",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()-3); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-1); return d})(new Date),       
@@ -34,6 +39,7 @@ export class TournamentsComponent {
     ),
     new Tournament(
       "Mock Ended State Tournament",
+      "you little mock!",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()-28); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
@@ -45,6 +51,7 @@ export class TournamentsComponent {
     // either them or the current tournaments will be displayed in the list
     new Tournament(
       "Mock Archived State Tournament 1",
+      "archived (short desc. here)",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()-28); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
@@ -53,6 +60,7 @@ export class TournamentsComponent {
     ),
     new Tournament(
       "Mock Archived State Tournament 2",
+      "short desc.: archived",
       "Some descriptive text",
       (function(d){ d.setDate(d.getDate()-28); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
@@ -64,5 +72,10 @@ export class TournamentsComponent {
   onTournamentDefined(tournament: Tournament)
   {
     this.tournaments.push(tournament);
+  }
+
+  onTournamentSelected(tournament: Tournament)
+  {
+    this.selectedTournament = tournament;
   }
 }

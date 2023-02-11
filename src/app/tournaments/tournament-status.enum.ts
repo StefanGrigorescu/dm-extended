@@ -4,16 +4,22 @@
 */
 export enum TournamentStatus {
     Defined = 0,
-    Register = 1,
-    Active = 2,
-    Ended = 3,
-    Archived = 4
+    Published = 1,
+    Register = 2,
+    Active = 3,
+    Ended = 4,
+    Archived = 5
 }
 
 /*
     - Defined:
     * When the create form it submited, the tournament is created in the Defined state.
-    In this state, users can see the tournament in the tournaments list.
+    
+    - Published:
+    * In this state, users can see the tournament in the tournaments list.
+    * Card tiers and other configurations besides dates can not be modified anymore.
+    * Register start, register end, active start and active end dates can be modified only within the limits of the tournament initial interval 
+    (initial register start time - initial active end time)
     
     - Register:
     * When the register start date is reached, the users can start registering to the tournament.

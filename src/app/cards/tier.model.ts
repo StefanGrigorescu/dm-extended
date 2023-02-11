@@ -4,6 +4,7 @@ export class Tier{
         // unique name
         public name: string,
         public description: string,
-        public color: string
+        public color: string,
+        public imageUrl: string
     ) {}
 }

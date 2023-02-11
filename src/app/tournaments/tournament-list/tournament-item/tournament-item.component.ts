@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Tournament } from '../../tournament.model';
 
 @Component({
   selector: 'app-tournament-item',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./tournament-item.component.scss']
 })
 export class TournamentItemComponent {
+  @Input() tournament: Tournament;
+  @Output() tournamentItemSelect: EventEmitter<void> = new EventEmitter<void>();
 
+  constructor() {
+    
+  }
+
+  onSelect()
+  {
+    this.tournamentItemSelect.emit();
+  }
 }

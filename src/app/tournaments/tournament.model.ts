@@ -45,6 +45,8 @@ export class Tournament {
     public tournamentId: number;
     public hostId: string;
     public hostName: string;
+    public initialRegisterStartTime: Date;
+    public initialActiveEndTime: Date;
     public createdOn: Date = new Date();
     public status: TournamentStatus = TournamentStatus.Defined;
     public canceledOn: Date = null;
@@ -52,6 +54,7 @@ export class Tournament {
 
     constructor(
         name: string,
+        shortDescription: string,
         description: string,
         // deckMaxSize: number,             // between 40 and 70 (for some crazy draft), 
         // draftPickCount: number,         // how many cards the players see on screen when drafting;                          e.g.: 10, 
@@ -64,6 +67,7 @@ export class Tournament {
         // hostName: string
     ) {
         this.name = name;
+        this.shortDescription = shortDescription ?? "";
         this.description = description ?? "";
         // this.deckMaxSize = deckMaxSize
         // this.draftPickCount = draftPickCount
