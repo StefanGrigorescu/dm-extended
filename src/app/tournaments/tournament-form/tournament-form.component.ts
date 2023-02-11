@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
 
 @Component({
@@ -13,7 +14,17 @@ export class TournamentFormComponent {
 
   tournamentForm: FormGroup;
   
-  tournament: Tournament = this.getDefaultTournament();
+  tournament: Tournament = new Tournament
+    (
+      "Mock Defined State Tournament",
+      "first short text only",
+      "Some descriptive text",
+      (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
+      (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
+      TournamentState.Defined
+    );
 
   constructor(private formBuilder: FormBuilder) {
     this.tournamentForm = this.formBuilder.group({
@@ -51,7 +62,7 @@ export class TournamentFormComponent {
   }
 
   onDefineTournament() {
-    this.tournament = this.tournamentForm.value;
+    //this.tournament = this.tournamentForm.value;
     console.log(this.tournament);
 
     this.tournamentCreated.emit(this.tournament);
@@ -63,19 +74,5 @@ export class TournamentFormComponent {
 
   onCancel() {
     this.cancel.emit();
-  }
-
-  private getDefaultTournament(): Tournament
-  {
-    return new Tournament
-    (
-      "Mock Defined State Tournament",
-      "first short text only",
-      "Some descriptive text",
-      (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
-      (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
-      (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
-      (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
-    );
   }
 }

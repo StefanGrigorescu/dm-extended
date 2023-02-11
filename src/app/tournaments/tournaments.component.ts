@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RoutesManager } from 'src/utils/routes-manager';
+import { TournamentState } from './tournament-state.enum';
 import { Tournament } from './tournament.model';
 
 @Component({
@@ -19,6 +20,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
+      TournamentState.Defined
     ),
     new Tournament(
       "Mock Register State Tournament",
@@ -28,6 +30,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()+1); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()+5); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+12); return d})(new Date),
+      TournamentState.Register
     ),
     new Tournament(
       "Mock Active State Tournament",
@@ -37,6 +40,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()-1); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+2); return d})(new Date),
+      TournamentState.Active
     ),
     new Tournament(
       "Mock Ended State Tournament",
@@ -46,6 +50,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()-11); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-1); return d})(new Date),
+      TournamentState.Ended
     ),
     
     // The archived tournaments will be filtered and depending on the current view being redered,
@@ -58,6 +63,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()-11); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-1); return d})(new Date),
+      TournamentState.Archived
     ),
     new Tournament(
       "Mock Archived State Tournament 2",
@@ -67,6 +73,7 @@ export class TournamentsComponent {
       (function(d){ d.setDate(d.getDate()-23); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()-11); return d})(new Date),
       (function(d){ d.setDate(d.getDate()-1); return d})(new Date),
+      TournamentState.Archived
     ),
   ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
 
 @Component({
@@ -21,14 +22,30 @@ export class TournamentListComponent  implements OnInit{
 
   }
 
-  onTournamentSelected(tournament: Tournament)
-  {
+  onTournamentSelected(tournament: Tournament): void {
     this.tournamentSelect.emit(tournament);
   }
 
-  onDefineTournament()
-  {
+  onDefineTournament(): void {
     this.tournamentDefine.emit();
+  }
+
+  onToggleChange(): void {
+    this.toggleCurrentTournaments = !this.toggleCurrentTournaments;
+    this.tournamentSelect.emit(null);
+  }
+
+  getTournaments(): Tournament[] {
+    if(this.toggleCurrentTournaments)
+    {
+      return this
+        .tournaments
+        .filter(t => t.status != TournamentState.Archived);
+    }
+    
+    return this
+      .tournaments
+      .filter(t => t.status === TournamentState.Archived);
   }
 }
 

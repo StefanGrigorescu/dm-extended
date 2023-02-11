@@ -1,4 +1,4 @@
-import { TournamentStatus } from "./tournament-status.enum";
+import { TournamentState as TournamentState } from "./tournament-state.enum";
 
 export class Tournament {
     // General properties
@@ -48,7 +48,7 @@ export class Tournament {
     public initialRegisterStartTime: Date;
     public initialActiveEndTime: Date;
     public createdOn: Date = new Date();
-    public status: TournamentStatus = TournamentStatus.Defined;
+    public status: TournamentState = TournamentState.Defined;
     public canceledOn: Date = null;
     public cancelReason: string = null;
 
@@ -64,7 +64,8 @@ export class Tournament {
         activeStartTime: Date,
         activeEndTime: Date,
         // hostId: string,
-        // hostName: string
+        // hostName: string,
+        status: TournamentState        // To be removed later when using real tournament data (tournamets are only instantiated with DefinedState)
     ) {
         this.name = name;
         this.shortDescription = shortDescription ?? "";
@@ -81,6 +82,7 @@ export class Tournament {
 
         this.cardsInPoolOfTier = {"A": 20, "B": 40, "C": 20, "D": 20, "E": 0};
         this.maxCardCopiesOfTier = {"A": 2, "B": 4, "C": 2, "D": 2, "E": 0};
+        this.status = status;
     }
 }
 

@@ -7,18 +7,26 @@
             Host Tournament
         </button>
     </div>
-    <div class="col-xs-5">
-        <div [ngSwitch]="toggleCurrentTournaments">
-            <div *ngSwitchCase="false">Archived Tournaments</div>
-            <div *ngSwitchDefault>Current Tournaments</div>
-        </div>
-    </div>
+
+    <label class="toggle">
+        <input 
+            type="checkbox"
+            (change)="onToggleChange()"    
+        >
+        <span 
+            class="labels" 
+            data-on="Current" 
+            data-off="Archived"
+            (onclick)="toggleCurrentTournaments=!toggleCurrentTournaments"
+        >
+        </span>
+    </label>
 </div>
 <hr>
 <div class="row">
     <div class="col-xs-12">
         <app-tournament-item
-            *ngFor="let tournamentElement of tournaments"
+            *ngFor="let tournamentElement of getTournaments()"
             [tournament]="tournamentElement"
             (tournamentItemSelect)="onTournamentSelected(tournamentElement)"
         />

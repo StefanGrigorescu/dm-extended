@@ -1,0 +1,19 @@
+@import "../../../styles";
+
+.pool-ribbon {
+    background-color: $indigo-default;
+    border-radius: 10px;  
+
+    text-align: center;
+}
+
+.pool-ribbon * {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: larger;
+}
+
+.pool-ribbon label {
+    align-self: center;
+}
+

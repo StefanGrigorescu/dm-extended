@@ -1,34 +1,52 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ApiCard } from '../api-card.model';
 import { Card } from '../card.model';
+import { Cards } from '../cards-model';
+
 
 @Component({
   selector: 'app-card-pool',
   templateUrl: './card-pool.component.html',
   styleUrls: ['./card-pool.component.scss']
 })
-export class CardPoolComponent {
-  cards: Card[] = [
-    new Card("ae56a6c7-b118-44cb-bb6d-c45a9484c598", "Mystic Inscription", "nature", "", 6, "dm-04", "Spell", 2, null, 4),                    // tier B (good)
-    new Card("7a94b69e-335c-489a-8c5d-1294a9cb960f", "Milieus, the Daystretcher", "light", "Berserker", 5, "dm-04", "Creature", 3, null, 1),  // tier C (not really seen)
-    new Card("215c4cfb-2a22-4ee1-b4ea-28ac24a1eeee", "Ultracide Worm", "darkness", "Parasite Worm", 6, "dm-02", "Creature", 2, null, 2),       // tier B (good)
-
-    new Card("ae56a6c7-b118-44cb-bb6d-c45a9484c598", "Mystic Inscription", "nature", "", 6, "dm-04", "Spell", 2, null, 4),                    // tier B (good)
-    new Card("7a94b69e-335c-489a-8c5d-1294a9cb960f", "Milieus, the Daystretcher", "light", "Berserker", 5, "dm-04", "Creature", 3, null, 1),  // tier C (not really seen)
-    new Card("215c4cfb-2a22-4ee1-b4ea-28ac24a1eeee", "Ultracide Worm", "darkness", "Parasite Worm", 6, "dm-02", "Creature", 2, null, 2),       // tier B (good)
-
-    new Card("ae56a6c7-b118-44cb-bb6d-c45a9484c598", "Mystic Inscription", "nature", "", 6, "dm-04", "Spell", 2, null, 4),                    // tier B (good)
-    new Card("7a94b69e-335c-489a-8c5d-1294a9cb960f", "Milieus, the Daystretcher", "light", "Berserker", 5, "dm-04", "Creature", 3, null, 1),  // tier C (not really seen)
-    new Card("215c4cfb-2a22-4ee1-b4ea-28ac24a1eeee", "Ultracide Worm", "darkness", "Parasite Worm", 6, "dm-02", "Creature", 2, null, 2),       // tier B (good)
-    
-    new Card("ae56a6c7-b118-44cb-bb6d-c45a9484c598", "Mystic Inscription", "nature", "", 6, "dm-04", "Spell", 2, null, 4),                    // tier B (good)
-    new Card("7a94b69e-335c-489a-8c5d-1294a9cb960f", "Milieus, the Daystretcher", "light", "Berserker", 5, "dm-04", "Creature", 3, null, 1),  // tier C (not really seen)
-    new Card("215c4cfb-2a22-4ee1-b4ea-28ac24a1eeee", "Ultracide Worm", "darkness", "Parasite Worm", 6, "dm-02", "Creature", 2, null, 2),       // tier B (good)
-    
-    new Card("ae56a6c7-b118-44cb-bb6d-c45a9484c598", "Mystic Inscription", "nature", "", 6, "dm-04", "Spell", 2, null, 4),                    // tier B (good)
-    new Card("7a94b69e-335c-489a-8c5d-1294a9cb960f", "Milieus, the Daystretcher", "light", "Berserker", 5, "dm-04", "Creature", 3, null, 1),  // tier C (not really seen)
-    new Card("215c4cfb-2a22-4ee1-b4ea-28ac24a1eeee", "Ultracide Worm", "darkness", "Parasite Worm", 6, "dm-02", "Creature", 2, null, 2),       // tier B (good)
-  ]
+export class CardPoolComponent implements OnInit {
+  cards: Cards;
   
+  constructor(private httpClient: HttpClient) {}
+
+  ngOnInit(): void {
+    this
+      .httpClient
+      .get<ApiCard[]>('https://shobu.io/api/cards')
+      .subscribe(cards => {
+        this.cards = new Cards(
+          cards.map(apiCard => new Card(
+            apiCard.uid,
+            apiCard.name,
+            apiCard.civilization,
+            apiCard.family,
+            apiCard.manaCost,
+            apiCard.set,
+            apiCard.type
+        )));
+
+        console.log("received: " + cards.length + " cards. stored: " + this.cards.length + " cards");
+      });
+  }
+
+  setSortBy(sortBy: string): void {
+    var oldSortBy = this.cards.sortBy;
+
+    if(oldSortBy === sortBy)
+    {
+      this.cards.sortAscending = !this.cards.sortAscending;
+      return;
+    }
+
+    this.cards.sortBy = sortBy;
+    this.cards.sortAscending = true;
+  }
 }
 
 // {"uid":"ae56a6c7-b118-44cb-bb6d-c45a9484c598","name":"Mystic Inscription","civilization":"nature","family":"","manaCost":6,"set":"dm-04","type":"Spell"},

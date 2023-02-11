@@ -48,6 +48,10 @@ $indigo-default: #3F51B5;
 $indigo-light: #8C9EFF;
 $indigo-dark: #303F9F;
 
+$orange-default: #FFAB40;
+$orange-light: #FFD180;
+$orange-dark: #FF9100;
+
 @include mat.core();
 
 $my-primary: mat.define-palette(mat.$indigo-palette, 500, A100, 700);
@@ -82,3 +86,82 @@ $my-light-theme: mat.define-light-theme((
 
 // @include mat.expansion-panel-theme($my-light-theme);
 // @include mat.accordion-theme($my-light-theme);
+
+// body {
+//     background-image: url("./assets/images/Zid.png");
+// }
+
+
+// Toggle style
+.toggle {
+    --width: 80px;
+    --height: calc(var(--width) / 3);
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle .labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-on);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    background-color: $indigo-light;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+    content: attr(data-off);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #4d4d4d;
+    background-color: $orange-dark;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked~.labels::after {
+    /* flip 180deg */
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    transform: rotateY(180deg) scale(-1, 1);
+    opacity: 1;
+}

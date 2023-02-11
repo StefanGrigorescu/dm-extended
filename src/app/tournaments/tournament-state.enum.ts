@@ -2,7 +2,7 @@
  define the state of a tournament
  and depending on that state, specific behaviors are defined
 */
-export enum TournamentStatus {
+export enum TournamentState {
     Defined = 0,
     Published = 1,
     Register = 2,

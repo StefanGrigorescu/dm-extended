@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { EnumValueToNamePipe } from 'src/utils/enum-value-to-name-pipe';
@@ -39,14 +41,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DeckItemComponent,
     DeckDetailComponent,
     GalleryComponent,
-    TournamentFormComponent
+    TournamentFormComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

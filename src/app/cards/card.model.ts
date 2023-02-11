@@ -3,13 +3,13 @@ export class Card {
         public uid: string,
         public name: string,
         public civilization: string,
-        public family: string,
+        public race: string,
         public manaCost: number,
         public set: string,
         public type: string,
         public defaultTierId: number = null,
         public specificTierId: number = null,
-        public copiesCount: number = null
+        public copiesCount: number = 1
     ) {}
 
     getImgUrl() {
