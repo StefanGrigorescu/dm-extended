@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RoutesManager } from 'src/utils/routes-manager';
+import { RoutesManager } from 'src/common/routes-manager';
 import { TournamentState } from './tournament-state.enum';
 import { Tournament } from './tournament.model';
 

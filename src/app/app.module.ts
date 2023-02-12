@@ -8,7 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { EnumValueToNamePipe } from 'src/utils/enum-value-to-name-pipe';
+import { EnumValueToNamePipe } from 'src/common/pipes/enum-value-to-name-pipe';
 import { HeaderComponent } from './header/header.component';
 import { CardPileComponent } from './cards/card-pile/card-pile.component';
 import { CardPoolComponent } from './cards/card-pool/card-pool.component';
@@ -24,7 +24,9 @@ import { DeckDetailComponent } from './decks/deck-detail/deck-detail.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OpacityDirective } from '../utils/opacity.directive';
+import { OpacityDirective } from '../common/directives/opacity.directive';
+import { UnlessDirective } from '../common/directives/unless.directive';
+import { DropdownDirective } from 'src/common/directives/dropdown.directive';
 
 const appRoutes: Routes = [
   { path:'', component: GalleryComponent },
@@ -70,7 +72,9 @@ const appRoutes: Routes = [
     DeckDetailComponent,
     GalleryComponent,
     TournamentFormComponent,
-    OpacityDirective
+    OpacityDirective,
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

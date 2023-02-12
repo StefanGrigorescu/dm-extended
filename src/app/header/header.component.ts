@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RoutesManager } from '../../utils/routes-manager';
+import { RoutesManager } from '../../common/routes-manager';
 
 @Component({
     selector: 'app-header',
