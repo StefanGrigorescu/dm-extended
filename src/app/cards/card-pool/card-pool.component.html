@@ -5,123 +5,120 @@
 
 <div class="container">
     <div class="row">
-        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div
+            class="gallery col-lg-3 col-md-3 col-sm-3 col-xs-3"
+            id="pool-title"
+        >
             <h1 class="gallery-title">Card Pool</h1>
         </div>
     </div>
-        <!-- <div align = "center">
-            <button class="btn btn-default filter-button" data-filter="all">All</button>
-            <button class="btn btn-default filter-button" data-filter="hdpe">Name</button>
-            <button class="btn btn-default filter-button" data-filter="sprinkle">Civilization</button>
-            <button class="btn btn-default filter-button" data-filter="spray">Race</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation">Mana Cost</button>
-            <button class="btn btn-default filter-button" data-filter="spray">Set</button>
-            <button class="btn btn-default filter-button" data-filter="spray">Type</button>
-        </div> -->
 
-        <div *ngIf="cards">
-            <div class="row pool-ribbon">
-                <div class="col-md-3">
-                    <div class="row">
-                        <label for="card-name-input">Card name</label>
-                        <button
-                            id="sort-by-name"
-                            class="sort-button"
-                            (click)="setSortBy('name')"
-                        >
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </button>
-                    </div>
-                    <input 
-                        id="card-name-input" 
-                        type="text" 
-                        placeholder="Search by card name"
-                        [(ngModel)]="cards.nameFilter"
+    <div 
+        id="pool-content"
+        *ngIf="cards"
+    >
+        <div class="row pool-ribbon">
+            <div class="col-md-3">
+                <div class="row">
+                    <label for="card-name-input">Card name</label>
+                    <button
+                        id="sort-by-name"
+                        class="sort-button"
+                        (click)="setSortBy('name')"
                     >
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
                 </div>
+                <input 
+                    id="card-name-input" 
+                    type="text" 
+                    placeholder="Search by card name"
+                    [(ngModel)]="cards.nameFilter"
+                >
+            </div>
 
-                <div class="col-md-2">
-                    <div class="row">
-                        <label for="mana-input">Mana</label>
-                        <button
-                            id="sort-by-mana"
-                            class="sort-button"
-                            (click)="setSortBy('manaCost')"
-                        >
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="row">
-                        <label for="civilization-select">Civilization</label>
-                        <button
-                            id="sort-by-civilization"
-                            class="sort-button"
-                            (click)="setSortBy('civilization')"
-                        >
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </button>
-                    </div>
-                    <select 
-                        id="civilization-select"
-                        [(ngModel)]="cards.civilizationFilter"
+            <div class="col-md-2">
+                <div class="row">
+                    <label for="mana-input">Mana</label>
+                    <button
+                        id="sort-by-mana"
+                        class="sort-button"
+                        (click)="setSortBy('manaCost')"
                     >
-                        <option value="">All</option>
-                        <option *ngFor="let civilization of cards.civilizations" [value]="civilization">
-                            {{ civilization }}
-                        </option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="row">
-                        <label for="race-select">Race</label>
-                        <button
-                            id="sort-by-race"
-                            class="sort-button"
-                            (click)="setSortBy('race')"
-                        >
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </button>
-                    </div>
-                    <select
-                        id="race-select"
-                        [(ngModel)]="cards.raceFilter"
-                    >
-                        <option value="">All</option>
-                        <option *ngFor="let race of cards.races" [value]="race">
-                            {{ race }}
-                        </option>
-                    </select>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="row">
-                        <label for="set-select">Set</label>
-                        <button
-                            id="sort-by-set"
-                            class="sort-button"
-                            (click)="setSortBy('set')"
-                        >
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </button>
-                    </div>
-                    <select
-                        id="set-select"
-                        [(ngModel)]="cards.setFilter"
-                    >
-                        <option value="">All</option>
-                        <option *ngFor="let set of cards.sets" [value]="set">
-                            {{ set }}
-                        </option>
-                    </select>
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
                 </div>
             </div>
-            
 
-            <br/>
+            <div class="col-md-2">
+                <div class="row">
+                    <label for="civilization-select">Civilization</label>
+                    <button
+                        id="sort-by-civilization"
+                        class="sort-button"
+                        (click)="setSortBy('civilization')"
+                    >
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <select 
+                    id="civilization-select"
+                    [(ngModel)]="cards.civilizationFilter"
+                >
+                    <option value="">All</option>
+                    <option *ngFor="let civilization of cards.civilizations" [value]="civilization">
+                        {{ civilization }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <label for="race-select">Race</label>
+                    <button
+                        id="sort-by-race"
+                        class="sort-button"
+                        (click)="setSortBy('race')"
+                    >
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <select
+                    id="race-select"
+                    [(ngModel)]="cards.raceFilter"
+                >
+                    <option value="">All</option>
+                    <option *ngFor="let race of cards.races" [value]="race">
+                        {{ race }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <div class="row">
+                    <label for="set-select">Set</label>
+                    <button
+                        id="sort-by-set"
+                        class="sort-button"
+                        (click)="setSortBy('set')"
+                    >
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <select
+                    id="set-select"
+                    [(ngModel)]="cards.setFilter"
+                >
+                    <option value="">All</option>
+                    <option *ngFor="let set of cards.sets" [value]="set">
+                        {{ set }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        
+
+        <div class="row pool-container">
             <div
                 class="gallery_product col-lg-3 col-md-4 col-sm-4 col-xs-6 filter hdpe"
                 *ngFor="let card of cards.filteredAndSorted()"
@@ -130,8 +127,7 @@
                     <img
                         [src]="card.getImgUrl()"
                         alt="{{card.name}}"
-                        class="img-responsive"
-                        style="max-height: 400px"
+                        class="img-responsive card-item"
                     >
                 </span></a>
                 <div class="pull-down">
@@ -141,6 +137,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 <!-- <div class="row">

@@ -11,7 +11,6 @@ export class AppComponent {
   currentPage = RoutesManager.gallery;
 
   onNavigated(page: string) {
-    console.log("Page was this before: " + page);
     switch(page)
     {
       case RoutesManager.gallery:
@@ -23,6 +22,5 @@ export class AppComponent {
       default:
         this.currentPage = RoutesManager.decks;
     }
-    console.log("The value was set to " + this.currentPage);
   }
 }

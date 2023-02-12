@@ -1,0 +1,20 @@
+@import "../../../styles.scss";
+
+#tournament-info-container {
+    margin-top: 45px;
+    width: 55%;
+    background-color: $indigo-light;
+    border-radius: 10%;
+
+    & > * {
+        padding-left: 35px;
+    }
+}
+
+#tournament-name {
+    padding-top: 10px;
+}
+
+#tournament-status {
+    padding-bottom: 10px;
+}

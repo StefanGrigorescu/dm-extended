@@ -1,0 +1,14 @@
+@import "../../styles.scss";
+
+.gallery-header {
+    margin-top: 8px;
+    margin-left: 1%;
+    height: 60px;
+    font-size: 320%;
+    text-align: center;
+    border-radius: 8%;
+    background-color: $indigo-light;
+    line-height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+}

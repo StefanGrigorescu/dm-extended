@@ -1,0 +1,30 @@
+@import "../../../styles.scss";
+
+#form-page {
+    padding-top: 50px;
+    border-radius: 10%;
+}
+
+form {
+    background-color: $indigo-light;
+    padding-left: 20px;
+    padding-top: 2px;
+
+    & > * {
+        background-color: $indigo-light;
+        width: 100%;
+    }
+}
+
+.tier-label {
+    text-align: right;
+    vertical-align: middle;
+}
+
+#top-text {
+    padding-top: 20px;
+}
+
+#button-row {
+    padding-bottom: 30px;
+}

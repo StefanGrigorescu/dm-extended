@@ -13,7 +13,7 @@ export class Cards extends Array<Card> {
         }
         this.races = [...racesSet];
         this.races.sort();
-        this.races = ["spell", ...this.races];
+        this.races = ["Spell", ...this.races];
 
         this.sets = [...new Set(cards.map(card => card.set))];
         this.sets.sort();
@@ -61,10 +61,18 @@ export class Cards extends Array<Card> {
             true :
             card.civilization.toLowerCase() === this.civilizationFilter.toLowerCase();
 
-        var raceFilter: (card: Card) => boolean = card =>
-            this.raceFilter === "" ?
-            true :    
-            card.race.toLowerCase() === this.raceFilter.toLowerCase();
+        var raceFilter: (card: Card) => boolean; 
+        switch(this.raceFilter)
+        {
+            case "":
+                raceFilter = _ => true;
+                break;
+            case "Spell":
+                raceFilter = card => card.type.toLocaleLowerCase() === this.raceFilter.toLocaleLowerCase();
+                break;
+            default:
+                raceFilter = card => card.race.toLowerCase() === this.raceFilter.toLowerCase();
+        }
 
         var setFilter: (card: Card) => boolean = card =>
             this.setFilter === "" ?

@@ -12,6 +12,7 @@ export class TournamentFormComponent {
   @Output() tournamentCreated = new EventEmitter<Tournament>();
   @Output() cancel = new EventEmitter<void>();
 
+  Object = Object;
   tournamentForm: FormGroup;
   
   tournament: Tournament = new Tournament

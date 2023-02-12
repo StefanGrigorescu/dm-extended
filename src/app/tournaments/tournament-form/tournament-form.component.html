@@ -1,7 +1,15 @@
-<div class="row">
+<div
+    class="row"
+    id="form-page"
+>
     <div class="col-xs-12">
         <form>
-            <h2 class="text-center">General</h2>
+            <h2
+                class="text-center"
+                id="top-text"
+            >
+                General
+            </h2>
             <div class="row">
                 <div class="col-sm-2 form-group">
                     <label for="name">Name</label>
@@ -124,7 +132,8 @@
                     <input 
                         type="number"
                         id="initialPoolMaxResetTimes"
-                        class="form-control" [(ngModel)]="tournament.initialPoolMaxResetTimes"
+                        class="form-control"
+                        [(ngModel)]="tournament.initialPoolMaxResetTimes"
                         name="initialPoolMaxResetTimes"
                     >
                 </div>
@@ -141,25 +150,60 @@
             </div>
 
             <div class="row">
-                Cards In Pool Of Tier
-            </div>
-            <!-- <div class="row">
-                <div 
-                    *ngFor="let item of tournament.cardsInPoolOfTier | keyvalue"
-                    class="col-sm-3 form-group"
-                >
-                    <label for="cardsInPoolOfTier">Tier {{item.key}}</label>
-                    <input type="number" id="cardsInPoolOfTier" class="form-control" [(ngModel)]="item.value")] name="totalCards">
+                <div class="col-md-12">
+                    Cards in Pool Of Tier:
                 </div>
-            </div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-1" *ngFor="let tier of Object.keys(tournament.cardsInPoolOfTier)">
+                    <div class="row">
+                        <label class="col-md-2 tier-label">
+                            {{tier}}:
+                        </label>
+                        <div class="col-md-8">
+                            <input
+                                type="number"
+                                id="cardsInPoolOfTier"
+                                class="form-control"
+                                [(ngModel)]="tournament.cardsInPoolOfTier[tier]"
+                                name="cardsInPoolOfTier"    
+                            >
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row">
-                Max Card Copies Of Tier
+                <div class="col-md-12">
+                    Max Card Copies Of Tier:
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1" *ngFor="let tier of Object.keys(tournament.maxCardCopiesOfTier)">
+                    <div class="row">
+                        <label class="col-md-2 tier-label">
+                            {{tier}}:
+                        </label>
+                        <div class="col-md-8">
+                            <input
+                                type="number"
+                                id="maxCardCopiesOfTier"
+                                class="form-control"
+                                [(ngModel)]="tournament.maxCardCopiesOfTier[tier]"
+                                name="maxCardCopiesOfTier"
+                            >
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
             </div>
 
             <h2 class="text-center">General Pool Configurations</h2>
             <div class="row">
-                Allowed Sets
+                <div class="col-md-12">
+                    {{tournament.allowedSets}}
+                </div>
             </div>
 
             <h2 class="text-center">Deck Building Configurations</h2>
@@ -227,7 +271,7 @@
             
             <div style="margin: 20px 0;"></div>
 
-            <div class="row">
+            <div class="row" id="button-row">
                 <div class="col-xs-2"></div>
 
                 <div class="btn-group col-xs-1">

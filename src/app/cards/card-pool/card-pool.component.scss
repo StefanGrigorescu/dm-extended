@@ -1,8 +1,24 @@
 @import "../../../styles";
 
+// .container {
+//     background-color: $indigo-light;
+// }
+
+#pool-title {
+    background-color: $indigo-light;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-left: 8px;
+}
+
+#pool-content {
+    border-radius: 10px;
+    width: auto;
+}
+
 .pool-ribbon {
     background-color: $indigo-default;
-    border-radius: 10px;  
+    border-radius: 10px;
 
     text-align: center;
 }
@@ -17,3 +33,16 @@
     align-self: center;
 }
 
+.pool-container {
+    padding-top: 10px;
+    background-color: $indigo-light;
+
+    & > * {
+        background-color: $indigo-light;
+    }
+}
+
+.card-item {
+    border-radius: 3.3%;
+    max-height: 400px
+}

@@ -1,0 +1,13 @@
+@import "../../styles.scss";
+
+nav.navbar.navbar-default {
+    background-color: $indigo-dark;
+}
+
+// .navbar-default {
+//     background-color: $indigo-dark;
+
+//     & > {
+//         background-color: $indigo-dark;
+//     }
+// }

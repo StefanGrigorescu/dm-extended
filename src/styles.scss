@@ -45,7 +45,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 $indigo-default: #3F51B5;
-$indigo-light: #8C9EFF;
+$indigo-light: #C5CAE9;
 $indigo-dark: #303F9F;
 
 $orange-default: #FFAB40;
@@ -87,9 +87,9 @@ $my-light-theme: mat.define-light-theme((
 // @include mat.expansion-panel-theme($my-light-theme);
 // @include mat.accordion-theme($my-light-theme);
 
-// body {
-//     background-image: url("./assets/images/Zid.png");
-// }
+body {
+    background-image: url("./assets/images/Zid.png");
+}
 
 
 // Toggle style
@@ -148,7 +148,7 @@ $my-light-theme: mat.define-light-theme((
     height: 100%;
     width: 100%;
     color: #4d4d4d;
-    background-color: $orange-dark;
+    background-color: $orange-light;
     text-align: center;
     opacity: 0;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
