@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RoutesManager } from '../utils/routes-manager';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +7,5 @@ import { RoutesManager } from '../utils/routes-manager';
 })
 export class AppComponent {
   title = 'DM Extended';
-  currentPage = RoutesManager.gallery;
 
-  onNavigated(page: string) {
-    switch(page)
-    {
-      case RoutesManager.gallery:
-        this.currentPage = RoutesManager.gallery;
-        break;
-      case RoutesManager.tournaments:
-        this.currentPage = RoutesManager.tournaments;
-        break;
-      default:
-        this.currentPage = RoutesManager.decks;
-    }
-  }
 }

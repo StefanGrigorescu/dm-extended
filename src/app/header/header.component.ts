@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component } from '@angular/core';
 import { RoutesManager } from '../../utils/routes-manager';
 
 @Component({
@@ -10,9 +10,4 @@ export class HeaderComponent {
 
     routesManager = RoutesManager;
 
-    @Output() navigate = new EventEmitter<string>();
-
-    onNavigate(page: string): void {
-        this.navigate.emit(page);
-    }
 }

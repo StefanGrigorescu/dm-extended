@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -24,6 +25,32 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+const appRoutes: Routes = [
+  { path:'', component: GalleryComponent },
+  { path:'gallery', component: GalleryComponent },
+  { path:'tournaments', component: TournamentsComponent },
+  // {
+  //   path: 'tournaments/view',
+  //   component: TournamentListComponent,
+  //   data: { 
+  //     input1: 'value1', 
+  //     handleOutput1: (event) => handleOutput1(event) 
+  //   } 
+  // },
+  // {
+  //   path: 'tournaments/create',
+  //   component: TournamentFormComponent,
+  //   data: { 
+  //     input1: 'value1', 
+  //     //handleOutput1: (event) => handleOutput1(event),
+  //     tournamentCreated: (event) => onTournamentDefined(event),
+  //     //(tournamentCreated) = "onTournamentDefined($event)"
+  //   } 
+  // },
+  { path:'decks', component: DecksComponent },
+  { path:'decks/:deckId', component: DeckDetailComponent }, // the ":" informs angular that this is a dynamic part of the path (a parameter)
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +73,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     MatExpansionModule,
     BrowserAnimationsModule,

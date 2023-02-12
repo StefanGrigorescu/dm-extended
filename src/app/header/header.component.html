@@ -11,27 +11,30 @@
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>
-                    <a
-                        href='#'
-                        (click)="onNavigate(routesManager.gallery)"
-                    >
+                <li
+                    role="presentation"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <a routerLink="gallery">
                         Gallery
                     </a>
                 </li>
-                <li>
-                    <a
-                        href='#'
-                        (click)="onNavigate(routesManager.tournaments)"
-                    >
+                <li
+                    role="presentation"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <a [routerLink]="['tournaments']">
                         Tournaments
                     </a>
                 </li>
-                <li>
-                    <a
-                        href='#'
-                        (click)="onNavigate(routesManager.decks)"
-                    >
+                <li
+                    role="presentation"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <a [routerLink]="['decks']">
                         Decks
                     </a>
                 </li>
