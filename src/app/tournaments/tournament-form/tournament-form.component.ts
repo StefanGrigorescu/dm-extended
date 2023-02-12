@@ -9,7 +9,7 @@ import { Tournament } from '../tournament.model';
   styleUrls: ['./tournament-form.component.scss']
 })
 export class TournamentFormComponent {
-  @Output() tournamentCreated = new EventEmitter<Tournament>();
+  @Output() formSubmit = new EventEmitter<Tournament>();
   @Output() cancel = new EventEmitter<void>();
 
   Object = Object;
@@ -62,11 +62,11 @@ export class TournamentFormComponent {
     });
   }
 
-  onDefineTournament() {
+  onSubmit() {
     //this.tournament = this.tournamentForm.value;
     console.log(this.tournament);
 
-    this.tournamentCreated.emit(this.tournament);
+    this.formSubmit.emit(this.tournament);
   }
 
   onClearForm() {

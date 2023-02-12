@@ -80,25 +80,25 @@ export class TournamentsComponent {
   routesManager = RoutesManager;
   currentPage = RoutesManager.tournamentsView;
 
-  onTournamentDefine()
+  onTournamentSelected(tournament: Tournament)
+  {
+    this.selectedTournament = tournament;
+  }
+
+  onOpenedCreateForm()
   {
     this.currentPage = RoutesManager.tournamentsCreate;
   }
 
-  onCancelTournamentDefine()
+  onCancelTournamentCreate()
   {
     this.currentPage = RoutesManager.tournamentsView;
   }
 
-  onTournamentDefined(tournament: Tournament)
+  onTournamentCreated(tournament: Tournament)
   {
     console.log("TournamentsComponent: onTournamentDefined: " + tournament.name)
     this.tournaments.push(tournament);
     this.currentPage = RoutesManager.tournamentsView;
-  }
-
-  onTournamentSelected(tournament: Tournament)
-  {
-    this.selectedTournament = tournament;
   }
 }

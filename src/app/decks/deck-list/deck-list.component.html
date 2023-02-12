@@ -15,10 +15,18 @@
             routerLink="./"
             class="list-group-item clearfix"
             *ngFor="let deck of decks"
+            [ngClass]="{
+                fire: coverCardFromCivilization(deck, 'fire'),
+                water: coverCardFromCivilization(deck, 'water'),
+                nature: coverCardFromCivilization(deck, 'nature'),
+                light: coverCardFromCivilization(deck, 'light'),
+                darkness: coverCardFromCivilization(deck, 'darkness'),
+                none: !coverCardFromAnyCivilization(deck)
+            }"
             [ngStyle]="{
-                'background-color': deck.coverCardCivilizationColor ?? 'transparent',
                 'cursor': pointer
             }"
+            appOpacity
         >
             <span class="pull-left">
                 <img

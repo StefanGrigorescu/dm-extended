@@ -24,6 +24,7 @@ import { DeckDetailComponent } from './decks/deck-detail/deck-detail.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OpacityDirective } from '../utils/opacity.directive';
 
 const appRoutes: Routes = [
   { path:'', component: GalleryComponent },
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
     DeckDetailComponent,
     GalleryComponent,
     TournamentFormComponent,
+    OpacityDirective
   ],
   imports: [
     BrowserModule,

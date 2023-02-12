@@ -6,7 +6,7 @@
         <app-tournament-list
             [tournaments]="tournaments"
             (tournamentSelect)="onTournamentSelected($event)"
-            (tournamentDefine)="onTournamentDefine()"
+            (openCreateForm)="onOpenedCreateForm()"
         />
     </div>
 
@@ -26,8 +26,8 @@
     <div class="row">
         <div class="col-md-12">
             <app-tournament-form
-                (tournamentCreated) = "onTournamentDefined($event)"
-                (cancel) = "onCancelTournamentDefine()"
+                (formSubmit) = "onTournamentCreated($event)"
+                (cancel) = "onCancelTournamentCreate()"
             />
         </div>
     </div>

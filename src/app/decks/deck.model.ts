@@ -9,14 +9,14 @@ export class Deck {
     public deckId: number;
     public name: string;
     public coverCardImgUrl: string;
-    public coverCardCivilizationColor: string;
+    public coverCardCivilization: string;
     public isFavorite: boolean = false;
 
     constructor(
         deckId,
         name,
         coverCardImgUrl,
-        coverCardCivilizationColor,
+        coverCardCivilization,
         // isFavorite,
         // userId,
         // tournamentId,
@@ -26,6 +26,6 @@ export class Deck {
         this.deckId = deckId;
         this.name = name;
         this.coverCardImgUrl = coverCardImgUrl;
-        this.coverCardCivilizationColor = coverCardCivilizationColor;
+        this.coverCardCivilization = coverCardCivilization;
     }
 }

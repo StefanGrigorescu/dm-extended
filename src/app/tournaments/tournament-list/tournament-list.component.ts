@@ -10,7 +10,7 @@ import { Tournament } from '../tournament.model';
 export class TournamentListComponent  implements OnInit{
   @Input() tournaments: Tournament[];
   @Output() tournamentSelect: EventEmitter<Tournament> = new EventEmitter<Tournament>();
-  @Output() tournamentDefine: EventEmitter<void> = new EventEmitter<void>();
+  @Output() openCreateForm: EventEmitter<void> = new EventEmitter<void>();
 
   toggleCurrentTournaments : boolean = true;
 
@@ -26,8 +26,8 @@ export class TournamentListComponent  implements OnInit{
     this.tournamentSelect.emit(tournament);
   }
 
-  onDefineTournament(): void {
-    this.tournamentDefine.emit();
+  onClickedHostButton(): void {
+    this.openCreateForm.emit();
   }
 
   onToggleChange(): void {
