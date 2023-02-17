@@ -11,7 +11,7 @@ export class TournamentDetailComponent implements OnInit {
   @Input() tournament: Tournament;
 
   // Reference to the enum. Used by the EnumValueToNamePipe
-  TournamentStatus = TournamentState;
+  TournamentState = TournamentState;
 
   constructor() {
     

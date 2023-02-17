@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
+import { TournamentsService } from '../tournaments.service';
 
 @Component({
   selector: 'app-tournament-list',
@@ -8,22 +9,16 @@ import { Tournament } from '../tournament.model';
   styleUrls: ['./tournament-list.component.scss']
 })
 export class TournamentListComponent  implements OnInit{
-  @Input() tournaments: Tournament[];
-  @Output() tournamentSelect: EventEmitter<Tournament> = new EventEmitter<Tournament>();
+  private tournaments: Tournament[];
   @Output() openCreateForm: EventEmitter<void> = new EventEmitter<void>();
 
   toggleCurrentTournaments : boolean = true;
 
-  constructor() {
-
+  constructor(private tournamentsService: TournamentsService) {
   }
 
   ngOnInit() {
-
-  }
-
-  onTournamentSelected(tournament: Tournament): void {
-    this.tournamentSelect.emit(tournament);
+    this.tournaments = this.tournamentsService.getTournaments();
   }
 
   onClickedHostButton(): void {
@@ -32,9 +27,10 @@ export class TournamentListComponent  implements OnInit{
 
   onToggleChange(): void {
     this.toggleCurrentTournaments = !this.toggleCurrentTournaments;
-    this.tournamentSelect.emit(null);
+    this.tournamentsService.tournamentSelected.emit(null);
   }
 
+  // Probably this will be replaced with a pipe
   getTournaments(): Tournament[] {
     if(this.toggleCurrentTournaments)
     {

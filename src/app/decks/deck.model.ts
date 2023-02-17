@@ -1,16 +1,16 @@
 
 export class Deck {
     public userId: number;
-    
-    // If it is a tournament deck
-    public tournamentId: number;
-    public tournamentPlayerId: number;
 
     public deckId: number;
     public name: string;
     public coverCardImgUrl: string;
     public coverCardCivilization: string;
     public isFavorite: boolean = false;
+    
+    // If it is a tournament deck
+    public tournamentId: number;
+    public tournamentPlayerId: number;
 
     constructor(
         deckId,

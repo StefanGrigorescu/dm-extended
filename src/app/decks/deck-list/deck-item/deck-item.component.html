@@ -1,1 +1,28 @@
-<p>deck-item works!</p>
+<a
+    routerLink="./"
+    class="list-group-item clearfix"
+    [ngClass]="{
+        fire: isCoverCardFromCivilization(this.deck, 'fire'),
+        water: isCoverCardFromCivilization(this.deck, 'water'),
+        nature: isCoverCardFromCivilization(this.deck, 'nature'),
+        light: isCoverCardFromCivilization(this.deck, 'light'),
+        darkness: isCoverCardFromCivilization(this.deck, 'darkness'),
+        none: !isCoverCardFromAnyCivilization(this.deck)
+    }"
+    appOpacity
+    [defaultOpacity]="1"
+    [hoverOpacity]="0.9"
+    >
+    <span class="pull-left">
+        <img
+            [src]="this.deck.coverCardImgUrl"
+            alt="{{this.deck.name}}"
+            class="img-responsive"
+            style="max-height: 50px"
+        >
+    </span>
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{this.deck.name}}</h4>
+        <p class="list-group-item-text">{{this.deck.tournamentId}}</p>
+    </div>
+</a>

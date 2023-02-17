@@ -7,14 +7,12 @@ export class Card {
         public manaCost: number,
         public set: string,
         public type: string,
-        public defaultTierId: number = null,
-        public specificTierId: number = null,
+
+        public imgUrl: string = `https://shobu.io/assets/cards/all/${uid}.jpg`,
+        public tierId: number = null,
+
         public copiesCount: number = 1
     ) {}
-
-    getImgUrl() {
-        return `https://shobu.io/assets/cards/all/${this.uid}.jpg`;
-    }
 
     getColor() {
         switch(this.civilization)

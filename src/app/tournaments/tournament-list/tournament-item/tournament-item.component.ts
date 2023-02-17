@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Tournament } from '../../tournament.model';
+import { TournamentsService } from '../../tournaments.service';
 
 @Component({
   selector: 'app-tournament-item',
@@ -8,14 +9,13 @@ import { Tournament } from '../../tournament.model';
 })
 export class TournamentItemComponent {
   @Input() tournament: Tournament;
-  @Output() tournamentItemSelect: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() {
+  constructor(private tournamentsService: TournamentsService) {
     
   }
 
   onSelect()
   {
-    this.tournamentItemSelect.emit();
+    this.tournamentsService.tournamentSelected.emit(this.tournament);
   }
 }

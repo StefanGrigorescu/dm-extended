@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
+import { TournamentsService } from '../tournaments.service'
 
 @Component({
   selector: 'app-tournament-form',
@@ -27,7 +28,10 @@ export class TournamentFormComponent {
       TournamentState.Defined
     );
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private tournamentsService: TournamentsService
+    ) {
     this.tournamentForm = this.formBuilder.group({
       name: ['', Validators.required],
       shortDescription: [''],
@@ -64,9 +68,8 @@ export class TournamentFormComponent {
 
   onSubmit() {
     //this.tournament = this.tournamentForm.value;
-    console.log(this.tournament);
 
-    this.formSubmit.emit(this.tournament);
+    this.tournamentsService.createTournament(this.tournament);
   }
 
   onClearForm() {

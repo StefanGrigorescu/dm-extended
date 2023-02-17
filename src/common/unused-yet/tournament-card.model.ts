@@ -12,7 +12,6 @@ export class TournamentCard {
     public set: string;
     public type: string;
 
-    public specificTierId: number = null;
-    public specificManaCost: number;
-    public specificImgUrl: string;
+    public imgUrl: string;
+    public tierId: number = null;
 }

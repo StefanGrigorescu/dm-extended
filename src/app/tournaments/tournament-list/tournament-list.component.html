@@ -28,7 +28,6 @@
         <app-tournament-item
             *ngFor="let tournamentElement of getTournaments()"
             [tournament]="tournamentElement"
-            (tournamentItemSelect)="onTournamentSelected(tournamentElement)"
         />
     </div>
 </div>

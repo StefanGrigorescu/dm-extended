@@ -11,38 +11,9 @@
 <br>
 <div class="row">
     <div class="col-xs-12">
-        <a
-            routerLink="./"
-            class="list-group-item clearfix"
-            *ngFor="let deck of decks"
-            [ngClass]="{
-                fire: coverCardFromCivilization(deck, 'fire'),
-                water: coverCardFromCivilization(deck, 'water'),
-                nature: coverCardFromCivilization(deck, 'nature'),
-                light: coverCardFromCivilization(deck, 'light'),
-                darkness: coverCardFromCivilization(deck, 'darkness'),
-                none: !coverCardFromAnyCivilization(deck)
-            }"
-            [ngStyle]="{
-                'cursor': pointer
-            }"
-            appOpacity
-            [defaultOpacity]="1"
-            [hoverOpacity]="0.9"
-        >
-            <span class="pull-left">
-                <img
-                    [src]="deck.coverCardImgUrl"
-                    alt="{{deck.name}}"
-                    class="img-responsive"
-                    style="max-height: 50px"
-                >
-            </span>
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{deck.name}}</h4>
-                <p class="list-group-item-text">{{deck.tournamentId}}</p>
-            </div>
-        </a>
-        <app-deck-item/>
+        <app-deck-item
+            *ngFor="let deckElement of decks"
+            [deck]="deckElement"
+        />
     </div>
 </div>

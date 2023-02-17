@@ -5,9 +5,6 @@
 export class TournamentPoolCard {
     public tournamentPoolCardId: number;
 
-    public tournamentCardId;
-
-    public tournamentId: number;
     public cardUid: number;
     public tournamentPlayerId: string = null;  // This property is set only when pools are not shared and draft is set to false (one pool per player to build a deck).
 
