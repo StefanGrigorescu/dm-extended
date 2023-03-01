@@ -1,1 +1,22 @@
-<p>deck-detail works!</p>
+<div class="row">
+    <div class="col-xs-3">
+        <div class="row">
+            <div class="col-xs-12">
+                <app-deck-item
+                    [deck]="deck"
+                />
+            </div>
+            <div class="col-xs-12">
+
+            <app-card-item
+                *ngFor="let cardElement of deckCards"
+                [card]="cardElement"
+            />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-9">
+        <app-card-pool/>
+    </div>
+</div>

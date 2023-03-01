@@ -1,0 +1,28 @@
+<a
+    routerLink="./"
+    class="list-group-item clearfix app-list-item"
+    [ngClass]="{
+        fire: isCardFromCivilization('fire'),
+        water: isCardFromCivilization('water'),
+        nature: isCardFromCivilization('nature'),
+        light: isCardFromCivilization('light'),
+        darkness: isCardFromCivilization('darkness'),
+        none: !isCardFromAnyCivilization()
+    }"
+    appOpacity
+    [defaultOpacity]="1"
+    [hoverOpacity]="0.9"
+    >
+    <span class="pull-left">
+        <img
+            [src]="this.getManaCostImg()"
+            alt="{{this.card.manaCost}}"
+            class="img-responsive"
+            style="max-height: 10px"
+        >
+    </span>
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{this.card.name}}</h4>
+        <p class="list-group-item-text">{{this.card.race}}</p>
+    </div>
+</a>

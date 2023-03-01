@@ -1,13 +1,13 @@
 <a
     routerLink="./"
-    class="list-group-item clearfix"
+    class="list-group-item clearfix app-list-item"
     [ngClass]="{
-        fire: isCoverCardFromCivilization(this.deck, 'fire'),
-        water: isCoverCardFromCivilization(this.deck, 'water'),
-        nature: isCoverCardFromCivilization(this.deck, 'nature'),
-        light: isCoverCardFromCivilization(this.deck, 'light'),
-        darkness: isCoverCardFromCivilization(this.deck, 'darkness'),
-        none: !isCoverCardFromAnyCivilization(this.deck)
+        fire: isCoverCardFromCivilization('fire'),
+        water: isCoverCardFromCivilization('water'),
+        nature: isCoverCardFromCivilization('nature'),
+        light: isCoverCardFromCivilization('light'),
+        darkness: isCoverCardFromCivilization('darkness'),
+        none: !isCoverCardFromAnyCivilization()
     }"
     appOpacity
     [defaultOpacity]="1"

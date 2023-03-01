@@ -19,16 +19,15 @@ export class DeckItemComponent {
     this.decksService.deckSelected.emit(this.deck);
   }
 
-  isCoverCardFromCivilization(deck, civilization): boolean {
-    return deck.coverCardCivilization.toLowerCase() === civilization.toLowerCase();
+  isCoverCardFromCivilization(civilization): boolean {
+    return this.deck.coverCardCivilization.toLowerCase() === civilization.toLowerCase();
   }
 
-  isCoverCardFromAnyCivilization(deck)
-  {
-    return this.isCoverCardFromCivilization(deck, 'fire') ||
-      this.isCoverCardFromCivilization(deck, 'water') ||
-      this.isCoverCardFromCivilization(deck, 'nature') ||
-      this.isCoverCardFromCivilization(deck, 'light') ||
-      this.isCoverCardFromCivilization(deck, 'darkness');
+  isCoverCardFromAnyCivilization() {
+    return this.isCoverCardFromCivilization('fire') ||
+      this.isCoverCardFromCivilization('water') ||
+      this.isCoverCardFromCivilization('nature') ||
+      this.isCoverCardFromCivilization('light') ||
+      this.isCoverCardFromCivilization('darkness');
   }
 }

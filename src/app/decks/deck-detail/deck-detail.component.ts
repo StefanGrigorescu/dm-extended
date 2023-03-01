@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Card } from 'src/app/cards/card.model';
+import { Deck } from '../deck.model';
 
 @Component({
   selector: 'app-deck-detail',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./deck-detail.component.scss']
 })
 export class DeckDetailComponent {
-
+  deck: Deck;
+  deckCards: Card[] = [];
 }

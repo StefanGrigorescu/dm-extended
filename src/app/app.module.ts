@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OpacityDirective } from '../common/directives/opacity.directive';
 import { UnlessDirective } from '../common/directives/unless.directive';
 import { DropdownDirective } from 'src/common/directives/dropdown.directive';
+import { CardItemComponent } from './decks/deck-detail/card-item/card-item.component';
 
 const appRoutes: Routes = [
   { path:'', component: GalleryComponent },
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     TournamentFormComponent,
     OpacityDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,
