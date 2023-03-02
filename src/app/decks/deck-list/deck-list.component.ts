@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { Card } from 'src/app/cards/card.model';
 import { Deck } from '../deck.model';
 import { DecksService } from '../decks.service';
 
@@ -15,7 +14,10 @@ export class DeckListComponent {
   }
 
   ngOnInit() {
-    this.decks = this.decksService.getDecks();
+    this
+      .decksService
+      .getDecks()
+      .subscribe(decks => this.decks = decks);
   }
 
   // getCardById(id)

@@ -19,7 +19,7 @@ import { TournamentItemComponent } from './tournaments/tournament-list/tournamen
 import { DecksComponent } from './decks/decks.component';
 import { DeckStatisticsComponent } from './decks/deck-statistics/deck-statistics.component';
 import { DeckListComponent } from './decks/deck-list/deck-list.component';
-import { DeckItemComponent } from './decks/deck-list/deck-item/deck-item.component';
+import { DeckItemComponent } from './decks/deck-item/deck-item.component';
 import { DeckDetailComponent } from './decks/deck-detail/deck-detail.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TournamentFormComponent } from './tournaments/tournament-form/tournament-form.component';

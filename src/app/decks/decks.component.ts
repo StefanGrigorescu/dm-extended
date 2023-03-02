@@ -17,7 +17,11 @@ export class DecksComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.decks = this.decksService.getDecks();
+    this
+      .decksService
+      .getDecks()
+      .subscribe(decks => this.decks = decks);
+    
     this.decksService
       .deckSelected
       .subscribe(

@@ -1,1 +1,34 @@
-<p>card-pile works!</p>
+<a><span class="pull-up">
+    <img
+        [src]="card.imgUrl"
+        alt="{{card.name}}"
+        class="img-responsive card-item"
+    >
+</span></a>
+<div class="pull-down">
+    <a><p class="list-group-item-heading">{{card.defaultTierId}}</p></a>
+    <p class="list-group-item-text">{{card.copiesCount}}</p>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-xs-3">
+        <a
+            class="list-group-item clearfix"
+            *ngFor="let card of cards"
+        >
+            <span class="pull-down">
+                <img
+                    [src]="card.getImgUrl()"
+                    alt="{{card.name}}"
+                    class="img-responsive"
+                    style="max-height: 400px"
+                >
+            </span>
+            <div class="pull-up">
+                <h4 class="list-group-item-heading">{{card.defaultTierId}}</h4>
+                <p class="list-group-item-text">{{card.copiesCount}}</p>
+            </div>
+        </a>
+    </div>
+</div> -->

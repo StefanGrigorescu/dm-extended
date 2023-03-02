@@ -1,4 +1,6 @@
 import { EventEmitter } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { Cards } from "../cards/cards-model";
 import { Deck } from "./deck.model";
 
 export class DecksService {
@@ -28,8 +30,13 @@ export class DecksService {
         ),
     };
 
-    getDecks(): Deck[] {
-        return Object.values(this.decks);
+    getDecks(): Observable<Deck[]> {
+        return of(Object.values(this.decks));
+    }
+
+    getCardsByDeckId(deckId: number): Cards {
+      console.log("Decks Service: Fetched deck cards...");
+      return new Cards([]);
     }
     
     createDeck(deck: Deck) {

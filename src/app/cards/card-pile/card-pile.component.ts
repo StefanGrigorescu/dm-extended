@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-pile',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-pile.component.scss']
 })
 export class CardPileComponent {
-
+  @Input() card;
 }

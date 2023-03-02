@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Deck } from '../deck.model';
 
 @Component({
   selector: 'app-deck-statistics',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./deck-statistics.component.scss']
 })
 export class DeckStatisticsComponent {
-
+  @Input() deck: Deck;
 }
