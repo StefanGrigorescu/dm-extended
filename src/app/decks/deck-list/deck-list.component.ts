@@ -10,8 +10,7 @@ import { DecksService } from '../decks.service';
 export class DeckListComponent {
   decks: Deck[] = [];
 
-  constructor(private decksService: DecksService) {
-  }
+  constructor(private decksService: DecksService) { }
 
   ngOnInit() {
     this

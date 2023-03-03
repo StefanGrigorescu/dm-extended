@@ -34,6 +34,10 @@ export class DecksService {
         return of(Object.values(this.decks));
     }
 
+    getDeckById(deckId: number): Observable<Deck> {
+      return of(Object.values(this.decks)[0]);
+    }
+
     getCardsByDeckId(deckId: number): Cards {
       console.log("Decks Service: Fetched deck cards...");
       return new Cards([]);

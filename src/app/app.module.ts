@@ -33,6 +33,7 @@ const appRoutes: Routes = [
   { path:'', component: GalleryComponent },
   { path:'gallery', component: GalleryComponent },
   { path:'tournaments', component: TournamentsComponent },
+  { path:'tournaments/create', component: TournamentFormComponent },
   // {
   //   path: 'tournaments/view',
   //   component: TournamentListComponent,

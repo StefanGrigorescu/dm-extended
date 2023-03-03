@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
 import { TournamentsService } from '../tournaments.service'
@@ -10,17 +11,14 @@ import { TournamentsService } from '../tournaments.service'
   styleUrls: ['./tournament-form.component.scss']
 })
 export class TournamentFormComponent {
-  @Output() formSubmit = new EventEmitter<Tournament>();
-  @Output() cancel = new EventEmitter<void>();
-
   Object = Object;
   tournamentForm: FormGroup;
   
   tournament: Tournament = new Tournament
     (
-      "Mock Defined State Tournament",
-      "first short text only",
-      "Some descriptive text",
+      "",
+      "Short description",
+      "Description",
       (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
       (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
       (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
@@ -30,7 +28,8 @@ export class TournamentFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private tournamentsService: TournamentsService
+    private tournamentsService: TournamentsService,
+    private router: Router
     ) {
     this.tournamentForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -70,13 +69,10 @@ export class TournamentFormComponent {
     //this.tournament = this.tournamentForm.value;
 
     this.tournamentsService.createTournament(this.tournament);
+    this.router.navigate(['/tournaments']);
   }
 
   onClearForm() {
     
-  }
-
-  onCancel() {
-    this.cancel.emit();
   }
 }

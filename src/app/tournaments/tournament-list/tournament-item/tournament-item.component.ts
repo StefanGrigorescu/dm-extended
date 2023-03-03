@@ -10,12 +10,12 @@ import { TournamentsService } from '../../tournaments.service';
 export class TournamentItemComponent {
   @Input() tournament: Tournament;
 
-  constructor(private tournamentsService: TournamentsService) {
-    
-  }
+  constructor(private tournamentsService: TournamentsService) { }
 
   onSelect()
   {
-    this.tournamentsService.tournamentSelected.emit(this.tournament);
+    this.tournamentsService
+      .tournamentSelected
+      .emit(this.tournament);
   }
 }

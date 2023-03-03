@@ -10,19 +10,14 @@ import { TournamentsService } from '../tournaments.service';
 })
 export class TournamentListComponent  implements OnInit{
   private tournaments: Tournament[];
-  @Output() openCreateForm: EventEmitter<void> = new EventEmitter<void>();
 
   toggleCurrentTournaments : boolean = true;
 
-  constructor(private tournamentsService: TournamentsService) {
-  }
+  constructor(private tournamentsService: TournamentsService) { }
 
   ngOnInit() {
-    this.tournaments = this.tournamentsService.getTournaments();
-  }
-
-  onClickedHostButton(): void {
-    this.openCreateForm.emit();
+    this.tournaments = this.tournamentsService
+      .getTournaments();
   }
 
   onToggleChange(): void {

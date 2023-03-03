@@ -1,11 +1,6 @@
-<div
-    class="row"
-    *ngIf="currentPage === routesManager.tournamentsView; else tournamentDefine"
->
+<div class="row">
     <div class="col-md-3">
-        <app-tournament-list
-            (openCreateForm)="onOpenedCreateForm()"
-        />
+        <app-tournament-list/>
     </div>
 
     <div class="col-md-9">
@@ -19,14 +14,3 @@
         </ng-template>
     </div>
 </div>
-
-<ng-template #tournamentDefine>
-    <div class="row">
-        <div class="col-md-12">
-            <app-tournament-form
-                (formSubmit) = "onTournamentCreated($event)"
-                (cancel) = "onCancelTournamentCreate()"
-            />
-        </div>
-    </div>
-</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tournament } from '../tournament.model';
 import { TournamentState } from '../tournament-state.enum';
 import { CardsService } from 'src/app/cards/cards.service';
@@ -20,9 +20,8 @@ export class TournamentDetailComponent implements OnInit {
 
   constructor(private cardsService: CardsService) { }
 
-  ngOnInit() {
-    this
-      .cardsService
+  ngOnInit(): void {
+    this.cardsService
       .getShobuIoCards()
       .subscribe(cards => {
         this.poolCards = cards;
