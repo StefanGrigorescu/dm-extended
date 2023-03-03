@@ -1,6 +1,18 @@
+@import '../../../fonts.scss';
+
 .app-list-item {
     border-radius: 14px;
     background-size: cover; /* or "contain" */
+    height: 110px;
+}
+
+.card-item {
+    padding-bottom: 25%;
+    max-height: 110px
+}
+
+.deck-item-info-container {
+    // background-color: $indigo-light;
 }
 
 .fire {

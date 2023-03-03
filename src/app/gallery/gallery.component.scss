@@ -1,10 +1,12 @@
 @import "../../styles.scss";
+@import "../../fonts.scss";
 
-.gallery-header {
+#gallery-header {
     margin-top: 8px;
     margin-left: 1%;
     height: 60px;
     font-size: 320%;
+    font-family: $regular;
     text-align: center;
     border-radius: 8%;
     background-color: $indigo-light;

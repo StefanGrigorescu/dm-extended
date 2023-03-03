@@ -12,17 +12,17 @@
     appOpacity
     [defaultOpacity]="1"
     [hoverOpacity]="0.9"
-    >
+    (click)="onSelect()"
+>
     <span class="pull-left">
         <img
             [src]="this.deck.coverCardImgUrl"
             alt="{{this.deck.name}}"
-            class="img-responsive"
-            style="max-height: 50px"
+            class="img-responsive card-item"
         >
     </span>
-    <div class="pull-left">
-        <h4 class="list-group-item-heading">{{this.deck.name}}</h4>
-        <p class="list-group-item-text">{{this.deck.tournamentId}}</p>
+    <div class="pull-left deck-item-info-container">
+        <h4 class="list-group-item-heading app-list-item-heading">{{this.deck.name}}</h4>
+        <p class="list-group-item-text app-list-item-text">{{this.deck.tournamentId}}</p>
     </div>
 </a>

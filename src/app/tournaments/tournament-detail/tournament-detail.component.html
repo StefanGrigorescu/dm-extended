@@ -1,25 +1,25 @@
 <div class="row" id="tournament-info-container">
     <div class="col-md-12" id="tournament-name">
-        <h1>Name: {{tournament.name}}</h1>
+      <h1>Name: {{tournament.name}}</h1>
     </div>
     <div class="col-md-12">
-        Hosted by {{tournament.hostName}}
+      <p>Hosted by {{tournament.hostName}}</p>
     </div>
     <div class="col-md-12">
-        <p>Short Description: {{ tournament.shortDescription }}</p>
+      <p>Short Description: {{ tournament.shortDescription }}</p>
     </div>
     <div class="col-md-12">
-        <p>Description: {{ tournament.description }}</p>
+      <p>Description: {{ tournament.description }}</p>
     </div>
     
     <div class="col-md-12">
-        <p>Registration open &nbsp; from &nbsp; {{ tournament.registerStartTime | date }} &nbsp; to &nbsp; {{ tournament.registerEndTime | date }}</p>
+      <p>Registration open &nbsp; from &nbsp; {{ tournament.registerStartTime | date }} &nbsp; to &nbsp; {{ tournament.registerEndTime | date }}</p>
     </div>
     <div class="col-md-12">
-        <p>Tournament active from &nbsp; {{ tournament.activeStartTime | date }} &nbsp; to &nbsp; {{ tournament.activeEndTime | date }}</p>
+      <p>Tournament active from &nbsp; {{ tournament.activeStartTime | date }} &nbsp; to &nbsp; {{ tournament.activeEndTime | date }}</p>
     </div>
     <div class="col-md-12" id="tournament-status">
-        <p>Tournament status: {{ tournament.status | enumValueToName: TournamentState }}</p>
+      <p>Tournament status: {{ tournament.status | enumValueToName: TournamentState }}</p>
     </div>
 </div>
 <br>

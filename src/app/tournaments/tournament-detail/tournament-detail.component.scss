@@ -1,4 +1,5 @@
 @import "../../../styles.scss";
+@import "../../../fonts.scss";
 
 #tournament-info-container {
     margin-top: 52px;
@@ -18,4 +19,14 @@
 
 #tournament-status {
     padding-bottom: 10px;
+}
+
+div#tournament-info-container > div.col-md-12 > h1 {
+    font-family: $semi-bold;
+    font-size: x-large;
+}
+
+div#tournament-info-container > div.col-md-12 > p {
+    font-family: $regular;
+    font-size: medium;
 }

@@ -1,0 +1,28 @@
+$bold: 'Bold';
+$semi-bold: 'Semi-Bold';
+$regular: 'Regular';
+
+@font-face {
+    font-family: $bold;
+    src: url('./assets/fonts/SignikaNegative-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: $semi-bold;
+    src: url('./assets/fonts/SignikaNegative-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: $regular;
+    src: url('./assets/fonts/SignikaNegative-Regular.ttf') format('truetype');
+}
+
+.app-list-item-heading {
+    font-size: x-large;
+    font-family: $semi-bold;
+}
+
+.app-list-item-text {
+    font-size: medium;
+    font-family: $regular;
+}

@@ -69,7 +69,7 @@ export class TournamentFormComponent {
     //this.tournament = this.tournamentForm.value;
 
     this.tournamentsService.createTournament(this.tournament);
-    this.router.navigate(['/tournaments']);
+    this.router.navigate(['/tournaments', 'view']);
   }
 
   onClearForm() {

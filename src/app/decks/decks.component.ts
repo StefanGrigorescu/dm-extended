@@ -11,7 +11,7 @@ import { DecksService } from './decks.service';
   providers: [DecksService]
 })
 export class DecksComponent implements OnInit, OnDestroy {
-  private selectedDeck: Deck;
+  public selectedDeck: Deck;
   private deckSubscription: Subscription;
 
   constructor(

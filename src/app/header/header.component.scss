@@ -1,4 +1,5 @@
 @import "../../styles.scss";
+// @import "../../fonts.scss";
 
 nav.navbar.navbar-default {
     background-color: $indigo-dark;
@@ -10,4 +11,8 @@ nav.navbar.navbar-default {
 //     & > {
 //         background-color: $indigo-dark;
 //     }
+// }
+
+// a {
+//     font-family: $titles;
 // }

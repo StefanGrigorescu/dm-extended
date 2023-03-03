@@ -4,275 +4,295 @@
 >
     <div class="col-xs-12">
         <form>
-            <h2
-                class="text-center"
-                id="top-text"
-            >
-                General
-            </h2>
-            <div class="row">
-                <div class="col-sm-2 form-group">
-                    <label for="name">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        class="form-control"
-                        [(ngModel)]="tournament.name"
-                        name="name"
-                    >
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="shortDescription">Short Description</label>
-                    <input
-                        type="text"
-                        id="shortDescription"
-                        class="form-control"
-                        [(ngModel)]="tournament.shortDescription"
-                        name="shortDescription"
-                    >
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="description">Description</label>
-                    <textarea
-                        id="description"
-                        class="form-control"
-                        [(ngModel)]="tournament.description"
-                        name="description"
-                    >
-                    </textarea>
-                </div>
-            </div>
-
-            <h2 class="text-center">Draft Configurations</h2>
-            <div class="row">
-                <div class="col-sm-2 form-group">
-                    <label for="draft">Draft</label>
-                    <input
-                        type="checkbox"
-                        id="draft"
-                        class="form-control"
-                        [(ngModel)]="tournament.draft"
-                        name="draft"
-                    >
-                </div>
-                <div class="col-sm-4 form-group">
-                    <label for="draftPickCount">Draft Pick Count</label>
-                    <input
-                        type="number"
-                        id="draftPickCount"
-                        class="form-control"
-                        [(ngModel)]="tournament.draftPickCount"
-                        name="draftPickCount"
-                        [disabled]="!tournament.draft"
-                    >
-                </div>
-                <div class="col-sm-4 form-group">
-                    <label for="draftPickDropped">Draft Pick Dropped</label>
-                    <input
-                        type="number"
-                        id="draftPickDropped"
-                        class="form-control"
-                        [(ngModel)]="tournament.draftPickDropped"
-                        name="draftPickDropped"
-                        [disabled]="!tournament.draft"
-                    >
-                </div>
-            </div>
-
-            <h2 class="text-center">Pool & Deck Management</h2>
-            <div class="row">
-                <div class="col-sm-2 form-group">
-                    <label for="sharedPool">Shared Pool</label>
-                    <input
-                        type="checkbox"
-                        id="sharedPool"
-                        class="form-control"
-                        [(ngModel)]="tournament.sharedPool"
-                        name="sharedPool"
-                        [disabled]="tournament.draft"
-                    >
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="fixedDecks">Fixed Decks</label>
-                    <input
-                        type="checkbox"
-                        id="fixedDecks"
-                        class="form-control"
-                        [(ngModel)]="tournament.fixedDecks"
-                        name="fixedDecks"
-                        [disabled]="tournament.draft"
-                    >
-                </div>
-            </div>
-
-            <h2 class="text-center">Initial Pool Configurations</h2>
-            <div class="row">
-                <div class="col-sm-2 form-group">
-                    <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
-                    <input 
-                        type="number" 
-                        id="initialPoolLowerSize" 
-                        class="form-control" 
-                        [(ngModel)]="tournament.initialPoolLowerSize" 
-                        name="initialPoolLowerSize"
-                    >                        
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
-                    <input 
-                        type="number"
-                        id="initialPoolUpperSize"
-                        class="form-control"
-                        [(ngModel)]="tournament.initialPoolUpperSize"
-                        name="initialPoolUpperSize"
-                    >
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="initialPoolUpperSize">Initial Pool Max Reset Times</label>
-                    <input 
-                        type="number"
-                        id="initialPoolMaxResetTimes"
-                        class="form-control"
-                        [(ngModel)]="tournament.initialPoolMaxResetTimes"
-                        name="initialPoolMaxResetTimes"
-                    >
-                </div>
-                <div class="col-sm-3 form-group">
-                    <label for="defineTiers">Define Tiers</label>
-                    <input 
-                        type="checkbox"
-                        id="defineTiers"
-                        class="form-control"
-                        [(ngModel)]="tournament.defineTiers"
-                        name="defineTiers"
-                    >
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    Cards in Pool Of Tier:
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.cardsInPoolOfTier)">
-                    <div class="row">
-                        <label class="col-md-2 tier-label">
-                            {{tier}}:
-                        </label>
-                        <div class="col-md-8">
-                            <input
-                                type="number"
-                                id="cardsInPoolOfTier"
-                                class="form-control"
-                                [(ngModel)]="tournament.cardsInPoolOfTier[tier]"
-                                name="cardsInPoolOfTier"
-                                [disabled]="!tournament.defineTiers"
-                            >
-                        </div>
-                        <div class="col-md-2"></div>
+            <section>
+                <h2
+                    class="text-center"
+                    id="top-text"
+                >
+                    General
+                </h2>
+                <div class="row">
+                    <div class="col-sm-2 form-group">
+                        <label for="name">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            [(ngModel)]="tournament.name"
+                            name="name"
+                        >
+                    </div>
+                    <div class="col-sm-2 form-group">
+                        <label for="shortDescription">Short Description</label>
+                        <input
+                            type="text"
+                            id="shortDescription"
+                            class="form-control"
+                            [(ngModel)]="tournament.shortDescription"
+                            name="shortDescription"
+                        >
+                    </div>
+                    <div class="col-sm-2 form-group">
+                        <label for="description">Description</label>
+                        <textarea
+                            id="description"
+                            class="form-control"
+                            [(ngModel)]="tournament.description"
+                            name="description"
+                        >
+                        </textarea>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="row">
-                <div class="col-md-12">
-                    Max Card Copies Of Tier:
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.maxCardCopiesOfTier)">
-                    <div class="row">
-                        <label class="col-md-2 tier-label">
-                            {{tier}}:
-                        </label>
-                        <div class="col-md-8">
-                            <input
-                                type="number"
-                                id="maxCardCopiesOfTier"
-                                class="form-control"
-                                [(ngModel)]="tournament.maxCardCopiesOfTier[tier]"
-                                name="maxCardCopiesOfTier"
-                                [disabled]="!tournament.defineTiers"
-                            >
-                        </div>
-                        <div class="col-md-2"></div>
+
+            <section>
+                <h2 class="text-center">Draft Configurations</h2>
+                <div class="row">
+                    <div class="col-sm-2 form-group">
+                        <label for="draft">Draft</label>
+                        <input
+                            type="checkbox"
+                            id="draft"
+                            class="form-control"
+                            [(ngModel)]="tournament.draft"
+                            name="draft"
+                        >
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="draftPickCount">Draft Pick Count</label>
+                        <input
+                            type="number"
+                            id="draftPickCount"
+                            class="form-control"
+                            [(ngModel)]="tournament.draftPickCount"
+                            name="draftPickCount"
+                            [disabled]="!tournament.draft"
+                        >
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="draftPickDropped">Draft Pick Dropped</label>
+                        <input
+                            type="number"
+                            id="draftPickDropped"
+                            class="form-control"
+                            [(ngModel)]="tournament.draftPickDropped"
+                            name="draftPickDropped"
+                            [disabled]="!tournament.draft"
+                        >
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <h2 class="text-center">General Pool Configurations</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    {{tournament.allowedSets}}
-                </div>
-            </div>
 
-            <h2 class="text-center">Deck Building Configurations</h2>
-            <div class="row">
-                <div class="col-sm-2 form-group">
-                    <label for="onlyMonoDecks">Only Mono Decks</label>
-                    <input 
-                        type="checkbox"
-                        id="onlyMonoDecks"
-                        class="form-control"
-                        [(ngModel)]="tournament.onlyMonoDecks"
-                        name="onlyMonoDecks"
-                    >
+            <section>
+                <h2 class="text-center">Pool & Deck Management</h2>
+                <div class="row">
+                    <div class="col-sm-2 form-group">
+                        <label for="sharedPool">Shared Pool</label>
+                        <input
+                            type="checkbox"
+                            id="sharedPool"
+                            class="form-control"
+                            [(ngModel)]="tournament.sharedPool"
+                            name="sharedPool"
+                            [disabled]="tournament.draft"
+                        >
+                    </div>
+                    <div class="col-sm-2 form-group">
+                        <label for="fixedDecks">Fixed Decks</label>
+                        <input
+                            type="checkbox"
+                            id="fixedDecks"
+                            class="form-control"
+                            [(ngModel)]="tournament.fixedDecks"
+                            name="fixedDecks"
+                            [disabled]="tournament.draft"
+                        >
+                    </div>
                 </div>
-                <div class="col-sm-2 form-group">
-                    <label for="deckMaxSize">Deck Max Size</label>
-                    <input 
-                        type="number"
-                        id="deckMaxSize"
-                        class="form-control"
-                        [(ngModel)]="tournament.deckMaxSize"
-                        name="deckMaxSize"
-                    >
-                </div>
-            </div>
+            </section>
 
-            <div class="row">
-                <div class="col-sm-3 form-group">
-                    <label for="registerStartTime">Register Start Time</label>
-                    <input 
-                        type="datetime-local"
-                        id="registerStartTime"
-                        [(ngModel)]="tournament.registerStartTime"
-                        name="registerStartTime"
-                    >
+
+            <section>
+                <h2 class="text-center">Initial Pool Configurations</h2>
+                <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
+                        <input 
+                            type="number" 
+                            id="initialPoolLowerSize" 
+                            class="form-control" 
+                            [(ngModel)]="tournament.initialPoolLowerSize" 
+                            name="initialPoolLowerSize"
+                        >                        
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
+                        <input 
+                            type="number"
+                            id="initialPoolUpperSize"
+                            class="form-control"
+                            [(ngModel)]="tournament.initialPoolUpperSize"
+                            name="initialPoolUpperSize"
+                        >
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="initialPoolUpperSize">Initial Pool Max Reset Times</label>
+                        <input 
+                            type="number"
+                            id="initialPoolMaxResetTimes"
+                            class="form-control"
+                            [(ngModel)]="tournament.initialPoolMaxResetTimes"
+                            name="initialPoolMaxResetTimes"
+                        >
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="defineTiers">Define Tiers</label>
+                        <input 
+                            type="checkbox"
+                            id="defineTiers"
+                            class="form-control"
+                            [(ngModel)]="tournament.defineTiers"
+                            name="defineTiers"
+                        >
+                    </div>
                 </div>
-                <div class="col-sm-3 form-group">
-                    <label for="registerEndTime">Register End Time</label>
-                    <input 
-                        type="datetime-local"
-                        id="registerEndTime"
-                        [(ngModel)]="tournament.registerEndTime"
-                        name="registerEndTime"
-                    >
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="cardsInPoolOfTier">Cards in Pool Of Tier:</label>
+                    </div>
+
+                    <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.cardsInPoolOfTier)">
+                        <div class="row">
+                            <label class="col-md-2 tier-label">
+                                {{tier}}:
+                            </label>
+                            <div class="col-md-8">
+                                <input
+                                    type="number"
+                                    id="cardsInPoolOfTier"
+                                    class="form-control"
+                                    [(ngModel)]="tournament.cardsInPoolOfTier[tier]"
+                                    name="cardsInPoolOfTier"
+                                    [disabled]="!tournament.defineTiers"
+                                >
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-3 form-group">
-                    <label for="activeStartTime">Active Start Time</label>
-                    <input 
-                        type="datetime-local"
-                        id="activeStartTime"
-                        [(ngModel)]="tournament.activeStartTime"
-                        name="activeStartTime"
-                    >
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="cardsInPoolOfTier">Max Card Copies Of Tier:</label>
+                    </div>
+
+                    <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.maxCardCopiesOfTier)">
+                        <div class="row">
+                            <label class="col-md-2 tier-label">
+                                {{tier}}:
+                            </label>
+                            <div class="col-md-8">
+                                <input
+                                    type="number"
+                                    id="maxCardCopiesOfTier"
+                                    class="form-control"
+                                    [(ngModel)]="tournament.maxCardCopiesOfTier[tier]"
+                                    name="maxCardCopiesOfTier"
+                                    [disabled]="!tournament.defineTiers"
+                                >
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-3 form-group">
-                    <label for="activeEndTime">Active End Time</label>
-                    <input 
-                        type="datetime-local"
-                        id="activeEndTime"
-                        [(ngModel)]="tournament.activeEndTime"
-                        name="activeEndTime"
-                    >
+            </section>
+
+
+            <section>
+                <h2 class="text-center">General Pool Configurations</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{tournament.allowedSets}}
+                    </div>
                 </div>
-            </div>
+            </section>
+
+
+            <section>
+                <h2 class="text-center">Deck Building Configurations</h2>
+                <div class="row">
+                    <div class="col-sm-2 form-group">
+                        <label for="onlyMonoDecks">Only Mono Decks</label>
+                        <input 
+                            type="checkbox"
+                            id="onlyMonoDecks"
+                            class="form-control"
+                            [(ngModel)]="tournament.onlyMonoDecks"
+                            name="onlyMonoDecks"
+                        >
+                    </div>
+                    <div class="col-sm-2 form-group">
+                        <label for="deckMaxSize">Deck Max Size</label>
+                        <input 
+                            type="number"
+                            id="deckMaxSize"
+                            class="form-control"
+                            [(ngModel)]="tournament.deckMaxSize"
+                            name="deckMaxSize"
+                        >
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <label for="registerStartTime">Register Start Time</label>
+                        <input 
+                            type="datetime-local"
+                            id="registerStartTime"
+                            [(ngModel)]="tournament.registerStartTime"
+                            name="registerStartTime"
+                        >
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="registerEndTime">Register End Time</label>
+                        <input 
+                            type="datetime-local"
+                            id="registerEndTime"
+                            [(ngModel)]="tournament.registerEndTime"
+                            name="registerEndTime"
+                        >
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="activeStartTime">Active Start Time</label>
+                        <input 
+                            type="datetime-local"
+                            id="activeStartTime"
+                            [(ngModel)]="tournament.activeStartTime"
+                            name="activeStartTime"
+                        >
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="activeEndTime">Active End Time</label>
+                        <input 
+                            type="datetime-local"
+                            id="activeEndTime"
+                            [(ngModel)]="tournament.activeEndTime"
+                            name="activeEndTime"
+                        >
+                    </div>
+                </div>
+            </section>
+
             
             <div style="margin: 20px 0;"></div>
 
+            
             <div class="row" id="button-row">
                 <div class="col-xs-2"></div>
 
@@ -310,7 +330,7 @@
 
                 <div class="col-xs-1"></div>
                 <button
-                    routerLink="/tournaments"
+                    [routerLink]="['/tournaments', 'view']"
                     class="btn btn-danger col-xs-1"
                     type="button"
                 >
