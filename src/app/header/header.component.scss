@@ -1,18 +1,66 @@
 @import "../../styles.scss";
-// @import "../../fonts.scss";
 
-nav.navbar.navbar-default {
-    background-color: $indigo-dark;
+.container-fluid {
+    background-color: black;
 }
 
-// .navbar-default {
-//     background-color: $indigo-dark;
+.navbar-default {
+    background-color: $indigo-light;
+    border-color: $indigo-light;
+}
 
-//     & > {
-//         background-color: $indigo-dark;
-//     }
-// }
+.navbar-default:active {
+    font-family: $semi-bold;
+    color: $indigo-light;
+    border: 2px;
+    border-color: $indigo-light;
+}
 
-// a {
-//     font-family: $titles;
+.navbar-brand {
+    font-family: $semi-bold;
+    color: $indigo-light;
+}
+
+.navbar-brand:hover {
+    color: $indigo-light;
+    background-color: black;
+    text-shadow: 1px 1px 2px $gray-light;
+}
+
+.navbar-brand:focus {
+    font-family: $semi-bold;
+    color: $indigo-light;
+    background-color: black;
+}
+
+.app-brand-active {
+    font-family: $semi-bold;
+    color: $indigo-light;
+    border: 2px;
+    border-color: $indigo-light;
+}
+
+#app-navigations > li > a {
+    font-family: $semi-bold;
+    color: $orange-light;
+    text-shadow: 1px 1px 2px $gray-light;
+    transition: all 0.4s ease-in-out;
+}
+
+#app-navigations > li > a:hover {
+    color: $white;
+    background-color: $indigo-light;
+    text-shadow: 1px 1px 2px $gray-dark;
+    transition: all 0.2s ease-in-out;
+}
+
+.app-navigation-active {
+    border: 2px;
+    border-color: $indigo-light;
+}
+
+// #app-navigations > li > a:active {
+//     border: 1px;
+//     border-color: $indigo-light;
+//     background-color: black;
 // }
