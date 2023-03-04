@@ -1,4 +1,5 @@
-@import '../../../styles.scss';
+@import '../../../styles/main-theme.scss';
+@import '../../../styles/fonts.scss';
 
 // Toggle style
 .toggle {
@@ -41,7 +42,7 @@
     width: 100%;
 
     color: $white;
-    background-color: $indigo-light;
+    background-color: $primary-light;
     text-shadow: 1px 1px 2px $gray-dark;
     transition: all 0.4s ease-in-out;
 }
@@ -60,7 +61,7 @@
     opacity: 0;
 
     color: $gray-default;
-    background-color: $orange-light;
+    background-color: $secondary-light;
     text-shadow: 1px 1px 2px $gray-light;
     transition: all 0.4s ease-in-out;
 }

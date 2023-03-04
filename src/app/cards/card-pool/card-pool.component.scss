@@ -1,18 +1,21 @@
-@import "../../../styles";
-@import "../../../fonts.scss";
+@import "../../../styles/main-theme.scss";
+@import '../../../styles/fonts.scss';
 
-// .container {
-//     background-color: $indigo-light;
-// }
-
-#pool-title {
-    background-color: $indigo-light;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    margin-left: 8px;
+#pool-container {
+    margin-top: 40px;
 }
 
-#gallery-title {
+#pool-title-container {
+    margin-left: 8px;
+    max-width: min(300px, calc(100% * 3 / 5));
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    background-color: $primary-light;
+}
+
+#pool-title {
     font-size: xx-large;
     font-family: $regular;
 }
@@ -23,7 +26,7 @@
 }
 
 .pool-ribbon {
-    background-color: $indigo-default;
+    background-color: $primary-default;
     border-radius: 10px;
 
     text-align: center;
@@ -42,11 +45,11 @@
     font-family: $bold;
 }
 
-.pool-container {
+#card-pile-container {
     padding-top: 10px;
-    background-color: $indigo-light;
+    background-color: $primary-light;
 
     & > * {
-        background-color: $indigo-light;
+        background-color: $primary-light;
     }
 }

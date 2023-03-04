@@ -1,15 +1,25 @@
-@import "../../styles.scss";
+@import "../../styles/main-theme.scss";
+@import "../../styles/fonts.scss";
 
-#gallery-header {
+#gallery-title-container {
+    display: flex;
+    justify-content: center;
+}
+
+#gallery-title {
     margin-top: 8px;
-    margin-left: 1%;
+
     height: 60px;
+    max-width: 200px;
+
+    text-align: center;
     font-size: 320%;
     font-family: $regular;
-    text-align: center;
+
     border-radius: 8%;
-    background-color: $indigo-light;
+    background-color: $primary-light;
+    
     line-height: 60px;
-    display: table-cell;
-    vertical-align: middle;
+    // display: table-cell;
+    // vertical-align: middle;
 }

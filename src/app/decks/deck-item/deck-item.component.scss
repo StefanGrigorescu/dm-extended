@@ -1,5 +1,3 @@
-@import '../../../fonts.scss';
-
 .app-list-item {
     border-radius: 14px;
     background-size: cover; /* or "contain" */
@@ -11,9 +9,9 @@
     max-height: 110px
 }
 
-.deck-item-info-container {
-    // background-color: $indigo-light;
-}
+// .deck-item-info-container {
+//     background-color: $primary-light;
+// }
 
 .fire {
     background-color: red;

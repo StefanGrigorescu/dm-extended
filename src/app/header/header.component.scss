@@ -1,66 +1,63 @@
-@import "../../styles.scss";
+@import "../../styles/main-theme.scss";
+@import "../../styles/fonts.scss";
 
 .container-fluid {
-    background-color: black;
+    background-color: $black;
 }
 
 .navbar-default {
-    background-color: $indigo-light;
-    border-color: $indigo-light;
-}
-
-.navbar-default:active {
+    background-color: $primary-light;
+    border: 2px solid $primary-light;
     font-family: $semi-bold;
-    color: $indigo-light;
-    border: 2px;
-    border-color: $indigo-light;
 }
 
 .navbar-brand {
     font-family: $semi-bold;
-    color: $indigo-light;
+    color: $primary-light;
+
+    &:hover {
+        color: $primary-light;
+        text-shadow: 1px 1px 2px $gray-light;
+    }
+
+    &:focus {
+        font-family: $semi-bold;
+        color: $primary-light;
+    }
 }
 
-.navbar-brand:hover {
-    color: $indigo-light;
-    background-color: black;
-    text-shadow: 1px 1px 2px $gray-light;
+$transition-duration: 0.4s;
+#app-navigations > li {
+    transition: all $transition-duration ease-in-out;
+
+    &:hover {
+        background-color: $primary-light;
+        transition-duration: $transition-duration;
+    }
+
+    > a {
+        font-family: $semi-bold;
+
+        color: $secondary-light;
+        text-shadow: 1px 1px 2px $gray-light;
+    
+        border-radius: 7px;
+    }
+
+    &:hover > a {
+        background-color: inherit;
+        color: $white;
+        text-shadow: 1px 1px 2px $gray-dark;
+        transition-duration: $transition-duration;
+    }
 }
 
-.navbar-brand:focus {
-    font-family: $semi-bold;
-    color: $indigo-light;
-    background-color: black;
-}
+li.app-navigation-active {
+    background-color: $primary-light;
 
-.app-brand-active {
-    font-family: $semi-bold;
-    color: $indigo-light;
-    border: 2px;
-    border-color: $indigo-light;
+    & > a {
+        background-color: $black;
+        border-left: solid 1px $primary-light;
+        border-right: solid 1px $primary-light;
+    }
 }
-
-#app-navigations > li > a {
-    font-family: $semi-bold;
-    color: $orange-light;
-    text-shadow: 1px 1px 2px $gray-light;
-    transition: all 0.4s ease-in-out;
-}
-
-#app-navigations > li > a:hover {
-    color: $white;
-    background-color: $indigo-light;
-    text-shadow: 1px 1px 2px $gray-dark;
-    transition: all 0.2s ease-in-out;
-}
-
-.app-navigation-active {
-    border: 2px;
-    border-color: $indigo-light;
-}
-
-// #app-navigations > li > a:active {
-//     border: 1px;
-//     border-color: $indigo-light;
-//     background-color: black;
-// }

@@ -14,17 +14,7 @@ export class TournamentFormComponent {
   Object = Object;
   tournamentForm: FormGroup;
   
-  tournament: Tournament = new Tournament
-    (
-      "",
-      "Short description",
-      "Description",
-      (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
-      (function(d){ d.setDate(d.getDate()+12); return d})(new Date),       
-      (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
-      (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
-      TournamentState.Defined
-    );
+  tournament: Tournament = this.newTournament();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -73,6 +63,20 @@ export class TournamentFormComponent {
   }
 
   onClearForm() {
-    
+    this.tournament = this.newTournament();
+  }
+
+  private newTournament(): Tournament {
+    return new Tournament
+    (
+      "",
+      "",
+      "",
+      (function(d){ d.setDate(d.getDate()); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()); return d})(new Date),       
+      (function(d){ d.setDate(d.getDate()); return d})(new Date),
+      (function(d){ d.setDate(d.getDate()); return d})(new Date),
+      TournamentState.Defined
+    )
   }
 }

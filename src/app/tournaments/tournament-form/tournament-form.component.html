@@ -4,16 +4,22 @@
 >
     <div class="col-xs-12">
         <form>
+            <h1
+                class="text-center"
+                id="tournament-form-title"
+            >
+                Host your tournament!
+            </h1>
+
             <section>
-                <h2
-                    class="text-center"
-                    id="top-text"
-                >
+                <h2 class="text-center">
                     General
                 </h2>
                 <div class="row">
-                    <div class="col-sm-2 form-group">
-                        <label for="name">Name</label>
+                    <div class="col-xs-12 col-sm-4 form-group text-center">
+                        <label for="name">
+                            Name
+                        </label>
                         <input
                             type="text"
                             id="name"
@@ -22,8 +28,10 @@
                             name="name"
                         >
                     </div>
-                    <div class="col-sm-2 form-group">
-                        <label for="shortDescription">Short Description</label>
+                    <div class="col-xs-12 col-sm-4 form-group text-center">
+                        <label for="shortDescription">
+                            Short Description
+                        </label>
                         <input
                             type="text"
                             id="shortDescription"
@@ -32,8 +40,10 @@
                             name="shortDescription"
                         >
                     </div>
-                    <div class="col-sm-2 form-group">
-                        <label for="description">Description</label>
+                    <div class="col-xs-12 col-sm-4 form-group text-center">
+                        <label for="description">
+                            Description
+                        </label>
                         <textarea
                             id="description"
                             class="form-control"
@@ -47,10 +57,14 @@
 
 
             <section>
-                <h2 class="text-center">Draft Configurations</h2>
+                <h2 class="text-center">
+                    Draft Configurations
+                </h2>
                 <div class="row">
-                    <div class="col-sm-2 form-group">
-                        <label for="draft">Draft</label>
+                    <div class="col-xs-2 form-group text-center">
+                        <label for="draft">
+                            Draft
+                        </label>
                         <input
                             type="checkbox"
                             id="draft"
@@ -59,8 +73,10 @@
                             name="draft"
                         >
                     </div>
-                    <div class="col-sm-4 form-group">
-                        <label for="draftPickCount">Draft Pick Count</label>
+                    <div class="col-xs-5 form-group text-center">
+                        <label for="draftPickCount">
+                            Draft Pick Count
+                        </label>
                         <input
                             type="number"
                             id="draftPickCount"
@@ -70,8 +86,10 @@
                             [disabled]="!tournament.draft"
                         >
                     </div>
-                    <div class="col-sm-4 form-group">
-                        <label for="draftPickDropped">Draft Pick Dropped</label>
+                    <div class="col-xs-5 form-group text-center">
+                        <label for="draftPickDropped">
+                            Draft Pick Dropped
+                        </label>
                         <input
                             type="number"
                             id="draftPickDropped"
@@ -85,11 +103,15 @@
             </section>
 
 
-            <section>
-                <h2 class="text-center">Pool & Deck Management</h2>
+            <section id="pool-deck-management">
+                <h2 class="text-center">
+                    Pool & Deck Management
+                </h2>
                 <div class="row">
-                    <div class="col-sm-2 form-group">
-                        <label for="sharedPool">Shared Pool</label>
+                    <div class="col-xs-6 form-group text-center">
+                        <label for="sharedPool">
+                            Shared Pool
+                        </label>
                         <input
                             type="checkbox"
                             id="sharedPool"
@@ -99,8 +121,10 @@
                             [disabled]="tournament.draft"
                         >
                     </div>
-                    <div class="col-sm-2 form-group">
-                        <label for="fixedDecks">Fixed Decks</label>
+                    <div class="col-xs-6 form-group text-center">
+                        <label for="fixedDecks">
+                            Fixed Decks
+                        </label>
                         <input
                             type="checkbox"
                             id="fixedDecks"
@@ -115,10 +139,14 @@
 
 
             <section>
-                <h2 class="text-center">Initial Pool Configurations</h2>
+                <h2 class="text-center">
+                    Initial Pool Configurations
+                </h2>
                 <div class="row">
-                    <div class="col-sm-3 form-group">
-                        <label for="initialPoolLowerSize">Initial Pool Lower Size</label>
+                    <div class="col-xs-12 col-sm-3 form-group text-center">
+                        <label for="initialPoolLowerSize">
+                            Initial Pool Lower Size
+                        </label>
                         <input 
                             type="number" 
                             id="initialPoolLowerSize" 
@@ -127,8 +155,10 @@
                             name="initialPoolLowerSize"
                         >                        
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="initialPoolUpperSize">Initial Pool Upper Size</label>
+                    <div class="col-xs-12 col-sm-3 form-group text-center">
+                        <label for="initialPoolUpperSize">
+                            Initial Pool Upper Size
+                        </label>
                         <input 
                             type="number"
                             id="initialPoolUpperSize"
@@ -137,8 +167,10 @@
                             name="initialPoolUpperSize"
                         >
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="initialPoolUpperSize">Initial Pool Max Reset Times</label>
+                    <div class="col-xs-12 col-sm-3 form-group text-center">
+                        <label for="initialPoolUpperSize">
+                            Initial Pool Max Reset Times
+                        </label>
                         <input 
                             type="number"
                             id="initialPoolMaxResetTimes"
@@ -147,8 +179,10 @@
                             name="initialPoolMaxResetTimes"
                         >
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="defineTiers">Define Tiers</label>
+                    <div class="col-xs-12 col-sm-3 form-group text-center">
+                        <label for="defineTiers">
+                            Define Tiers
+                        </label>
                         <input 
                             type="checkbox"
                             id="defineTiers"
@@ -160,16 +194,18 @@
                 </div>
     
                 <div class="row">
-                    <div class="col-md-12">
-                        <label for="cardsInPoolOfTier">Cards in Pool Of Tier:</label>
+                    <div class="col-xs-12 text-center">
+                        <label for="cardsInPoolOfTier">
+                            Cards in Pool Of Tier:
+                        </label>
                     </div>
 
-                    <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.cardsInPoolOfTier)">
-                        <div class="row">
-                            <label class="col-md-2 tier-label">
+                    <div class="col-xs-2" *ngFor="let tier of Object.keys(tournament.cardsInPoolOfTier)">
+                        <div class="row tier-container">
+                            <label class="col-xs-2 tier-label">
                                 {{tier}}:
                             </label>
-                            <div class="col-md-8">
+                            <div class="col-xs-10">
                                 <input
                                     type="number"
                                     id="cardsInPoolOfTier"
@@ -179,22 +215,23 @@
                                     [disabled]="!tournament.defineTiers"
                                 >
                             </div>
-                            <div class="col-md-2"></div>
                         </div>
                     </div>
                 </div>
     
                 <div class="row">
-                    <div class="col-md-12">
-                        <label for="cardsInPoolOfTier">Max Card Copies Of Tier:</label>
+                    <div class="col-xs-12 text-center">
+                        <label for="cardsInPoolOfTier">
+                            Max Card Copies Of Tier:
+                        </label>
                     </div>
 
-                    <div class="col-md-2" *ngFor="let tier of Object.keys(tournament.maxCardCopiesOfTier)">
-                        <div class="row">
-                            <label class="col-md-2 tier-label">
+                    <div class="col-xs-2" *ngFor="let tier of Object.keys(tournament.maxCardCopiesOfTier)">
+                        <div class="row tier-container">
+                            <label class="col-xs-2 tier-label">
                                 {{tier}}:
                             </label>
-                            <div class="col-md-8">
+                            <div class="col-xs-10">
                                 <input
                                     type="number"
                                     id="maxCardCopiesOfTier"
@@ -204,7 +241,6 @@
                                     [disabled]="!tournament.defineTiers"
                                 >
                             </div>
-                            <div class="col-md-2"></div>
                         </div>
                     </div>
                 </div>
@@ -212,9 +248,11 @@
 
 
             <section>
-                <h2 class="text-center">General Pool Configurations</h2>
+                <h2 class="text-center">
+                    General Pool Configurations
+                </h2>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-xs-12 text-center">
                         {{tournament.allowedSets}}
                     </div>
                 </div>
@@ -222,10 +260,14 @@
 
 
             <section>
-                <h2 class="text-center">Deck Building Configurations</h2>
+                <h2 class="text-center">
+                    Deck Building Configurations
+                </h2>
                 <div class="row">
-                    <div class="col-sm-2 form-group">
-                        <label for="onlyMonoDecks">Only Mono Decks</label>
+                    <div class="col-xs-6 form-group text-center">
+                        <label for="onlyMonoDecks">
+                            Only Mono Decks
+                        </label>
                         <input 
                             type="checkbox"
                             id="onlyMonoDecks"
@@ -234,8 +276,10 @@
                             name="onlyMonoDecks"
                         >
                     </div>
-                    <div class="col-sm-2 form-group">
-                        <label for="deckMaxSize">Deck Max Size</label>
+                    <div class="col-xs-6 form-group text-center">
+                        <label for="deckMaxSize">
+                            Deck Max Size
+                        </label>
                         <input 
                             type="number"
                             id="deckMaxSize"
@@ -250,38 +294,50 @@
 
             <section>
                 <div class="row">
-                    <div class="col-sm-3 form-group">
-                        <label for="registerStartTime">Register Start Time</label>
+                    <div class="col-xs-6 col-sm-3 form-group text-center">
+                        <label for="registerStartTime">
+                            Register Start Time
+                        </label>
                         <input 
                             type="datetime-local"
                             id="registerStartTime"
+                            class="form-control"
                             [(ngModel)]="tournament.registerStartTime"
                             name="registerStartTime"
                         >
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="registerEndTime">Register End Time</label>
+                    <div class="col-xs-6 col-sm-3 form-group text-center">
+                        <label for="registerEndTime">
+                            Register End Time
+                        </label>
                         <input 
                             type="datetime-local"
                             id="registerEndTime"
+                            class="form-control"
                             [(ngModel)]="tournament.registerEndTime"
                             name="registerEndTime"
                         >
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="activeStartTime">Active Start Time</label>
+                    <div class="col-xs-6 col-sm-3 form-group text-center">
+                        <label for="activeStartTime">
+                            Active Start Time
+                        </label>
                         <input 
                             type="datetime-local"
                             id="activeStartTime"
+                            class="form-control"
                             [(ngModel)]="tournament.activeStartTime"
                             name="activeStartTime"
                         >
                     </div>
-                    <div class="col-sm-3 form-group">
-                        <label for="activeEndTime">Active End Time</label>
+                    <div class="col-xs-6 col-sm-3 form-group text-center">
+                        <label for="activeEndTime">
+                            Active End Time
+                        </label>
                         <input 
                             type="datetime-local"
                             id="activeEndTime"
+                            class="form-control"
                             [(ngModel)]="tournament.activeEndTime"
                             name="activeEndTime"
                         >
@@ -290,56 +346,61 @@
             </section>
 
             
-            <div style="margin: 20px 0;"></div>
-
-            
             <div class="row" id="button-row">
-                <div class="col-xs-2"></div>
 
-                <div class="btn-group col-xs-1">
-                    <button
-                        type="button"
-                        class="btn btn-primary dropdown-toggle"
-                    >
-                        Load Preset<span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <!-- <li><a href="#">New Tournament</a></li>
-                        <li><a href="#">Edit Tournament</a></li>
-                        <li><a href="#">Cancel Tournament</a></li> -->
-                    </ul>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="btn-group app-button-container">
+                        <button
+                            class="btn btn-primary dropdown-toggle"
+                            type="button"
+                        >
+                            Load Preset<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a href="#">New Tournament</a></li>
+                            <li><a href="#">Edit Tournament</a></li>
+                            <li><a href="#">Cancel Tournament</a></li> -->
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-xs-1"></div>
-                <button
-                    class="btn btn-success col-xs-1"
-                    type="submit"
-                    (click)="onSubmit()"
-                >
-                    Submit
-                </button>
+                <div class="col-xs-6 col-sm-9">
+                    <div class="row">
 
-                <div class="col-xs-1"></div>
-                <button
-                    class="btn btn-primary col-xs-1"
-                    type="button"
-                    (click)="onClearForm()"
-                >
-                    Clear
-                </button>
+                        <div class="col-xs-12 col-sm-4 app-button-container">
+                            <button
+                                class="btn btn-success"
+                                type="submit"
+                                (click)="onSubmit()"
+                            >
+                                Submit
+                            </button>
+                        </div>
+        
+                        <div class="col-xs-12 col-sm-4 app-button-container">
+                            <button
+                                class="btn btn-primary"
+                                type="button"
+                                (click)="onClearForm()"
+                            >
+                                Clear
+                            </button>
+                        </div>
+        
+                        <div class="col-xs-12 col-sm-4 app-button-container">
+                            <button
+                                class="btn btn-danger"
+                                type="button"
+                                [routerLink]="['/tournaments', 'view']"
+                            >
+                                Cancel
+                            </button>
+                        </div>
 
-                <div class="col-xs-1"></div>
-                <button
-                    [routerLink]="['/tournaments', 'view']"
-                    class="btn btn-danger col-xs-1"
-                    type="button"
-                >
-                    Cancel
-                </button>
-                
+                    </div>
+                </div>
+
             </div>
-
-            <div style="margin: 100px 0;"></div>
         </form>
     </div>
 </div>
