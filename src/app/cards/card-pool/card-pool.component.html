@@ -18,7 +18,7 @@
         *ngIf="cards"
     >
         <div class="row pool-ribbon">
-            <div class="col-md-3">
+            <div class="col-sm-12 col-md-6 col-lg-3" id="name-container">
                 <div class="row">
                     <label for="card-name-input">Card name</label>
                     <button
@@ -37,7 +37,7 @@
                 >
             </div>
 
-            <div class="col-md-2">
+            <div class="col-sm-6 col-md-6 col-lg-2" id="mana-container">
                 <div class="row">
                     <label for="mana-input">Mana</label>
                     <button
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-sm-6 col-md-4 col-lg-2" id="civilization-container">
                 <div class="row">
                     <label for="civilization-select">Civilization</label>
                     <button
@@ -72,7 +72,7 @@
                 </select>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-4 col-lg-3" id="race-container">
                 <div class="row">
                     <label for="race-select">Race</label>
                     <button
@@ -94,7 +94,7 @@
                 </select>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-sm-6 col-md-4 col-lg-2" id="set-container">
                 <div class="row">
                     <label for="set-select">Set</label>
                     <button
@@ -120,7 +120,7 @@
 
         <div class="row" id="card-pile-container">
             <app-card-pile
-                class="gallery_product col-lg-3 col-md-4 col-sm-4 col-xs-6 filter hdpe"
+                class="gallery_product col-xs-6 col-sm-4 col-md-4 col-lg-3 filter hdpe"
                 *ngFor="let cardElement of cards.filteredAndSorted()"
                 [card]="cardElement"
             />

@@ -45,6 +45,27 @@
     font-family: $bold;
 }
 
+#name-container {
+    margin-bottom: 14px;
+}
+
+#mana-container {
+    margin-bottom: 60px;
+}
+
+$margin-bottom: 19px;
+#civilization-container {
+    margin-bottom: $margin-bottom;
+}
+
+#race-container {
+    margin-bottom: $margin-bottom;
+}
+
+#set-container {
+    margin-bottom: $margin-bottom;
+}
+
 #card-pile-container {
     padding-top: 10px;
     background-color: $primary-light;

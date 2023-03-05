@@ -1,12 +1,18 @@
 @import "../../../styles/main-theme.scss";
 @import "../../../styles/fonts.scss";
 
-#tournament-info-container {
+#tournament-details-container {
     margin-top: 52px;
     margin-bottom: 6px;
-    width: 55%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#tournament-info-container {
+    width: 100%;
     background-color: $primary-light;
     border-radius: 10%;
+    margin-right: 12px;
 
     & > * {
         padding-left: 35px;
@@ -17,18 +23,54 @@
     padding-top: 10px;
 }
 
-#tournament-status {
-    padding-bottom: 10px;
-}
-
-div#tournament-info-container > div.col-md-12 {
+#tournament-info-container > div.col-xs-12 {
     & > h1 {
         font-family: $semi-bold;
-        font-size: x-large;
+        font-size: xx-large;
+        margin-bottom: 15px;
     }
 
     & > p {
+        margin-top: 10px;
         font-family: $regular;
-        font-size: medium;
+        font-size: x-large;
     }
+}
+
+#tournament-manage-container {
+    margin-top: 10px;
+    margin-bottom: 120px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#tournament-rules-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#tournament-info-and-manage-container {
+    margin-bottom: 50px;
+}
+
+#mat-expansion-pannel-id {
+    // background-color: $primary-light;
+    border: solid 3px $primary-light;
+}
+
+// #mat-expansion-panel-header-id {
+//     padding-left: 0%;
+//     padding-right: 0%;
+// }
+
+#mat-panel-title-id {
+    font-family: $semi-bold;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#mat-grid-list-id {
+    font-family: $regular;
+    font-size: x-large;
 }

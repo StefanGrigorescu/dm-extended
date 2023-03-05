@@ -1,79 +1,32 @@
-<div class="row" id="tournament-info-container">
-    <div class="col-md-12" id="tournament-name">
-      <h1>Name: {{tournament.name}}</h1>
-    </div>
-    <div class="col-md-12">
-      <p>Hosted by {{tournament.hostName}}</p>
-    </div>
-    <div class="col-md-12">
-      <p>Short Description: {{ tournament.shortDescription }}</p>
-    </div>
-    <div class="col-md-12">
-      <p>Description: {{ tournament.description }}</p>
-    </div>
-    
-    <div class="col-md-12">
-      <p>Registration open &nbsp; from &nbsp; {{ tournament.registerStartTime | date }} &nbsp; to &nbsp; {{ tournament.registerEndTime | date }}</p>
-    </div>
-    <div class="col-md-12">
-      <p>Tournament active from &nbsp; {{ tournament.activeStartTime | date }} &nbsp; to &nbsp; {{ tournament.activeEndTime | date }}</p>
-    </div>
-    <div class="col-md-12" id="tournament-status">
-      <p>Tournament status: {{ tournament.status | enumValueToName: TournamentState }}</p>
-    </div>
-</div>
-<br>
+<div class="row" id="tournament-details-container">
+  <div class="col-sm-12 col-md-6" id="tournament-info-and-manage-container">
 
-<mat-accordion>
-    <mat-expansion-panel [expanded]="false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Rules
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-  
-      <mat-grid-list cols="2" rowHeight="100px">
-        <mat-grid-tile>
-          <p>Draft: {{ tournament.draft }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Draft Pick Count: {{ tournament.draftPickCount }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Draft Pick Dropped: {{ tournament.draftPickDropped }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Shared Pool: {{ tournament.sharedPool }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Fixed Decks: {{ tournament.fixedDecks }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Initial Pool Lower Size: {{ tournament.initialPoolLowerSize }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Initial Pool Upper Size: {{ tournament.initialPoolUpperSize }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Initial Pool Max Reset Times: {{ tournament.initialPoolMaxResetTimes }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Define Tiers: {{ tournament.defineTiers }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Cards In Pool Of Tier: {{ tournament.cardsInPoolOfTier | json }}</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <p>Max Card Copies Of Tier: {{ tournament.maxCardCopiesOfTier | json }}</p>
-        </mat-grid-tile>
-      </mat-grid-list>
-  
-    </mat-expansion-panel>
-  </mat-accordion>
+    <div class="row" id="tournament-info-container">
+      <div class="col-xs-12" id="tournament-name">
+        <h1>Name: {{tournament.name}}</h1>
+      </div>
+      <div class="col-xs-12">
+        <p>Hosted by {{tournament.hostName}}</p>
+      </div>
+      <div class="col-xs-12">
+        <p>Short Description: {{ tournament.shortDescription }}</p>
+      </div>
+      <div class="col-xs-12">
+        <p>Description: {{ tournament.description }}</p>
+      </div>
+      
+      <div class="col-xs-12">
+        <p>Registration open &nbsp; from &nbsp; {{ tournament.registerStartTime | date }} &nbsp; to &nbsp; {{ tournament.registerEndTime | date }}</p>
+      </div>
+      <div class="col-xs-12">
+        <p>Tournament active from &nbsp; {{ tournament.activeStartTime | date }} &nbsp; to &nbsp; {{ tournament.activeEndTime | date }}</p>
+      </div>
+      <div class="col-xs-12">
+        <p>Tournament status: {{ tournament.status | enumValueToName: TournamentState }}</p>
+      </div>
 
 
-<div class="row">
-    <div class="col-xs-12">
+      <div class="col-xs-12" id="tournament-manage-container">
         <div
           class="btn-group" 
           appDropdown
@@ -90,8 +43,63 @@
                 <li><a href="#">Cancel Tournament</a></li>
             </ul>
         </div>
+      </div>
     </div>
+
+  </div>
+
+
+  <div class="col-sm-12 col-md-6" id="tournament-rules-container">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="false" id="mat-expansion-pannel-id">
+        <mat-expansion-panel-header id="mat-expansion-panel-header-id">
+          <mat-panel-title class="text-center" id="mat-panel-title-id">
+            Rules
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        <mat-grid-list cols="2" rowHeight="150px" id="mat-grid-list-id">
+          <mat-grid-tile>
+            <p>Draft: {{ tournament.draft }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Draft Pick Count: {{ tournament.draftPickCount }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Draft Pick Dropped: {{ tournament.draftPickDropped }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Shared Pool: {{ tournament.sharedPool }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Fixed Decks: {{ tournament.fixedDecks }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Initial Pool Lower Size: {{ tournament.initialPoolLowerSize }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Initial Pool Upper Size: {{ tournament.initialPoolUpperSize }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Initial Pool Max Reset Times: {{ tournament.initialPoolMaxResetTimes }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Define Tiers: {{ tournament.defineTiers }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Cards In Pool Of Tier: {{ tournament.cardsInPoolOfTier | json }}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <p>Max Card Copies Of Tier: {{ tournament.maxCardCopiesOfTier | json }}</p>
+          </mat-grid-tile>
+        </mat-grid-list>
+    
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>
+
+
 <div class="row">
     <div class="col-xs-12">
         Current Card Pool

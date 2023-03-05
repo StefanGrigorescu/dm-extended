@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-lg-4">
         <app-tournament-list/>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-lg-8">
         <app-tournament-detail
             [tournament]="selectedTournament"
             *ngIf="selectedTournament; else infoText">

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xs-7">
+    <div class="col-xs-6">
         <button
             [routerLink]="['/tournaments','create']"
             class="button btn-success"
@@ -8,20 +8,21 @@
             Host Tournament
         </button>
     </div>
-
-    <label class="toggle pull-right">
-        <input 
-            type="checkbox"
-            (change)="onToggleChange()"   
-        >
-        <span 
-            class="labels"
-            data-on="Current"
-            data-off="Archived"
-            (onclick)="toggleCurrentTournaments=!toggleCurrentTournaments"  
-        >
-        </span>
-    </label>
+    <div class="col-xs-6">
+        <label class="toggle pull-right">
+            <input 
+                type="checkbox"
+                (change)="onToggleChange()"   
+            >
+            <span 
+                class="labels"
+                data-on="Current"
+                data-off="Archived"
+                (onclick)="toggleCurrentTournaments=!toggleCurrentTournaments"  
+            >
+            </span>
+        </label>
+    </div>
 </div>
 <br>
 <div class="row">
@@ -32,3 +33,4 @@
         />
     </div>
 </div>
+<hr>
