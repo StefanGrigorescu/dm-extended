@@ -1,6 +1,8 @@
 @import "../../../styles/main-theme.scss";
 @import "../../../styles/fonts.scss";
 
+$info-margin-top: 10px;
+
 #tournament-details-container {
     margin-top: 52px;
     margin-bottom: 6px;
@@ -20,7 +22,7 @@
 }
 
 #tournament-name {
-    padding-top: 10px;
+    margin-top: $info-margin-top;
 }
 
 #tournament-info-container > div.col-xs-12 {
@@ -31,14 +33,14 @@
     }
 
     & > p {
-        margin-top: 10px;
+        margin-top: $info-margin-top;
         font-family: $regular;
         font-size: x-large;
     }
 }
 
 #tournament-manage-container {
-    margin-top: 10px;
+    margin-top: $info-margin-top;
     margin-bottom: 120px;
 
     display: flex;
