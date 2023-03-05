@@ -9,7 +9,7 @@ import { TournamentsService } from '../tournaments.service';
   styleUrls: ['./tournament-list.component.scss']
 })
 export class TournamentListComponent  implements OnInit{
-  private tournaments: Tournament[];
+  tournaments: Tournament[];
 
   toggleCurrentTournaments : boolean = true;
 
@@ -17,26 +17,15 @@ export class TournamentListComponent  implements OnInit{
 
   ngOnInit() {
     this.tournaments = this.tournamentsService
-      .getTournaments();
+      .getTournaments(this.toggleCurrentTournaments);
   }
 
   onToggleChange(): void {
     this.toggleCurrentTournaments = !this.toggleCurrentTournaments;
     this.tournamentsService.tournamentSelected.emit(null);
-  }
 
-  // Probably this will be replaced with a pipe
-  getTournaments(): Tournament[] {
-    if(this.toggleCurrentTournaments)
-    {
-      return this
-        .tournaments
-        .filter(t => t.status != TournamentState.Archived);
-    }
-    
-    return this
-      .tournaments
-      .filter(t => t.status === TournamentState.Archived);
+    this.tournaments = this.tournamentsService
+      .getTournaments(this.toggleCurrentTournaments);
   }
 }
 

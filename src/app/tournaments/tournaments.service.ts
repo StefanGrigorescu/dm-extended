@@ -8,8 +8,15 @@ export class TournamentsService {
 
     private tournaments: object = this.createNewTournamentsObject();
 
-    getTournaments(): Tournament[] {
-        return Object.values(this.tournaments);
+    getTournaments(isActive: boolean): Tournament[] {
+        var tournaments: Tournament[] = Object.values(this.tournaments);
+
+        if(isActive)
+        {
+          return tournaments.filter(t => t.status != TournamentState.Archived);
+        }
+        
+        return tournaments.filter(t => t.status === TournamentState.Archived);
     }
 
     createTournament(tournament: Tournament) {
