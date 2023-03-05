@@ -1,3 +1,4 @@
+@import "../../../../styles/main-theme.scss";
 @import "../../../../styles/fonts.scss";
 
 .app-list-item-heading {
@@ -8,4 +9,9 @@
 .app-list-item-text {
     font-size: medium;
     font-family: $regular;
+}
+
+a {
+    border-left: solid 3px $primary-light;
+    border-right: solid 3px $primary-light;
 }
