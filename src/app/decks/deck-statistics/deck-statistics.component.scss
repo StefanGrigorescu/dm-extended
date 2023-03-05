@@ -1,6 +1,40 @@
 @import "../../../styles/main-theme.scss";
 
-.cover-card-container {
+#statistics-container {
+    margin-top: 45px;
+    background-color: $primary-light;
+    border-radius: 6%;
+}
+
+.container-top {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#cover-card-container {
+    border-right: solid 3px $primary-default;
+
+    display: flex;
+    justify-content: center;
+}
+
+#deck-info-container {
+    padding-left: 10px;
+
+    & > h4 {
+        font-size: xx-large;
+
+    }
+
+    & > p {
+        font-size: large;
+    }
+}
+
+#deck-manage-container {
+    margin-top: 20px;
+    margin-bottom: 120px;
+
     display: flex;
     justify-content: center;
 }

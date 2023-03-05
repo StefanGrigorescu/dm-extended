@@ -1,8 +1,9 @@
-import { EventEmitter } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { Cards } from "../cards/cards-model";
 import { Deck } from "./deck.model";
 
+@Injectable()
 export class DecksService {
     deckSelected = new EventEmitter<Deck>();
 
@@ -12,21 +13,27 @@ export class DecksService {
           0,
           "[FN] FN Rush",
           "https://shobu.io/assets/cards/all/48ab3f2b-4ae3-41a4-ae6f-61b49c958bdb.jpg",
-          "Nature"
+          "Nature",
+          3,
+          "Some mock tournament"
         ),
         2: new Deck
         (
           1,
           "[F] Fire Aggro",
           "https://shobu.io/assets/cards/all/eac1bc57-bdf8-4629-86b3-9609d1bf2aba.jpg",
-          "Fire"
+          "Fire",
+          13,
+          "Not really an existing tournament"
         ),
         3: new Deck
         (
           1,
           "[DW] Discard Party",
           "https://shobu.io/assets/cards/all/ae797f95-54b1-48e9-9216-f315b39826bd.jpg",
-          "Darkness"
+          "Darkness",
+          91,
+          "Random tournament name here"
         ),
     };
 

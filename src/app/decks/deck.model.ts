@@ -11,6 +11,7 @@ export class Deck {
     // If it is a tournament deck
     public tournamentId: number;
     public tournamentPlayerId: number;
+    public tournamentName: string;
 
     constructor(
         deckId,
@@ -19,13 +20,16 @@ export class Deck {
         coverCardCivilization,
         // isFavorite,
         // userId,
-        // tournamentId,
-        // tournamentPlayerId
+        tournamentId,
+        // tournamentPlayerId,
+        tournamentName
     )
     {
         this.deckId = deckId;
         this.name = name;
         this.coverCardImgUrl = coverCardImgUrl;
         this.coverCardCivilization = coverCardCivilization;
+        this.tournamentId = tournamentId;
+        this.tournamentName = tournamentName;
     }
 }

@@ -1,15 +1,6 @@
 @import "../../../../styles/main-theme.scss";
 @import "../../../../styles/fonts.scss";
-
-.app-list-item-heading {
-    font-size: x-large;
-    font-family: $semi-bold;
-}
-
-.app-list-item-text {
-    font-size: medium;
-    font-family: $regular;
-}
+@import "../../../../styles/app-list-item-styles.scss";
 
 a {
     border-left: solid 3px $primary-light;

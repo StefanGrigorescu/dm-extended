@@ -1,19 +1,40 @@
-<div class="row">
-    <div
-        class="col-xs-12"
-        style="height: 45px;"
-    >
-
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 cover-card-container">
-        <span class="">
+<div class="row" id="statistics-container">
+    <div class="col-xs-12 col-sm-6 container-top" id="cover-card-container">
+        <span class="pull-left">
             <img
                 [src]="this.deck.coverCardImgUrl"
                 alt="{{this.deck.name}}"
                 class="img-responsive img-card"
+                id="img-cover-card"
             >
         </span>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="pull-left container-top" id="deck-info-container">
+            <h4 class="list-group-item-heading app-list-item-heading">{{this.deck.name}}</h4>
+            <p class="list-group-item-text app-list-item-text">
+                Tournament:&nbsp;&nbsp;&nbsp;&nbsp;{{this.deck.tournamentName}} [#id: {{this.deck.tournamentId}}]
+            </p>
+        </div>
+
+        <div class="col-xs-12" id="deck-manage-container">
+            <div
+              class="btn-group" 
+              appDropdown
+            >
+                <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                >
+                    Manage Deck<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Edit Deck</a></li>
+                    <li><a href="#">Export Deck</a></li>
+                    <li><a href="#">Delete Deck</a></li>
+                </ul>
+            </div>
+          </div>
     </div>
 </div>
