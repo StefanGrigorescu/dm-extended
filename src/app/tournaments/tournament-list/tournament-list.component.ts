@@ -11,21 +11,21 @@ import { TournamentsService } from '../tournaments.service';
 export class TournamentListComponent  implements OnInit{
   tournaments: Tournament[];
 
-  toggleCurrentTournaments : boolean = true;
+  toggleArchivedTournaments : boolean = false;
 
   constructor(private tournamentsService: TournamentsService) { }
 
   ngOnInit() {
     this.tournaments = this.tournamentsService
-      .getTournaments(this.toggleCurrentTournaments);
+      .getTournaments(this.toggleArchivedTournaments);
   }
 
   onToggleChange(): void {
-    this.toggleCurrentTournaments = !this.toggleCurrentTournaments;
+    this.toggleArchivedTournaments = !this.toggleArchivedTournaments;
     this.tournamentsService.tournamentSelected.emit(null);
 
     this.tournaments = this.tournamentsService
-      .getTournaments(this.toggleCurrentTournaments);
+      .getTournaments(this.toggleArchivedTournaments);
   }
 }
 

@@ -8,22 +8,23 @@ export class TournamentsService {
 
     private tournaments: object = this.createNewTournamentsObject();
 
-    getTournaments(isActive: boolean): Tournament[] {
+    getTournaments(isArchived: boolean): Tournament[] {
         var tournaments: Tournament[] = Object.values(this.tournaments);
 
-        if(isActive)
+        if(isArchived)
         {
-          return tournaments.filter(t => t.status != TournamentState.Archived);
+          return tournaments.filter(t => t.status === TournamentState.Archived);
         }
         
-        return tournaments.filter(t => t.status === TournamentState.Archived);
+        return tournaments.filter(t => t.status !== TournamentState.Archived);
     }
 
-    createTournament(tournament: Tournament) {
+    createTournament(tournament: Tournament): number {
         var existingIds: number[] = Object.keys(this.tournaments).map(id => Number(id));
         var newId = Math.max(...existingIds) + 1;
 
         this.tournaments[newId] = tournament;
+        return newId;
     }
 
     updateTournament(id: number, updatedTournament: Tournament): void {

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Deck } from '../deck.model';
 import { DecksService } from '../decks.service';
 
@@ -7,14 +8,14 @@ import { DecksService } from '../decks.service';
   templateUrl: './deck-list.component.html',
   styleUrls: ['./deck-list.component.scss']
 })
-export class DeckListComponent {
+export class DeckListComponent implements OnInit, OnDestroy {
   decks: Deck[] = [];
+  getDecksSubscription: Subscription;
 
   constructor(private decksService: DecksService) { }
 
-  ngOnInit() {
-    this
-      .decksService
+  ngOnInit(): void {
+    this.getDecksSubscription = this.decksService
       .getDecks()
       .subscribe(decks => this.decks = decks);
   }
@@ -37,5 +38,9 @@ export class DeckListComponent {
       Depending on the tournament settings, like fixedDeck, this will not always be true.
       Later I will add the logic to communicate with a tournament component and fetch the necessary to implement this condition.
     */
+  }
+
+  ngOnDestroy(): void {
+    this.getDecksSubscription.unsubscribe();
   }
 }
