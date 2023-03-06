@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 
-<div class="container" id="pool-container">
+<div class="container" id="pool-container" #poolContainer>
     <div class="row">
         <div
             class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12"
@@ -12,13 +12,20 @@
             <h1 id="pool-title">Card Pool</h1>
         </div>
     </div>
+    
 
     <div 
         id="pool-content"
         *ngIf="cards"
     >
-        <div class="row pool-ribbon">
-            <div class="col-sm-12 col-md-6 col-lg-3" id="name-container">
+    <div class="row pool-ribbon">
+            <div
+                [ngClass]="{
+                    'col-sm-12 col-md-6 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-md-12 col-lg-6 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+                }"
+                id="name-container"    
+            >
                 <div class="row">
                     <label for="card-name-input">Card name</label>
                     <button
@@ -37,7 +44,13 @@
                 >
             </div>
 
-            <div class="col-sm-6 col-md-6 col-lg-2" id="mana-container">
+            <div
+                [ngClass]="{
+                    'col-sm-6 col-md-6 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-md-6 col-lg-6 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+                }"
+                id="mana-container"    
+            >
                 <div class="row">
                     <label for="mana-input">Mana</label>
                     <button
@@ -50,7 +63,13 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-2" id="civilization-container">
+            <div
+                [ngClass]="{
+                    'col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+                }"
+                id="civilization-container"
+            >
                 <div class="row">
                     <label for="civilization-select">Civilization</label>
                     <button
@@ -72,7 +91,13 @@
                 </select>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3" id="race-container">
+            <div
+                [ngClass]="{
+                    'col-sm-6 col-md-4 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-md-6 col-lg-4 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+                }"
+                id="race-container"
+            >
                 <div class="row">
                     <label for="race-select">Race</label>
                     <button
@@ -94,7 +119,13 @@
                 </select>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-2" id="set-container">
+            <div
+                [ngClass]="{
+                    'col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+                }"
+                id="set-container"
+            >
                 <div class="row">
                     <label for="set-select">Set</label>
                     <button
@@ -120,7 +151,12 @@
 
         <div class="row" id="card-pile-container">
             <app-card-pile
-                class="gallery_product col-xs-6 col-sm-4 col-md-4 col-lg-3 filter hdpe"
+                class="gallery_product filter hdpe"
+                [ngClass]="{
+                    'col-xs-6 col-sm-4 col-md-4 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                    'col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1),
+                    'col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-3': isAvailableWidthLowerThan(ScreenSizes.smMin - 1)
+                }"
                 *ngFor="let cardElement of cards.filteredAndSorted()"
                 [card]="cardElement"
             />

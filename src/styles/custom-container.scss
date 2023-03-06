@@ -1,3 +1,5 @@
+@import "./screen-sizes.scss";
+
 /// Source mixin
 @mixin make-container($padding-x: $container-padding-x) {
     width: 100%;
@@ -11,11 +13,6 @@ $custom-container-padding-x-xs: 5px;
 $custom-container-padding-x-sm: 20px;
 $custom-container-padding-x-md: 40px;
 $custom-container-padding-x-lg: 60px;
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
-$screen-xs-max: $screen-sm-min - 1;
 
 @media screen and (max-width: $screen-xs-max) {
     .custom-container {

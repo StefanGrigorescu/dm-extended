@@ -1,0 +1,7 @@
+// The numeric values representic screen sizes (in pixels)
+// Should match the values in the screen-sizes.ts file
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
