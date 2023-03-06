@@ -1,0 +1,19 @@
+.app-page-title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.app-page-title {
+    margin-top: 8px;
+
+    height: 60px;
+
+    text-align: center;
+    font-size: 320%;
+    font-family: $regular;
+
+    border-radius: 8%;
+    background-color: $primary-light;
+    
+    line-height: 60px;
+}

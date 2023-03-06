@@ -1,11 +1,11 @@
 @import "../../../styles/main-theme.scss";
 @import "../../../styles/fonts.scss";
+@import "../../../styles/page-styles.scss";
 
 $section-margin-top: 45px;
 $item-margin-top: 10px;
 
 #form-page {
-    padding-top: 50px;
     padding-bottom: 100px;
     border-radius: 10%;
 }
@@ -15,6 +15,7 @@ form {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 2px;
+    padding-bottom: 100px;
 
     & > section {
         background-color: $primary-light;
@@ -50,13 +51,14 @@ section > h2 {
     text-shadow: 0.6px 0.6px 1.2px $primary-default;
 }
 
+#tournament-form-title-container {
+    display: flex;
+    justify-content: center;
+}
+
 #tournament-form-title {
-    margin-top: $section-margin-top;
-    font-family: $bold;
-    font-size: xx-large;
-    height: 135%;
-    vertical-align: middle;
-    color: $secondary-default;
+    margin-bottom: 50px;
+    max-width: 600px;
 }
 
 // section > .row > .form-group {
