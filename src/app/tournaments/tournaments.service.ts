@@ -37,6 +37,16 @@ export class TournamentsService {
 
     private createNewTournamentsObject(): object {
         let privateTournaments: object = {
+            0: new Tournament(
+                "Mock Defined State Tournament (with extra text)",
+                "short description here - it really should not get too long as it is supposed to go on list items",
+                "Some descriptive text but some descriptive text and... some descriptive text, also with... um... some descriptive text and... some descriptive text. Did I mention some descriptive text?",
+                (function(d){ d.setDate(d.getDate()+4); return d})(new Date),
+                (function(d){ d.setDate(d.getDate()+12); return d})(new Date),
+                (function(d){ d.setDate(d.getDate()+19); return d})(new Date),
+                (function(d){ d.setDate(d.getDate()+25); return d})(new Date),
+                TournamentState.Defined
+            ),
             1: new Tournament(
                 "Mock Defined State Tournament",
                 "short description",
@@ -113,7 +123,7 @@ export class TournamentsService {
         };
 
         const newTournaments = {};
-        let idSuffix = 1;
+        let idSuffix = 0;
     
         for (const id in privateTournaments) {
             const tournament = privateTournaments[id];

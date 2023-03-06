@@ -1,24 +1,30 @@
-<div class="row">
-    <div class="col-xs-3">
-        <div class="row">
-            <div class="col-xs-12">
-                <app-deck-item
-                    [deck]="deck"
-                />
-            </div>
-            <div class="col-xs-12">
+<div class="container-fluid">
+    <div class="row">
 
-            <app-card-item
-                *ngFor="let cardElement of deckCards"
-                [card]="cardElement"
-            />
+        <div class="col-lg-4" id="left-col">
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <app-deck-item
+                        id="app-deck-item-id"
+                        [deck]="deck"
+                    />
+                </div>
+                <div class="col-xs-12">
+            
+                <app-card-item
+                    *ngFor="let cardElement of deckCards"
+                    [card]="cardElement"
+                />
+                </div>
+
             </div>
         </div>
-    </div>
 
-    <div class="col-xs-9">
-        <app-card-pool
-            [cards]="poolCards"
-        />
+        
+        <div class="col-lg-8" id="right-col">
+            <app-card-pool [cards]="poolCards"/>
+        </div>
+
     </div>
 </div>

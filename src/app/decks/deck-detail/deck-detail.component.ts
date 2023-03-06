@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cards } from 'src/app/cards/cards-model';
 import { CardsService } from 'src/app/cards/cards.service';
@@ -12,7 +12,7 @@ import { DecksService } from '../decks.service';
   styleUrls: ['./deck-detail.component.scss'],
   providers: [CardsService, DecksService]
 })
-export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
+export class DeckDetailComponent implements OnInit, OnDestroy {
   deck: Deck;
   deckCards: Cards;
   poolCards: Cards;
@@ -26,21 +26,22 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // this.getSelectedDeck(this.activatedRoute.snapshot.params["id"]);
-
-    this.activatedRoute
+    var deckId: number = this.activatedRoute
       .snapshot
-      .params
-      .subscribe((params: Params) => {
-        var deckId: number = params["id"];
-        this.deckSubscription = this.getSelectedDeck(deckId);
-      });
-    
+      .params['id'];
+      
+    this.deckSubscription = this.getSelectedDeck(deckId);
+
+    // this.decksService
+    //   .getCardsByDeckId(this.deck.deckId)
+    //   .subscribe(deckCards => this.deckCards = deckCards);
+    this.deckCards = this.decksService.getCardsByDeckId(this.deck.deckId);
+
     this.cardsService
       .getShobuIoCards()
       .subscribe(cards => {
         this.poolCards = cards;
-        console.log("received: " + this.poolCards.length + " cards. stored: " + this.poolCards.length + " cards");
+        console.log("DeckDetailComponent: Received " + this.poolCards.length + " cards... Stored " + this.poolCards.length + " cards.");
       });
   }
 
@@ -55,14 +56,5 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this.deckSubscription.unsubscribe();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // this.decksService
-    //   .getCardsByDeckId(this.deck.deckId)
-    //   .subscribe(deckCards => this.deckCards = deckCards);
-
-    this.deckCards = this.decksService
-      .getCardsByDeckId(this.deck.deckId);
   }
 }

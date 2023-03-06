@@ -53,7 +53,7 @@ const appRoutes: Routes = [
   //   } 
   // },
   { path:'decks', component: DecksComponent },
-  { path:'decks/:deckId', component: DeckDetailComponent }, // the ":" informs angular that this is a dynamic part of the path (a parameter)
+  { path:'decks/:id', component: DeckDetailComponent }, // the ":" informs angular that this is a dynamic part of the path (a parameter)
 ];
 
 @NgModule({

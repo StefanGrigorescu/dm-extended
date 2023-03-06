@@ -8,7 +8,7 @@ export class DecksService {
     deckSelected = new EventEmitter<Deck>();
 
     private decks: object = {
-        1: new Deck
+        0: new Deck
         (
           0,
           "[FN] FN Rush",
@@ -17,7 +17,7 @@ export class DecksService {
           3,
           "Some mock tournament"
         ),
-        2: new Deck
+        1: new Deck
         (
           1,
           "[F] Fire Aggro",
@@ -26,9 +26,9 @@ export class DecksService {
           13,
           "Not really an existing tournament"
         ),
-        3: new Deck
+        2: new Deck
         (
-          1,
+          2,
           "[DW] Discard Party",
           "https://shobu.io/assets/cards/all/ae797f95-54b1-48e9-9216-f315b39826bd.jpg",
           "Darkness",
@@ -38,11 +38,11 @@ export class DecksService {
     };
 
     getDecks(): Observable<Deck[]> {
-        return of(Object.values(this.decks));
+      return of(Object.values(this.decks));
     }
 
     getDeckById(deckId: number): Observable<Deck> {
-      return of(Object.values(this.decks)[0]);
+      return of(this.decks[deckId]);
     }
 
     getCardsByDeckId(deckId: number): Cards {

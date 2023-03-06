@@ -1,0 +1,9 @@
+$left-col-width: 700px;
+
+#left-col {
+    width: $left-col-width;
+}
+
+#right-col {
+    margin-left: $left-col-width;
+}
