@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TournamentState } from '../tournament-state.enum';
@@ -49,7 +49,7 @@ export class TournamentFormComponent {
       hostId: [''],
       hostName: [''],
       createdOn: [''],
-      status: [''],
+      state: [''],
       canceledOn: [''],
       cancelReason: [''],
     });

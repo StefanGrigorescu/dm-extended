@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TournamentState } from '../tournament-state.enum';
 import { Tournament } from '../tournament.model';
 import { TournamentsService } from '../tournaments.service';

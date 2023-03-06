@@ -1,4 +1,4 @@
-/* Tournament status, together with the dates defined in a tournament model,
+/* Tournament state, together with the dates defined in a tournament model,
  define the state of a tournament
  and depending on that state, specific behaviors are defined
 */

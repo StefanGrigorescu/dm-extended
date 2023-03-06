@@ -22,7 +22,7 @@
         <p>Tournament active from &nbsp; {{ tournament.activeStartTime | date }} &nbsp; to &nbsp; {{ tournament.activeEndTime | date }}</p>
       </div>
       <div class="col-xs-12">
-        <p>Tournament status: {{ tournament.status | enumValueToName: TournamentState }}</p>
+        <p>Tournament status: {{ tournament.state | enumValueToName: TournamentState }}</p>
       </div>
 
 

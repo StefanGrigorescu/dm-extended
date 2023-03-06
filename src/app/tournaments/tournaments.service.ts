@@ -13,10 +13,10 @@ export class TournamentsService {
 
         if(isArchived)
         {
-          return tournaments.filter(t => t.status === TournamentState.Archived);
+          return tournaments.filter(t => t.state === TournamentState.Archived);
         }
         
-        return tournaments.filter(t => t.status !== TournamentState.Archived);
+        return tournaments.filter(t => t.state !== TournamentState.Archived);
     }
 
     createTournament(tournament: Tournament): number {
@@ -139,7 +139,7 @@ export class TournamentsService {
                     tournament.registrationDeadline,
                     tournament.startDate,
                     tournament.endDate,
-                    tournament.status
+                    tournament.state
                 );
                 idSuffix++;
             }
