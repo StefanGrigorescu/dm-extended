@@ -1,13 +1,20 @@
-<a><span class="pull-up">
-    <img
-        [src]="card.imgUrl"
-        alt="{{card.name}}"
-        class="img-responsive img-card card-shadow"
-    >
-</span></a>
-<div class="pull-down">
-    <a><p class="list-group-item-heading">{{card.defaultTierId}}</p></a>
-    <p class="list-group-item-text">{{card.copiesCount}}</p>
+<div class="row">
+    <div class="col-xs-12" id="img-card-container">
+        <a><span class="pull-up">
+            <img
+                [src]="card.imgUrl"
+                alt="{{card.name}}"
+                class="img-responsive img-card card-shadow"
+            >
+        </span></a>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="pull-down">
+            <a><p class="list-group-item-heading">{{card.defaultTierId}}</p></a>
+            <p class="list-group-item-text">{{card.copiesCount}}</p>
+        </div>
+    </div>
 </div>
 
 

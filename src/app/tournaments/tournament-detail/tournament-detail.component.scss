@@ -18,6 +18,7 @@ $info-margin-top: 10px;
 
     & > * {
         padding-left: 35px;
+        padding-right: 35px;
     }
 }
 
@@ -42,7 +43,6 @@ $info-margin-top: 10px;
 #tournament-manage-container {
     margin-top: $info-margin-top;
     margin-bottom: 120px;
-
     display: flex;
     justify-content: center;
 }
@@ -75,4 +75,10 @@ $info-margin-top: 10px;
 #mat-grid-list-id {
     font-family: $regular;
     font-size: x-large;
+}
+
+$pool-container-padding: 30px;
+#pool-container {
+    padding-left: $pool-container-padding;
+    padding-right: $pool-container-padding;
 }

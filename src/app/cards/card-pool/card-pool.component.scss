@@ -20,14 +20,10 @@
     font-family: $regular;
 }
 
-#pool-content {
-    border-radius: 10px;
-    width: auto;
-}
-
 .pool-ribbon {
     background-color: $primary-default;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
     text-align: center;
 }
@@ -39,38 +35,28 @@
     font-family: $semi-bold;
 }
 
+.pool-ribbon > section {
+    height: 180px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
 .pool-ribbon label {
     align-self: center;
     font-size: xx-large;
     font-family: $bold;
 }
 
-#name-container {
-    margin-bottom: 14px;
-}
-
-#mana-container {
-    margin-bottom: 60px;
-}
-
-$margin-bottom: 19px;
-#civilization-container {
-    margin-bottom: $margin-bottom;
-}
-
-#race-container {
-    margin-bottom: $margin-bottom;
-}
-
-#set-container {
-    margin-bottom: $margin-bottom;
-}
-
+$margin-vertical: 30px;
 #card-pile-container {
-    padding-top: 10px;
+    padding-top: $margin-vertical;
     background-color: $primary-light;
 
     & > * {
         background-color: $primary-light;
     }
+}
+
+app-card-pile {
+    margin-bottom: $margin-vertical;
 }

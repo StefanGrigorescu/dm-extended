@@ -8,7 +8,7 @@ import { Cards } from '../cards-model';
   styleUrls: ['./card-pool.component.scss']
 })
 export class CardPoolComponent implements AfterViewInit {
-  @Input() cards: Cards;
+  @Input() cards: Cards = new Cards([]);
 
   availableWidth: number;
   @ViewChild('poolContainer') poolContainer: ElementRef;

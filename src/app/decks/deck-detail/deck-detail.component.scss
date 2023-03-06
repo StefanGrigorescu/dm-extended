@@ -1,4 +1,4 @@
-$left-col-width: 700px;//44rem
+$left-col-width: 700px;
 
 #left-col {
     width: $left-col-width;
@@ -6,8 +6,5 @@ $left-col-width: 700px;//44rem
 
 #right-col {
     margin-left: $left-col-width;
+    max-width: calc(100% - #{$left-col-width});
 }
-
-// .container-fluid {
-//     max-width: $left-col-width + 8rem; // 8rem is the default padding used by Bootstrap
-// }

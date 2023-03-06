@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 
-<div class="container" id="pool-container" #poolContainer>
+<div id="pool-container" #poolContainer>
     <div class="row">
         <div
             class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12"
@@ -14,19 +14,16 @@
     </div>
     
 
-    <div 
-        id="pool-content"
-        *ngIf="cards"
-    >
     <div class="row pool-ribbon">
-            <div
-                [ngClass]="{
-                    'col-sm-12 col-md-6 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-md-12 col-lg-6 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
-                }"
-                id="name-container"    
-            >
-                <div class="row">
+        <section
+            [ngClass]="{
+                'col-xs-12 col-sm-12 col-md-6 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+            }"
+            id="name-container"    
+        >
+            <div class="row">
+                <div class="col-xs-12">
                     <label for="card-name-input">Card name</label>
                     <button
                         id="sort-by-name"
@@ -36,22 +33,27 @@
                         <i class="fa-solid fa-arrow-up"></i>
                     </button>
                 </div>
-                <input 
-                    id="card-name-input" 
-                    type="text" 
-                    placeholder="Search by card name"
-                    [(ngModel)]="cards.nameFilter"
-                >
+                <div class="col-xs-12">
+                    <input 
+                        id="card-name-input" 
+                        type="text" 
+                        placeholder="Search by card name"
+                        [(ngModel)]="cards.nameFilter"
+                    >
+                </div>
             </div>
+        </section>
 
-            <div
-                [ngClass]="{
-                    'col-sm-6 col-md-6 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-md-6 col-lg-6 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
-                }"
-                id="mana-container"    
-            >
-                <div class="row">
+
+        <section
+            [ngClass]="{
+                'col-xs-12 col-sm-6 col-md-6 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+            }"
+            id="mana-container"    
+        >
+            <div class="row">
+                <div class="col-xs-12">
                     <label for="mana-input">Mana</label>
                     <button
                         id="sort-by-mana"
@@ -62,15 +64,18 @@
                     </button>
                 </div>
             </div>
+        </section>
 
-            <div
-                [ngClass]="{
-                    'col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
-                }"
-                id="civilization-container"
-            >
-                <div class="row">
+
+        <section
+            [ngClass]="{
+                'col-xs-12 col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+            }"
+            id="civilization-container"
+        >
+            <div class="row">
+                <div class="col-xs-12">
                     <label for="civilization-select">Civilization</label>
                     <button
                         id="sort-by-civilization"
@@ -80,25 +85,31 @@
                         <i class="fa-solid fa-arrow-up"></i>
                     </button>
                 </div>
-                <select 
-                    id="civilization-select"
-                    [(ngModel)]="cards.civilizationFilter"
-                >
-                    <option value="">All</option>
-                    <option *ngFor="let civilization of cards.civilizations" [value]="civilization">
-                        {{ civilization }}
-                    </option>
-                </select>
+                
+                <div class="col-xs-12">
+                    <select 
+                        id="civilization-select"
+                        [(ngModel)]="cards.civilizationFilter"
+                    >
+                        <option value="">All</option>
+                        <option *ngFor="let civilization of cards.civilizations" [value]="civilization">
+                            {{ civilization }}
+                        </option>
+                    </select>
+                </div>
             </div>
+        </section>
 
-            <div
-                [ngClass]="{
-                    'col-sm-6 col-md-4 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-md-6 col-lg-4 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
-                }"
-                id="race-container"
-            >
-                <div class="row">
+
+        <section
+            [ngClass]="{
+                'col-xs-12 col-sm-6 col-md-4 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+            }"
+            id="race-container"
+        >
+            <div class="row">
+                <div class="col-xs-12">
                     <label for="race-select">Race</label>
                     <button
                         id="sort-by-race"
@@ -108,25 +119,31 @@
                         <i class="fa-solid fa-arrow-up"></i>
                     </button>
                 </div>
-                <select
-                    id="race-select"
-                    [(ngModel)]="cards.raceFilter"
-                >
-                    <option value="">All</option>
-                    <option *ngFor="let race of cards.races" [value]="race">
-                        {{ race }}
-                    </option>
-                </select>
+                
+                <div class="col-xs-12">
+                    <select
+                        id="race-select"
+                        [(ngModel)]="cards.raceFilter"
+                    >
+                        <option value="">All</option>
+                        <option *ngFor="let race of cards.races" [value]="race">
+                            {{ race }}
+                        </option>
+                    </select>                    
+                </div>
             </div>
+        </section>
 
-            <div
-                [ngClass]="{
-                    'col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
-                }"
-                id="set-container"
-            >
-                <div class="row">
+
+        <section
+            [ngClass]="{
+                'col-xs-12 col-sm-6 col-md-4 col-lg-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1)
+            }"
+            id="set-container"
+        >
+            <div class="row">
+                <div class="col-xs-12">
                     <label for="set-select">Set</label>
                     <button
                         id="sort-by-set"
@@ -136,30 +153,33 @@
                         <i class="fa-solid fa-arrow-up"></i>
                     </button>
                 </div>
-                <select
-                    id="set-select"
-                    [(ngModel)]="cards.setFilter"
-                >
-                    <option value="">All</option>
-                    <option *ngFor="let set of cards.sets" [value]="set">
-                        {{ set }}
-                    </option>
-                </select>
-            </div>
-        </div>
-        
 
-        <div class="row" id="card-pile-container">
-            <app-card-pile
-                class="gallery_product filter hdpe"
-                [ngClass]="{
-                    'col-xs-6 col-sm-4 col-md-4 col-lg-3': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
-                    'col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1),
-                    'col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-3': isAvailableWidthLowerThan(ScreenSizes.smMin - 1)
-                }"
-                *ngFor="let cardElement of cards.filteredAndSorted()"
-                [card]="cardElement"
-            />
-        </div>
+                <div class="col-xs-12">
+                    <select
+                        id="set-select"
+                        [(ngModel)]="cards.setFilter"
+                    >
+                        <option value="">All</option>
+                        <option *ngFor="let set of cards.sets" [value]="set">
+                            {{ set }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    <div class="row" id="card-pile-container">
+        <app-card-pile
+            class="gallery_product filter hdpe"
+            [ngClass]="{
+                'col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2': isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+                'col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2': isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1),
+                'col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-3': isAvailableWidthLowerThan(ScreenSizes.smMin - 1)
+            }"
+            *ngFor="let cardElement of cards.filteredAndSorted()"
+            [card]="cardElement"
+        />
     </div>
 </div>
