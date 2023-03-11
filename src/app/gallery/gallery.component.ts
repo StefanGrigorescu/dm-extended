@@ -9,7 +9,7 @@ import { CardsService } from '../cards/cards.service';
   providers: [CardsService]
 })
 export class GalleryComponent implements OnInit {
-  poolCards: Cards;
+  poolCards: Cards = new Cards([]);
 
   constructor(private cardsService: CardsService) { }
 

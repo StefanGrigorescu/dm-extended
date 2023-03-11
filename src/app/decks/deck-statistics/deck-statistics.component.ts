@@ -11,7 +11,7 @@ import { DecksService } from '../decks.service';
 })
 export class DeckStatisticsComponent implements OnChanges {
   @Input() deck: Deck;
-  private deckCards: Cards;
+  private deckCards: Cards = new Cards([]);
 
   constructor(private decksService: DecksService) { }
 

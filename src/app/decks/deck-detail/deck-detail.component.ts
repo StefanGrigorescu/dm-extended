@@ -14,8 +14,8 @@ import { DecksService } from '../decks.service';
 })
 export class DeckDetailComponent implements OnInit, OnDestroy {
   deck: Deck;
-  deckCards: Cards;
-  poolCards: Cards;
+  deckCards: Cards = new Cards([]);
+  poolCards: Cards = new Cards([]);
   
   private deckSubscription: Subscription;
 

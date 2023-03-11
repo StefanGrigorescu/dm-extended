@@ -16,7 +16,7 @@ export class TournamentDetailComponent implements OnInit {
   // Reference to the enum. Used by the EnumValueToNamePipe
   TournamentState = TournamentState;
 
-  poolCards: Cards;
+  poolCards: Cards = new Cards([]);
 
   constructor(private cardsService: CardsService) { }
 
