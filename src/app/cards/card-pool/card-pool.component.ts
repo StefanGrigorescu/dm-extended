@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ScreenSizes } from 'src/common/screen-sizes';
 import { Cards } from '../cards-model';
 
@@ -13,38 +13,52 @@ export class CardPoolComponent implements AfterViewInit {
   availableWidth: number;
   @ViewChild('poolContainer') poolContainer: ElementRef;
   ScreenSizes = ScreenSizes;
+  cardPileClasses: { [key: string]: boolean };
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
-      
-      console.log("availableWidth is in init: " + this.availableWidth);
-
-      // Trigger a change detection cycle manually
-      this.changeDetectorRef.detectChanges();
-    }, 0);
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        this.availableWidth = entry.contentRect.width;
+        this.updateCardPileClasses();
+      }
+    });
+    resizeObserver.observe(this.poolContainer.nativeElement);
   }
-
-  // ngAfterViewChecked(): void {
-  //   this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
-  //   console.log("availableWidth is in check: " + this.availableWidth);
-  // }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
+  
+  private updateCardPileClasses(): void {
+    this.cardPileClasses = {
+      'col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2': this.isAvailableWidthGreaterThan(ScreenSizes.mdMin),
+      'col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2': this.isAvailableWidthBetween(ScreenSizes.smMin, ScreenSizes.mdMin - 1),
+      'col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-3': this.isAvailableWidthLowerThan(ScreenSizes.smMin - 1)
+    };
+    this.changeDetectorRef.detectChanges();
   }
 
   isAvailableWidthBetween(first: number, second: number): boolean {
-    return this.availableWidth >= first && this.availableWidth <= second;
+    var result: boolean = this.availableWidth >= first && this.availableWidth <= second;
+    // if(result) {
+    //   console.log(`[${this.availableWidth}]: isAvailableWidthBetween(${first}, ${second}) = ${result}`);
+    // }
+
+    return result;
   }
   isAvailableWidthGreaterThan(other: number) {
-    return this.availableWidth >= other;
+    var result: boolean = this.availableWidth >= other;
+    // if(result) {
+    //   console.log(`[${this.availableWidth}]: isAvailableWidthGreaterThan(${other}) = ${result}`);
+    // }
+
+    return result;
   }
   isAvailableWidthLowerThan(other: number) {
-    return this.availableWidth <= other;
+    var result: boolean = this.availableWidth <= other;
+    // if(result) {
+    //   console.log(`[${this.availableWidth}]: isAvailableWidthLowerThan(${other}) = ${result}`);
+    // }
+
+    return result;
   }
 
   setSortBy(sortBy: string): void {
