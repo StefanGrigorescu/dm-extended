@@ -23,9 +23,7 @@ export class TournamentListComponent  implements OnInit{
       .subscribe(params => {
         const archivedStr: string = params['archived'];
         const archived: boolean = archivedStr === "false" ? false : true;
-
-        console.log("hereeeeee archived = " + archived);
-
+        
         this.tournamentsService.tournamentSelected.emit(null);
 
         this.tournaments = this.tournamentsService
@@ -42,8 +40,7 @@ export class TournamentListComponent  implements OnInit{
 
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
-      queryParams: { archived },
-      queryParamsHandling: 'merge'
+      queryParams: { archived }
     });
   }
 }

@@ -28,8 +28,7 @@
                 </li>
                 <li
                     role="presentation"
-                    routerLinkActive="app-navigation-active"
-                    [routerLinkActiveOptions]="{exact: true}"
+                    [ngClass]="{'app-navigation-active': isTournamentsView}"
                 >
                     <a
                         [routerLink]="['tournaments', 'view']"
