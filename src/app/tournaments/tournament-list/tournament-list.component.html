@@ -12,7 +12,8 @@
         <label class="toggle pull-right">
             <input 
                 type="checkbox"
-                (change)="onToggleChange()"   
+                [checked]="archived"
+                (change)="onToggleChange()" 
             >
             <span 
                 class="labels"

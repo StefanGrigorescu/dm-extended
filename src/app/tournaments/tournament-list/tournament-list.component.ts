@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { Tournament } from '../tournament.model';
 import { TournamentsService } from '../tournaments.service';
 
@@ -10,6 +11,7 @@ import { TournamentsService } from '../tournaments.service';
 })
 export class TournamentListComponent  implements OnInit{
   tournaments: Tournament[];
+  archived: boolean = false;
 
   constructor(
     private tournamentsService: TournamentsService,
@@ -21,27 +23,30 @@ export class TournamentListComponent  implements OnInit{
     this.activatedRoute
       .queryParams
       .subscribe(params => {
-        const archivedStr: string = params['archived'];
-        const archived: boolean = archivedStr === "false" ? false : true;
-        
+        this.archived = params['archived'] === 'true';
+
         this.tournamentsService.tournamentSelected.emit(null);
 
         this.tournaments = this.tournamentsService
-          .getTournaments(archived);
+          .getTournaments(this.archived);
+      });
+
+    this.router
+      .events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const queryParams = this.activatedRoute.snapshot.queryParams;
+        this.archived = queryParams['archived'] === 'true';
       });
   }
 
   onToggleChange(): void {
-    const oldArchived = this.activatedRoute
-      .snapshot
-      .queryParams['archived'];
-
-    const archived = oldArchived === 'true' ? 'false' : 'true';
+    const queryParams = { archived: String(!this.archived) };
 
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
-      queryParams: { archived }
+      queryParams: queryParams,
+      queryParamsHandling: 'merge'
     });
   }
 }
-

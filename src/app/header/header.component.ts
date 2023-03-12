@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-header',
@@ -16,10 +17,9 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {
       this.router
         .events
-        .subscribe(event => {
-            if (event instanceof NavigationEnd) {
-                this.isTournamentsView = this.router.url.startsWith('/tournaments/view');
-            }
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe(() => {
+            this.isTournamentsView = this.router.url.startsWith('/tournaments/view');
         });
     }
 }
