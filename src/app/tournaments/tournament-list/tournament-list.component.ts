@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TournamentState } from '../tournament-state.enum';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Tournament } from '../tournament.model';
 import { TournamentsService } from '../tournaments.service';
 
@@ -11,21 +11,40 @@ import { TournamentsService } from '../tournaments.service';
 export class TournamentListComponent  implements OnInit{
   tournaments: Tournament[];
 
-  toggleArchivedTournaments : boolean = false;
-
-  constructor(private tournamentsService: TournamentsService) { }
+  constructor(
+    private tournamentsService: TournamentsService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.tournaments = this.tournamentsService
-      .getTournaments(this.toggleArchivedTournaments);
+    this.activatedRoute
+      .queryParams
+      .subscribe(params => {
+        const archivedStr: string = params['archived'];
+        const archived: boolean = archivedStr === "false" ? false : true;
+
+        console.log("hereeeeee archived = " + archived);
+
+        this.tournamentsService.tournamentSelected.emit(null);
+
+        this.tournaments = this.tournamentsService
+          .getTournaments(archived);
+      });
   }
 
   onToggleChange(): void {
-    this.toggleArchivedTournaments = !this.toggleArchivedTournaments;
-    this.tournamentsService.tournamentSelected.emit(null);
+    const oldArchived = this.activatedRoute
+      .snapshot
+      .queryParams['archived'];
 
-    this.tournaments = this.tournamentsService
-      .getTournaments(this.toggleArchivedTournaments);
+    const archived = oldArchived === 'true' ? 'false' : 'true';
+
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { archived },
+      queryParamsHandling: 'merge'
+    });
   }
 }
 

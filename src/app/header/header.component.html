@@ -31,7 +31,10 @@
                     routerLinkActive="app-navigation-active"
                     [routerLinkActiveOptions]="{exact: true}"
                 >
-                    <a [routerLink]="['tournaments', 'view']" >
+                    <a
+                        [routerLink]="['tournaments', 'view']"
+                        [queryParams]="{ archived: false }"
+                    >
                         Tournaments
                     </a>
                 </li>

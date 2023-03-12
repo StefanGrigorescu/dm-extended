@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { ScreenSizes } from 'src/common/screen-sizes';
 import { Cards } from '../cards-model';
 
@@ -14,16 +14,23 @@ export class CardPoolComponent implements AfterViewInit {
   @ViewChild('poolContainer') poolContainer: ElementRef;
   ScreenSizes = ScreenSizes;
 
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
   ngAfterViewInit(): void {
-    this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
-    
-    console.log("availableWidth is in init: " + this.availableWidth);
+    setTimeout(() => {
+      this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
+      
+      console.log("availableWidth is in init: " + this.availableWidth);
+
+      // Trigger a change detection cycle manually
+      this.changeDetectorRef.detectChanges();
+    }, 0);
   }
 
-  ngAfterViewChecked(): void {
-    this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
-    console.log("availableWidth is in check: " + this.availableWidth);
-  }
+  // ngAfterViewChecked(): void {
+  //   this.availableWidth = this.poolContainer.nativeElement.offsetWidth;
+  //   console.log("availableWidth is in check: " + this.availableWidth);
+  // }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {

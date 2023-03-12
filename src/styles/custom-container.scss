@@ -10,9 +10,9 @@
 }
 
 $custom-container-padding-x-xs: 5px;
-$custom-container-padding-x-sm: 20px;
-$custom-container-padding-x-md: 40px;
-$custom-container-padding-x-lg: 60px;
+$custom-container-padding-x-sm: 30px;
+$custom-container-padding-x-md: 60px;
+$custom-container-padding-x-lg: 80px;
 
 @media screen and (max-width: $screen-xs-max) {
     .custom-container {
