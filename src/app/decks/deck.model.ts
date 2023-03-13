@@ -1,4 +1,3 @@
-
 export class Deck {
     public userId: number;
 
@@ -31,5 +30,17 @@ export class Deck {
         this.coverCardCivilization = coverCardCivilization;
         this.tournamentId = tournamentId;
         this.tournamentName = tournamentName;
+    }
+
+    isCoverCardFromCivilization(civilization): boolean {
+        return this.coverCardCivilization.toLowerCase() === civilization.toLowerCase();
+    }
+
+    isCoverCardFromAnyCivilization() {
+        return this.isCoverCardFromCivilization('fire') ||
+        this.isCoverCardFromCivilization('water') ||
+        this.isCoverCardFromCivilization('nature') ||
+        this.isCoverCardFromCivilization('light') ||
+        this.isCoverCardFromCivilization('darkness');
     }
 }

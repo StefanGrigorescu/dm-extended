@@ -9,18 +9,6 @@ import { Card } from 'src/app/cards/card.model';
 export class CardItemComponent {
   @Input() card: Card;
 
-  isCardFromCivilization(civilization): boolean {
-    return this.card.civilization.toLowerCase() === civilization.toLowerCase();
-  }
-  
-  isCardFromAnyCivilization() {
-    return this.isCardFromCivilization('fire') ||
-      this.isCardFromCivilization('water') ||
-      this.isCardFromCivilization('nature') ||
-      this.isCardFromCivilization('light') ||
-      this.isCardFromCivilization('darkness');
-  }
-
   getManaCostImg() {
     
   }

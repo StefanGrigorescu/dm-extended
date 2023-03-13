@@ -25,8 +25,6 @@ export class TournamentListComponent  implements OnInit{
       .subscribe(params => {
         this.archived = params['archived'] === 'true';
 
-        this.tournamentsService.tournamentSelected.emit(null);
-
         this.tournaments = this.tournamentsService
           .getTournaments(this.archived);
       });
@@ -43,8 +41,7 @@ export class TournamentListComponent  implements OnInit{
   onToggleChange(): void {
     const queryParams = { archived: String(!this.archived) };
 
-    this.router.navigate([], {
-      relativeTo: this.activatedRoute,
+    this.router.navigate(['/tournaments'], {
       queryParams: queryParams,
       queryParamsHandling: 'merge'
     });

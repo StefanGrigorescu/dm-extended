@@ -1,8 +1,7 @@
 <a
-    routerLink="./"
+    [routerLink]="[tournament.tournamentId, 'details']"
     [queryParamsHandling]="'preserve'"
     class="app-list-item list-group-item clearfix"
-    (click)="onSelect()"
 >
     <!-- <span class="pull-left">
         <img

@@ -4,13 +4,6 @@
     </div>
 
     <div class="col-lg-8">
-        <app-tournament-detail
-            [tournament]="selectedTournament"
-            *ngIf="selectedTournament; else infoText">
-        </app-tournament-detail>
-
-        <ng-template #infoText>
-            <p>You can select a tournament from the list on left to see its details!</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>

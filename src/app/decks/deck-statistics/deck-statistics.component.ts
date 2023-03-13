@@ -1,4 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Cards } from 'src/app/cards/cards-model';
 import { Deck } from '../deck.model';
 import { DecksService } from '../decks.service';
@@ -9,18 +11,43 @@ import { DecksService } from '../decks.service';
   styleUrls: ['./deck-statistics.component.scss'],
   providers: [DecksService]
 })
-export class DeckStatisticsComponent implements OnChanges {
-  @Input() deck: Deck;
+export class DeckStatisticsComponent implements OnInit, OnDestroy {
+  deck: Deck;
   private deckCards: Cards = new Cards([]);
+  private deckSubscription: Subscription;
 
-  constructor(private decksService: DecksService) { }
+  constructor(
+    private decksService: DecksService,
+    private activatedRoute: ActivatedRoute) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // this.decksService
-    //   .getCardsByDeckId(this.deck.deckId)
-    //   .subscribe(deckCards => this.deckCards = deckCards);
+  ngOnInit(): void {
+    this.activatedRoute
+      .params
+      .subscribe(params => {
+        const deckId: number = +params['id'];
+        this.fetchDeckById(deckId);
+      });
+  }
 
-    this.deckCards = this.decksService
-      .getCardsByDeckId(this.deck.deckId);
+  ngOnDestroy(): void {
+    this.deckSubscription.unsubscribe();
+  }
+
+  private fetchDeckById(deckId: number): void {
+    if (this.deckSubscription) {
+      this.deckSubscription.unsubscribe();
+    }
+    
+    this.deckSubscription = this.decksService
+      .getDeckById(deckId)
+      .subscribe(deck => {
+        this.deck = deck;
+        
+      // this.decksService
+      //   .getCardsByDeckId(this.deck.deckId)
+      //   .subscribe(deckCards => this.deckCards = deckCards);
+        this.deckCards = this.decksService
+          .getCardsByDeckId(this.deck.deckId);
+      });
   }
 }

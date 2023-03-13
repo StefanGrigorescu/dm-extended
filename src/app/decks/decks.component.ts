@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Deck } from './deck.model';
+import { Component } from '@angular/core';
 import { DecksService } from './decks.service';
 
 @Component({
@@ -8,17 +7,5 @@ import { DecksService } from './decks.service';
   styleUrls: ['./decks.component.scss'],
   providers: [DecksService]
 })
-export class DecksComponent implements OnInit {
-  public selectedDeck: Deck;
-
-  constructor(private decksService: DecksService) {}
-
-  ngOnInit(): void {
-    this.decksService
-      .deckSelected
-      .subscribe(
-        (deck: Deck) => {
-          this.selectedDeck = deck;
-    });
-  }
+export class DecksComponent {
 }

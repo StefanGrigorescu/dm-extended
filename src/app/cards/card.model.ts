@@ -13,4 +13,16 @@ export class Card {
 
         public copiesCount: number = 1
     ) {}
+
+    isCardFromCivilization(civilization): boolean {
+        return this.civilization.toLowerCase() === civilization.toLowerCase();
+    }
+    
+    isCardFromAnyCivilization() {
+        return this.isCardFromCivilization('fire') ||
+        this.isCardFromCivilization('water') ||
+        this.isCardFromCivilization('nature') ||
+        this.isCardFromCivilization('light') ||
+        this.isCardFromCivilization('darkness');
+    }
 }

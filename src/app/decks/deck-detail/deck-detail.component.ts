@@ -26,10 +26,10 @@ export class DeckDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    var deckId: number = this.activatedRoute
+    var deckId: number = +this.activatedRoute
       .snapshot
       .params['id'];
-      
+    
     this.deckSubscription = this.getSelectedDeck(deckId);
 
     // this.decksService

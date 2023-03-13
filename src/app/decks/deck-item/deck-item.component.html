@@ -1,18 +1,17 @@
 <a
-    routerLink="./"
+    [routerLink]="[deck.deckId, 'statistics']"
     class="list-group-item clearfix app-list-item"
     [ngClass]="{
-        fire: isCoverCardFromCivilization('fire'),
-        water: isCoverCardFromCivilization('water'),
-        nature: isCoverCardFromCivilization('nature'),
-        light: isCoverCardFromCivilization('light'),
-        darkness: isCoverCardFromCivilization('darkness'),
-        none: !isCoverCardFromAnyCivilization()
+        fire: deck.isCoverCardFromCivilization('fire'),
+        water: deck.isCoverCardFromCivilization('water'),
+        nature: deck.isCoverCardFromCivilization('nature'),
+        light: deck.isCoverCardFromCivilization('light'),
+        darkness: deck.isCoverCardFromCivilization('darkness'),
+        none: !deck.isCoverCardFromAnyCivilization()
     }"
     appOpacity
     [defaultOpacity]="1"
     [hoverOpacity]="0.9"
-    (click)="onSelect()"
 >
     <span class="pull-left">
         <img

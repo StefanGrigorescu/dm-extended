@@ -4,10 +4,33 @@
         <div class="row">
 
             <div class="col-xs-12">
-                <app-deck-item
-                    id="app-deck-item-id"
-                    [deck]="deck"
-                />
+
+                <div
+                    class="list-group-item clearfix app-list-item"
+                    [ngClass]="{
+                        fire: deck.isCoverCardFromCivilization('fire'),
+                        water: deck.isCoverCardFromCivilization('water'),
+                        nature: deck.isCoverCardFromCivilization('nature'),
+                        light: deck.isCoverCardFromCivilization('light'),
+                        darkness: deck.isCoverCardFromCivilization('darkness'),
+                        none: !deck.isCoverCardFromAnyCivilization()
+                    }"
+                >
+                    <span class="pull-left">
+                        <img
+                            [src]="this.deck.coverCardImgUrl"
+                            alt="{{this.deck.name}}"
+                            class="img-responsive img-card"
+                        >
+                    </span>
+                    <div class="pull-left deck-item-info-container">
+                        <h4 class="list-group-item-heading app-list-item-heading">{{this.deck.name}}</h4>
+                        <p class="list-group-item-text app-list-item-text">
+                            Tournament:&nbsp;&nbsp;&nbsp;&nbsp;{{this.deck.tournamentName}} [#id: {{this.deck.tournamentId}}]
+                        </p>
+                    </div>
+                </div>
+
             </div>
             <div class="col-xs-12">
         

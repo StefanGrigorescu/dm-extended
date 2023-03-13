@@ -2,12 +2,12 @@
     routerLink="./"
     class="list-group-item clearfix app-list-item"
     [ngClass]="{
-        fire: isCardFromCivilization('fire'),
-        water: isCardFromCivilization('water'),
-        nature: isCardFromCivilization('nature'),
-        light: isCardFromCivilization('light'),
-        darkness: isCardFromCivilization('darkness'),
-        none: !isCardFromAnyCivilization()
+        fire: card.isCardFromCivilization('fire'),
+        water: card.isCardFromCivilization('water'),
+        nature: card.isCardFromCivilization('nature'),
+        light: card.isCardFromCivilization('light'),
+        darkness: card.isCardFromCivilization('darkness'),
+        none: !card.isCardFromAnyCivilization()
     }"
     appOpacity
     [defaultOpacity]="1"

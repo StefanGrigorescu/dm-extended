@@ -1,3 +1,81 @@
+@import "../../../styles/app-list-item-styles.scss";
+
+.app-list-item {
+    border-radius: 14px;
+    background-size: cover; /* or "contain" */
+    height: 110px;
+}
+
+.img-card {
+    padding-bottom: 25%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 19.5%;
+    max-height: 110px
+}
+
+// .deck-item-info-container {
+//     background-color: $primary-light;
+// }
+
+.fire {
+    background-color: red;
+    background-image: url("../../../assets/images/card-headers/fire-header.png");
+}
+
+.fire:hover {
+    background-color: red;
+    background-image: url("../../../assets/images/card-headers/fire-header.png");
+}
+
+.water {
+    background-color: blue;
+    background-image: url("../../../assets/images/card-headers/water-header.png");
+}
+
+.water:hover {
+    background-color: blue;
+    background-image: url("../../../assets/images/card-headers/water-header.png");
+}
+
+.nature {
+    background-color: green;
+    background-image: url("../../../assets/images/card-headers/nature-header.png"); 
+  
+}
+
+.nature:hover {
+    background-color: green;
+    background-image: url("../../../assets/images/card-headers/nature-header.png");
+}
+
+.light {
+    background-color: yellow;
+    background-image: url("../../../assets/images/card-headers/light-header.png");
+}
+
+.light:hover {
+    background-color: yellow;
+    background-image: url("../../../assets/images/card-headers/light-header.png");
+}
+
+.darkness {
+    background-color: purple;
+    background-image: url("../../../assets/images/card-headers/darkness-header.png");
+}
+
+.darkness:hover {
+    background-color: purple;
+    background-image: url("../../../assets/images/card-headers/darkness-header.png");
+}
+
+.none {
+    background-color: transparent;
+}
+
+.none:hover {
+    background-color: transparent;
+}
+
 $left-col-width: 700px;
 
 #left-col {

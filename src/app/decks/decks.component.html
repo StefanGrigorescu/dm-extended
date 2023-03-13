@@ -4,13 +4,6 @@
     </div>
 
     <div class="col-lg-7">
-        <app-deck-statistics
-            [deck]="selectedDeck"
-            *ngIf="selectedDeck; else infoText"
-        />
-
-        <ng-template #infoText>
-            <p>You can select a deck from the list on left to see its statistics!</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>

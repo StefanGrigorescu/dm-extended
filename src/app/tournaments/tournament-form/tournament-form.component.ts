@@ -67,8 +67,11 @@ export class TournamentFormComponent {
   }
 
   private newTournament(): Tournament {
+    TournamentsService.newTournamentId++;
+
     return new Tournament
     (
+      TournamentsService.newTournamentId,
       "",
       "",
       "",

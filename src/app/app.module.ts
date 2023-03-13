@@ -32,7 +32,9 @@ import { CardItemComponent } from './decks/deck-detail/card-item/card-item.compo
 const appRoutes: Routes = [
   { path:'', component: GalleryComponent },
   { path:'gallery', component: GalleryComponent },
-  { path:'tournaments/view', component: TournamentsComponent },
+  { path:'tournaments', component: TournamentsComponent, children: [
+    { path: ':id/details', component: TournamentDetailComponent }
+  ]},
   { path:'tournaments/create', component: TournamentFormComponent },
   // {
   //   path: 'tournaments/view',
@@ -52,8 +54,10 @@ const appRoutes: Routes = [
   //     //(tournamentCreated) = "onTournamentDefined($event)"
   //   } 
   // },
-  { path:'decks', component: DecksComponent },
-  { path:'decks/:id', component: DeckDetailComponent }, // the ":" informs angular that this is a dynamic part of the path (a parameter)
+  { path:'decks', component: DecksComponent, children: [
+    { path:':id/statistics', component: DeckStatisticsComponent }
+  ]},
+  { path:'decks/:id/edit', component: DeckDetailComponent }, // the ":" informs angular that this is a dynamic part of the path (a parameter)
 ];
 
 @NgModule({

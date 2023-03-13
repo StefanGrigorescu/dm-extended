@@ -1,12 +1,10 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { Cards } from "../cards/cards-model";
 import { Deck } from "./deck.model";
 
 @Injectable()
 export class DecksService {
-    deckSelected = new EventEmitter<Deck>();
-
     private decks: object = {
         0: new Deck
         (

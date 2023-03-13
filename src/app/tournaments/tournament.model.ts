@@ -53,6 +53,7 @@ export class Tournament {
     public cancelReason: string = null;
 
     constructor(
+        tournamentId: number,
         name: string,
         shortDescription: string,
         description: string,
@@ -67,6 +68,7 @@ export class Tournament {
         // hostName: string,
         state: TournamentState        // To be removed later when using real tournament data (tournamets are only instantiated with DefinedState)
     ) {
+        this.tournamentId = tournamentId;
         this.name = name;
         this.shortDescription = shortDescription ?? "";
         this.description = description ?? "";
